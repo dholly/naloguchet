@@ -1,0 +1,96 @@
+//====================================================================================================
+@use "../abstracts/variables" as *;
+
+.footer {
+	// .footer__container
+	&__container {
+	}
+	// .footer__top
+	&__top {
+		text-align: center;
+		padding-bottom: 39px;
+		border-bottom: 1px solid #e5e5e5;
+		margin-bottom: 28px;
+	}
+	// .footer__logo
+	&__logo {
+		margin-bottom: 18px;
+		img {
+			max-width: 100%;
+		}
+	}
+	// .footer__copy
+	&__copy {
+		font-size: toRem(14);
+		letter-spacing: -0.03em;
+		color: #929292;
+	}
+	// .footer__bottom
+	&__bottom {
+		padding-bottom: 39px;
+		border-bottom: 1px solid #e5e5e5;
+	}
+	// .footer__row
+	&__row {
+		display: flex;
+		gap: 130px;
+	}
+	// .footer__item
+	&__item {
+		&:first-child{
+			margin-right: 160px;
+		}
+	}
+	// .footer__list
+	&__list {
+		.footer__li{
+			&:not(:last-child){
+				padding-bottom: 16px;
+			}
+		}
+	}
+	// .footer__li
+	&__li {
+	}
+	a.footer__link, button.footer__link{
+		text-decoration: underline;
+		@media (any-hover: hover){
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+	a.footer__link_tel, a.footer__link_email{
+		text-decoration: none;
+	}
+	// .footer__link
+	&__link {
+		font-size: 18px;
+		// .footer__link_tel
+		&_tel {
+			&::before{
+				background: url('@/img/icons/tel.svg') left/contain no-repeat;
+			}
+		}
+		// .footer__link_email
+		&_email {
+			&::before{
+				background: url('@/img/icons/email.svg') left/contain no-repeat;
+			}
+		}
+		&_tel, &_email{
+			font-size: 18px;
+			font-weight: 700;
+			display: flex;
+			gap: 4px;
+			&::before{
+				content: '';
+				width: 18px;
+				height: 18px;
+				flex: 0 0 18px;
+			}
+		}
+	}
+}
+
+//====================================================================================================
