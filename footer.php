@@ -32,6 +32,52 @@ $copyright = [
 
 </main><!-- .page -->
 
+<section class="page__form-section section-form">
+  <div class="section-form__container">
+    <div class="section-form__body">
+      <div class="section-form__decor">
+        <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/semicircle.svg" alt="Decor">
+      </div>
+      <div class="section-form__decor">
+        <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/semicircle.svg" alt="Decor">
+      </div>
+      <div class="section-form__decor">
+        <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/semicircle.svg" alt="Decor">
+      </div>
+
+      <div class="section-form__row">
+        <div class="section-form__content">
+          <h2 class="section-form__title title">
+            Готовы передать бухгалтерию профессионалам?
+          </h2>
+          <form action="#" class="section-form__form">
+            <input type="text" placeholder="Имя" name="firstname">
+            <input type="text" class="input-tel" placeholder="Номер телефона" name="phone">
+            <button type="submit" class="section-form__btn btn btn_arr">
+              Жду звонка
+            </button>
+          </form>
+          <div class="section-form__decor">
+            <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/semicircle.svg" alt="Decor">
+          </div>
+          <div class="section-form__decor">
+            <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/semicircle.svg" alt="Decor">
+          </div>
+        </div>
+        <div class="section-form__image-block">
+          <div class="section-form__image">
+            <img src="<?php echo get_template_directory_uri(); ?>/static/img/form-section/image-01.png" class="ibg ibg--contain" alt="Photo">
+          </div>
+          <div class="section-form__text">
+            «Я лично отвечаю за качество услуг ЦПБ. Работаем так, как если бы
+            это был мой собственный бизнес»
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="footer">
     <div class="footer__container">
         <div class="footer__top">

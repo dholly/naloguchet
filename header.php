@@ -36,10 +36,10 @@ $menu_items = [
         'title' => 'Консультации',
         'url' => get_post_type_archive_link('consultation'),
     ],
-    [
+/*    [
         'title' => 'Клиенты',
         'url' => get_post_type_archive_link('clients'),
-    ],
+    ],*/
     [
         'title' => 'Команда',
         'url' => get_post_type_archive_link('staff'),

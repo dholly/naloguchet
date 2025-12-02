@@ -1,13 +1,6 @@
 .hero-section {
-  width: 100%;
-  background-image: url('@/img/contacts/bc.jpg');
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  padding-top: 60px;
-  padding-bottom: 80px;
-  box-sizing: border-box;
-  overflow: hidden;
+  background: url("@/img/contacts/bc.jpg") center/cover no-repeat;
+  padding-bottom: 120px;
 }
 
 .hero-wrapper {
@@ -222,7 +215,6 @@
    ADVANTAGES SECTION
    ============================================= */
 .advantages-section {
-  padding: 80px 0 100px;
   background-color: #fff;
 }
 
@@ -301,7 +293,6 @@
    STATS SECTION
    ============================================= */
 .stats-section {
-  padding: 80px 0 100px;
   background-color: #fff;
 }
 
@@ -315,9 +306,10 @@
   margin: 0 0 50px 0;
 }
 
-.stats-title .text-blue {
+.stats-title text-blue {
   color: #2d6281;
 }
+
 
 .stats-list {
   display: flex;
@@ -420,4 +412,286 @@
   letter-spacing: -0.03em;
   color: #2f2f30;
   text-align: left;
+}
+
+/* =============================================
+   Industries tiles
+   ============================================= */
+
+.tiles-block__header {
+
+}
+
+.tiles-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 5px;
+}
+
+.industry-card {
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+}
+
+.industry-card .card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 7px;
+}
+
+.industry-card .card-title {
+  margin-left: 14px;
+  font-weight: 590;
+  font-size: 26px;
+  line-height: 110%;
+  letter-spacing: -0.03em;
+  color: #2f2f30;
+}
+
+.industry-card .card-desc {
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  color: #2f2f30;
+}
+
+.industry-card .card-price {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: #2d6281;
+}
+
+.industries-footer {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.spheres-text {
+  font-weight: 590;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: #2f2f30;
+}
+
+/* =============================================
+   TABLE
+   ============================================= */
+
+.pricing-table-section {
+
+}
+
+
+.table-wrapper {
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  box-shadow: 0 0 35px 0 rgba(47, 47, 48, 0.1);
+  gap: 1px;
+}
+
+.table-header-cell {
+ background-color: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: 590;
+  font-size: 18px;
+  line-height: 110%;
+  letter-spacing: -0.03em;
+  color: #2f2f30;
+  &:nth-child(1){
+    border-top-left-radius: 0;
+  }
+  &:nth-child(4){
+    border-top-right-radius: 0;
+  }
+}
+
+.table-cell {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 110%;
+  letter-spacing: -0.03em;
+  color: #2f2f30;
+}
+
+/* =============================================
+   accorderon 1
+   ============================================= */
+
+.services-accordion-section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background: url("@/img/contacts/bc-rotated.jpg") center/cover no-repeat;
+}
+
+.services-accordion {
+ display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.services-accordion__item {
+  box-shadow: 0 0 35px 0 rgba(47, 47, 48, 0.1);
+  background: #fff;
+  margin: 1px;
+}
+
+.services-accordion__header h3 {
+  font-weight: 590;
+  font-size: 24px;
+  line-height: 115%;
+  letter-spacing: -0.03em;
+  color: #2f2f30;
+}
+
+.services-accordion__header {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.services-accordion__header:after {
+  content: "\002B";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  transition: transform 0.1s ease-in-out;
+}
+
+.services-accordion__header.active:after {
+  /* content: "\2212"; */
+  transform: rotate(-45deg);
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.accordion-item__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion-item__content {
+  padding: 1rem;
+  border-top: 1.5px solid rgba(47, 47, 48, 0.1);
+  background: #fff;
+}
+
+/* =============================================
+   Cases
+   ============================================= */
+
+.cases-badge {
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #e5e5e5;
+  width: 114px;
+  height: 46px;
+}
+
+.cases-badge p {
+  word-spacing: 3px;
+  text-align: center;
+  padding: 14px;
+  font-weight: 590;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: #2d6281;
+}
+
+.case-title {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.case-tiles__grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 5px;
+}
+
+.case-card {
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+}
+
+.case-card__case-number {
+  margin-left: auto;
+  width: 103px;
+  height: 42px;
+  background: #f3f3f3;
+}
+
+.case-card__case-number p {
+  text-align: center;
+  padding: 14px;
+  font-weight: 590;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: #2d6281;
+}
+
+.case-card__icon {
+  width: 80px;
+  height: 80px;
+}
+
+.case-card__title {
+  font-weight: 590;
+  font-size: 26px;
+  line-height: 110%;
+  letter-spacing: -0.03em;
+  color: #2f2f30;
+  margin-top: 22px;
+}
+
+.case-card__desc {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 22px;
+}
+
+
+.case__container h1{
+  font-size: 20px;
+}
+
+.case__container{
+
+
+
 }
