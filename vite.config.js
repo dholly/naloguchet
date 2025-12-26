@@ -42,16 +42,11 @@ export default defineConfig({
 		assetsInlineLimit: 0,
 
 		rollupOptions: {
-			input: {
-				'js/main': resolve(`${__dirname}/assets/src/js/main.js`),
-				...(() =>
-					glob
-						.sync(resolve(__dirname, 'assets/src/scss/[!_]*.scss'))
-						.reduce((entries, filename) => {
-							const [, name] = filename.match(/([^/]+)\.scss$/);
-							return { ...entries, [name]: filename };
-						}, {}))(),
-			},
+      input: {
+        'js/main': resolve(__dirname, 'assets/src/js/main.js'),
+        'main': resolve(__dirname, 'assets/src/scss/main.scss'),
+        'main-diff': resolve(__dirname, 'assets/src/scss/main-diff.scss'),
+      },
 			output: {
 				entryFileNames: '[name]-[hash].js',
 				chunkFileNames: '[name]-[hash].js',
@@ -92,14 +87,12 @@ export default defineConfig({
 		// We need a strict port to match on PHP side.
 		strictPort: true,
 		port: 5173,
-	},
+    origin: 'http://localhost:5173',
+  },
 
-	resolve: {
-		alias: {
-			'@':
-				process.env.NODE_ENV === 'development'
-					? resolve(`${wpContentPath}/static`)
-					: '/static',
-		},
-	},
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'static'),
+    },
+  },
 });

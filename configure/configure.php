@@ -103,3 +103,20 @@ add_action('upload_mimes', 'add_file_types_to_uploads', 1, 1);
 //disable update emails
 add_filter( 'auto_plugin_update_send_email', '__return_false' );
 add_filter( 'auto_theme_update_send_email', '__return_false' );
+
+
+add_filter('register_post_type_args', function($args, $post_type) {
+    // Пропускаем встроенные типы WordPress
+    $builtin = array('post', 'page', 'attachment', 'revision', 'nav_menu_item', 'wp_block', 'wp_template', 'wp_template_part', 'wp_navigation');
+
+    if (!in_array($post_type, $builtin)) {
+        if (!isset($args['rewrite'])) {
+            $args['rewrite'] = array();
+        }
+        if (is_array($args['rewrite'])) {
+            $args['rewrite']['with_front'] = false;
+        }
+    }
+
+    return $args;
+}, 99, 2);

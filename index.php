@@ -9,7 +9,7 @@ get_header();
       while(have_posts()) : the_post();
       ?>
 
-        <section>
+        <section class="first default__container">
           <?php the_title('<h1>', '</h1>'); ?>
 
           <?php

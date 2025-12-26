@@ -18,7 +18,8 @@ function add_vite_assets() {
 
 	// add your custom scss files here
 	$scss_files = [
-		'main' => 'main.scss'
+		'main' => 'main.scss',
+    'main-diff' => 'main-diff.scss'
 	];
 
 	if ( VITE_BUILD ) {
