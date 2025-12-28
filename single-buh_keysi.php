@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="page__case-single case-single">
+<main class="page__case-single case-single first">
     <div class="case-single__container">
 
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

@@ -72,7 +72,6 @@ get_header();
               <ul class="person-info">
                 <li class="info-point">30 лет опыта</li>
                 <li class="info-point">Бухгалтер года 2020</li>
-                <br>
                 <li class="info-point">2 высших экономических образования</li>
               </ul>
             </div>
@@ -102,7 +101,10 @@ get_header();
 
           <div class="proof-card">
             <div class="kp-content">
-              <span class="top-text"><span class="top-num">ТОП 7</span> Аутсорс компаний Москвы по версии</span>
+              <div class="top-text">
+                <span class="top-num">ТОП 7</span> 
+                <span>Аутсорс компаний Москвы по версии</span>
+            </div>
               <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/kp.png" alt="KP.RU"
                     class="proof-logo-kp">
             </div>
@@ -115,7 +117,7 @@ get_header();
     <section class="advantages-section">
       <div class="advantages-section__container">
         <h2 class="section-title">
-          Почему компании выбирают <span class="text-blue">Центр<br>Профессиональной Бухгалтерии?</span>
+          Почему компании выбирают <span class="text-blue">Центр Профессиональной Бухгалтерии?</span>
         </h2>
 
         <div class="scroll-indicator">
@@ -128,24 +130,28 @@ get_header();
 
           <div class="advantage-card">
             <div class="card-dot"></div>
-            <div class="icon-wrapper">
-              <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\1.svg"
-                   alt="Опытные специалисты" class="main-icon">
+            <div class="advantages-card-header">
+              <div class="icon-wrapper">
+                <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\1.svg"
+                    alt="Опытные специалисты" class="main-icon">
+              </div>
+              <h3 class="advantage-card__title">Опытные специалисты</h3>
             </div>
-            <h3 class="advantage-card__title">Опытные специалисты</h3>
             <p class="card-text">
-              Без стажёров и новичков.<br>
-              Средний стаж сотрудников — 15 лет, у руководителя — 30 лет.
+              Без стажёров и новичков. Средний стаж сотрудников — 15 лет, у руководителя — 30 лет.
             </p>
           </div>
 
           <div class="advantage-card">
             <div class="card-dot"></div>
-            <div class="icon-wrapper">
-              <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\2.svg"
-                   alt="Юридическая защита" class="main-icon">
+            <div class="advantages-card-header">
+              <div class="icon-wrapper">
+                <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\2.svg"
+                    alt="Юридическая защита" class="main-icon">
+              </div>
+              <h3 class="advantage-card__title">Юридическая защита</h3>
             </div>
-            <h3 class="advantage-card__title">Юридическая защита</h3>
+
             <p class="card-text">
               Снимаем 90% требований налоговой по закону. Страхование ответственности на 3 млн.₽
             </p>
@@ -153,11 +159,14 @@ get_header();
 
           <div class="advantage-card">
             <div class="card-dot"></div>
-            <div class="icon-wrapper">
-              <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\3.svg"
-                   alt="Двойной контроль качества" class="main-icon">
+            <div class="advantages-card-header">
+              <div class="icon-wrapper">
+                <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\3.svg"
+                    alt="Двойной контроль качества" class="main-icon">
+              </div>
+              <h3 class="advantage-card__title">Двойной контроль качества</h3>
             </div>
-            <h3 class="advantage-card__title">Двойной контроль качества</h3>
+
             <p class="card-text">
               Две внутренних перепроверки + внешний аудитор. Так не делает никто.
             </p>
@@ -165,11 +174,14 @@ get_header();
 
           <div class="advantage-card">
             <div class="card-dot"></div>
-            <div class="icon-wrapper">
-              <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\4.svg"
-                   alt="Гарантия стабильности" class="main-icon">
+            <div class="advantages-card-header">
+              <div class="icon-wrapper">
+                <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\4.svg"
+                    alt="Гарантия стабильности" class="main-icon">
+              </div>
+              <h3 class="advantage-card__title">Гарантия стабильности</h3>
             </div>
-            <h3 class="advantage-card__title">Гарантия стабильности</h3>
+
             <p class="card-text">
               Резерв бухгалтеров на случай аврала — работа не останавливается.
             </p>
@@ -177,11 +189,14 @@ get_header();
 
           <div class="advantage-card">
             <div class="card-dot"></div>
-            <div class="icon-wrapper">
-              <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\5.svg"
-                   alt="Работаем в CRM клиента" class="main-icon">
+            <div class="advantages-card-header">
+              <div class="icon-wrapper">
+                <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\5.svg"
+                    alt="Работаем в CRM клиента" class="main-icon">
+              </div>
+              <h3 class="advantage-card__title">Работаем в CRM клиента</h3>
             </div>
-            <h3 class="advantage-card__title">Работаем в CRM клиента</h3>
+
             <p class="card-text">
               Полная прозрачность: вы видите все процессы и отчёты в реальном времени.
             </p>
@@ -189,11 +204,13 @@ get_header();
 
           <div class="advantage-card">
             <div class="card-dot"></div>
-            <div class="icon-wrapper">
-              <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\6.svg"
-                   alt="Партнёрская атмосфера" class="main-icon">
+            <div class="advantages-card-header">
+              <div class="icon-wrapper">
+                <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\6.svg"
+                    alt="Партнёрская атмосфера" class="main-icon">
+              </div>
+              <h3 class="advantage-card__title">Партнёрская атмосфера</h3>
             </div>
-            <h3 class="advantage-card__title">Партнёрская атмосфера</h3>
             <p class="card-text">
               Мы часть вашего бизнеса. Работаем на результат, с улыбкой и без формализма.
             </p>
@@ -298,7 +315,7 @@ get_header();
         </div>
 
         <div class="stats-footer">
-          <span class="footer-text">Расскажем, как быстро и безопасно <br>передать бухгалтерию нам</span>
+          <span class="footer-text">Расскажем, как быстро и безопасно передать бухгалтерию нам</span>
           <a href="#" class="btn btn_arr">Получить консультацию</a>
         </div>
       </div>
@@ -396,6 +413,13 @@ get_header();
 
     <section class="pricing-table-section">
       <div class="pricing-table__container">
+
+        <div class="scroll-indicator">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.19795 1.51494L0.497952 1.51294V3.51294L2.36995 3.51394C-1.21305 8.58794 -0.733048 15.6519 3.80795 20.1939L4.51495 20.8999L5.92895 19.4859L5.22195 18.7789C1.29995 14.8569 0.958952 8.70994 4.19795 4.39994V6.49994H6.19795V1.51494ZM7.97395 6.63794C7.45496 6.93767 7.07628 7.43127 6.92119 8.01018C6.7661 8.58909 6.84731 9.2059 7.14695 9.72494L11.179 16.7079L8.59595 17.5879C7.87695 17.8339 7.37595 18.4879 7.32795 19.2459L7.21795 20.9559L13.736 23.6479C14.528 23.9749 15.426 23.9159 16.167 23.4879L22.304 19.9449C22.8046 19.6552 23.2016 19.2155 23.4388 18.688C23.676 18.1605 23.7415 17.5717 23.626 17.0049L22.494 11.4789C22.3663 10.8594 22.0298 10.3026 21.5406 9.90154C21.0515 9.50051 20.4395 9.27966 19.807 9.27594L15.61 9.25594C15.1214 9.25389 14.641 9.38158 14.218 9.62594L12.786 10.4519L11.061 7.46494C10.7612 6.94595 10.2676 6.56726 9.68871 6.41218C9.1098 6.25709 8.49299 6.3383 7.97395 6.63794Z" fill="#D4D4D4" />
+          </svg>
+        </div>
+
         <div class="table-wrapper">
 
           <div class="table-header-cell">Отрасль / Тип бизнеса</div>
@@ -694,8 +718,7 @@ get_header();
         </div>
 
         <h2 class="case-title">
-          Экономим деньги, возвращаем налоги
-          <br> <span class="text-blue"> и защищаем бизнес от штрафов </span>
+          Экономим деньги, возвращаем налоги <span class="text-blue"> и защищаем бизнес от штрафов </span>
         </h2>
 
         <div class="case-tiles__grid">
@@ -1207,7 +1230,7 @@ get_header();
           </h2>
 
           <h3 class="faq-accordion__subtitle">
-            Мы собрали ответы на самые важные вопросы. Если не нашли <br>нужное — оставьте заявку, и мы проконсультируем вас лично.
+            Мы собрали ответы на самые важные вопросы. Если не нашли нужное — оставьте заявку, и мы проконсультируем вас лично.
           </h3>
 
         <div class="faq-accordion">

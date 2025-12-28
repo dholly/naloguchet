@@ -149,17 +149,19 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const expandBtn = document.getElementById('seo-expand-btn');
     const textWrapper = document.getElementById('seo-text-wrapper');
-    const btnSpan = expandBtn.querySelector('span');
 
     if (expandBtn && textWrapper) {
+        const btnSpan = expandBtn.querySelector('span');
+
         expandBtn.addEventListener('click', function() {
             textWrapper.classList.toggle('open');
             expandBtn.classList.toggle('active');
-
-            if (textWrapper.classList.contains('open')) {
-                btnSpan.textContent = 'Свернуть';
-            } else {
-                btnSpan.textContent = 'Развернуть';
+            if (btnSpan) {
+                if (textWrapper.classList.contains('open')) {
+                    btnSpan.textContent = 'Свернуть';
+                } else {
+                    btnSpan.textContent = 'Развернуть';
+                }
             }
         });
     }
@@ -191,4 +193,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+});
+
+// --------------- BLOG - CLOSE FORM BUTTON --------------- //
+
+document.addEventListener('DOMContentLoaded', function() {
+    const closeBtn = document.querySelector('.expert-widget__close');
+    const sidebar = document.querySelector('.single-post__sidebar'); 
+
+    if (closeBtn && sidebar) {
+
+        closeBtn.addEventListener('click', function() {
+
+            // sidebar.style.display = 'none';
+            
+
+            sidebar.style.transition = 'opacity 0.3s ease';
+            sidebar.style.opacity = '0';
+            setTimeout(() => {
+                sidebar.style.display = 'none';
+            }, 300);
+        });
+    }
 });

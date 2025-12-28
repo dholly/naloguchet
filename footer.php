@@ -35,15 +35,6 @@ $copyright = [
 <section class="page__form-section section-form">
   <div class="section-form__container">
     <div class="section-form__body">
-      <div class="section-form__decor">
-        <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/semicircle.svg" alt="Decor">
-      </div>
-      <div class="section-form__decor">
-        <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/semicircle.svg" alt="Decor">
-      </div>
-      <div class="section-form__decor">
-        <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/semicircle.svg" alt="Decor">
-      </div>
 
       <div class="section-form__row">
         <div class="section-form__content">
@@ -57,12 +48,6 @@ $copyright = [
               Жду звонка
             </button>
           </form>
-          <div class="section-form__decor">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/semicircle.svg" alt="Decor">
-          </div>
-          <div class="section-form__decor">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/semicircle.svg" alt="Decor">
-          </div>
         </div>
         <div class="section-form__image-block">
           <div class="section-form__image">
@@ -95,7 +80,7 @@ $copyright = [
                     <ul class="footer__list">
                         <?php foreach ($footer_menu as $item) : ?>
                             <li class="footer__li">
-                                <a href="<?php echo esc_url(home_url($item['url'])); ?>" class="footer__link">
+                                <a href="<?php echo esc_url(home_url($item['url'])); ?>" class="footer__link" style="text-decoration: underline;">
                                     <?php echo esc_html($item['title']); ?>
                                 </a>
                             </li>
@@ -108,7 +93,7 @@ $copyright = [
                         <?php foreach ($company_info as $item) : ?>
                             <li class="footer__li">
                                 <?php if (!empty($item['url'])) : ?>
-                                    <a href="<?php echo esc_url(home_url($item['url'])); ?>" class="footer__link">
+                                    <a href="<?php echo esc_url(home_url($item['url'])); ?>" class="footer__link" style="text-decoration: underline;">
                                         <?php echo esc_html($item['text']); ?>
                                     </a>
                                 <?php else : ?>
@@ -138,7 +123,7 @@ $copyright = [
                             <?php echo esc_html($contacts['worktime']); ?>
                         </li>
                         <li class="footer__li">
-                            <button data-popup="#order" class="footer__link">Заказать звонок</button>
+                            <button data-popup="#order" class="footer__link" style="text-decoration: underline;">Заказать звонок</button>
                         </li>
                     </ul>
                 </div>
