@@ -23,19 +23,19 @@ header {
 .header__logo img {
 	width: clamp(110px, 13vw, 130px);
     max-width: 100%;
-    display: block; 
+    display: block;
 }
 
 .header__body {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 
 .header__top {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
     align-items: stretch;
     border-bottom: 1px solid #e5e5e5;
     height: 50%;
@@ -45,10 +45,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1 1 auto; 
-    gap: 20px;    
-    border-right: 1px solid #e5e5e5; 
-    height: 100%;  
+    flex: 1 1 auto;
+    gap: 20px;
+    border-right: 1px solid #e5e5e5;
+    height: 100%;
 
 	// Socials
 	&:first-child {
@@ -93,9 +93,9 @@ header {
 .socials-row__social-icons {
     display: flex;
     flex-direction: row;
-    align-items: center; 
-    gap: 10px; 
-    margin-left: 10px; 
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
 }
 
 .social__link {
@@ -179,7 +179,7 @@ header {
 .menu__list {
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -213,16 +213,16 @@ header {
     .bottom__item {
         display: flex;
         align-items: center;
-        justify-content: flex-start; 
+        justify-content: flex-start;
         height: 100%;
-        padding: 0 15px; 
+        padding: 0 15px;
     }
 
 	.header__menu {
-		width: auto; 
+		width: auto;
 		flex: 0 0 auto;
 		border-right: none;
-		padding-left: 20px; 
+		padding-left: 20px;
     }
 
 	#open-sidebar, #close-sidebar {
@@ -245,6 +245,7 @@ header {
 		z-index: 10;
 		border-left: 2px solid #e5e5e5;
 		transition: right 0.3s ease-out;
+    overflow: auto
 	}
 
 	.menu__body.show {
@@ -285,7 +286,7 @@ header {
 	}
 
 	.header__bottom {
-		padding-left: 20px;	
+		padding-left: 20px;
 	}
 
 	.bottom__item {
@@ -304,103 +305,153 @@ header {
 }
 
 .sub-menu {
-    position: relative;
+  position: relative;
 }
 
 .sub-menu > .menu__link {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-.sub-menu > .menu__link::after {
-    content: "";
-    width: 8px;
-    height: 5px;
-    flex: 0 0 8px;
-    background: url("@/img/icons/triangle.svg") center/contain no-repeat;
-    transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
 }
 
-.sub-menu:hover > .menu__link::after {
-    transform: rotate(180deg);
+.sub-menu > .menu__link::after {
+  content: "";
+  width: 8px;
+  height: 5px;
+  flex: 0 0 8px;
+  background: url("@/img/icons/triangle.svg") center/contain no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.sub-menu.active > .menu__link::after {
+  transform: rotate(180deg);
 }
 
 .sub-menu__list {
-    position: absolute;
-    top: 100%; /* Позиция сразу под ссылкой */
-    left: 0;    
-    /* Скрытое состояние */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    
-    min-width: 266px;
-    background: #fff;
-    padding: 14px;
-    box-shadow: 0 4px 15px rgba(47, 47, 48, 0.25);
-    z-index: 100;
-    
-    transition: all 0.3s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 266px;
+  background: #fff;
+  padding: 14px;
+  box-shadow: 0 4px 15px rgba(47, 47, 48, 0.25);
+  z-index: 100;
+  margin-top: 20px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
 }
 
-/* область чтобы меню не пропадало */
-.sub-menu__list::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    background: transparent;
+.sub-menu--wide .sub-menu__list {
+  min-width: 750px;
+  left: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 20px;
+
+  transform: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.sub-menu:hover .sub-menu__list {
+@media screen and (max-width: 1050px) {
+  .sub-menu--wide .sub-menu__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 640px;
+  }
+}
+
+.sub-menu--wide.active .sub-menu__list {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.sub-menu--wide .sub-menu__list .menu__item {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.sub-menu--wide .sub-menu__list .menu__item:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+@media screen and (max-width: $tablet) {
+  .sub-menu__list,
+  .sub-menu--wide .sub-menu__list {
+    position: static;
+    box-shadow: none;
+    padding-left: 20px;
+    min-width: auto;
+    margin-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+
+    display: none;
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
-    margin-top: 20px;
+    transform: none;
+    transition: none;
+  }
+
+  .sub-menu.active .sub-menu__list,
+  .sub-menu--wide.active .sub-menu__list {
+    display: block;
+  }
+}
+
+.sub-menu__list::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+}
+
+.sub-menu.active .sub-menu__list {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .sub-menu__list .menu__item {
-    display: block;
-    margin: 0;
-    border-bottom: 1px solid #e5e5e5;
+  display: block;
+  margin: 0;
+  border-bottom: 1px solid #e5e5e5;
 }
+
 .sub-menu__list .menu__item:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .sub-menu__list .menu__link {
-    display: block;
-    padding: 10px 0;
-
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 100%;
-	letter-spacing: -0.03em;
-	color: #2f2f30;
-
-    transition: color 0.3s;
+  display: block;
+  padding: 10px 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: #2f2f30;
+  transition: color 0.3s;
 }
 
 .sub-menu__list .menu__link:hover {
-    color: #2d6281; 
+  color: #2d6281;
 }
 
-@media screen and (max-width: 936px) { 
-    .sub-menu__list {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        padding-left: 20px; 
-        display: none; /* Скрыто по умолчанию на мобилке */
-        min-width: auto;
-    }
-    
-    /* нужен JS для клика, либо просто показать всегда: */
-    .sub-menu:hover .sub-menu__list {
-        display: block;
-    }
+@media screen and (max-width: $tablet) {
+  .sub-menu__list {
+    position: static;
+    box-shadow: none;
+    padding-left: 20px;
+    min-width: auto;
+    margin-top: 10px;
+  }
 }

@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (openBtn) {
         openBtn.addEventListener('click', openSidebar);
     }
-    
+
     if (closeBtn) {
         closeBtn.addEventListener('click', closeSidebar);
     }
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (scrollContainer && nextBtn && prevBtn) {
       const getScrollAmount = () => {
         const card = scrollContainer.querySelector('.reviews__tile');
-        return card ? card.offsetWidth + 28 : 300; 
+        return card ? card.offsetWidth + 28 : 300;
       };
 
       nextBtn.addEventListener('click', () => {
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (teamContainer && teamNextBtn && teamPrevBtn) {
       const getTeamScrollAmount = () => {
         const card = teamContainer.querySelector('.team-card');
-        return card ? card.offsetWidth + 20 : 300; 
+        return card ? card.offsetWidth + 20 : 300;
       };
 
       teamNextBtn.addEventListener('click', () => {
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.classList.add('active-switch');
 
             contents.forEach(c => c.classList.remove('active-tiles'));
-            
+
             const targetId = btn.getAttribute('data-target');
             document.getElementById(targetId).classList.add('active-tiles');
         });
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
     showMoreBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const parentContent = this.closest('.otzivi-tiles__content');
-            const grid = parentContent.querySelector('.otzivi-tiles__grid');            
+            const grid = parentContent.querySelector('.otzivi-tiles__grid');
             grid.classList.add('show-all');
             this.style.display = 'none';
         });
@@ -168,12 +168,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // --------------- SWIPER --------------- //
 
 document.addEventListener('DOMContentLoaded', function() {
-    
+
     if (document.querySelector('.related-slider')) {
         const relatedSwiper = new Swiper('.related-slider', {
             slidesPerView: 1,
             spaceBetween: 20,
-            loop: false, 
+            loop: false,
             navigation: {
                 nextEl: '.related-nav-next',
                 prevEl: '.related-nav-prev',
@@ -191,4 +191,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const subMenus = document.querySelectorAll('.sub-menu');
+
+  subMenus.forEach(subMenu => {
+    const link = subMenu.querySelector(':scope > .menu__link');
+    const list = subMenu.querySelector('.sub-menu__list');
+
+    if (!link || !list) return;
+
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      if (window.innerWidth <= 835) {
+        subMenus.forEach(other => {
+          if (other !== subMenu) {
+            other.classList.remove('active');
+          }
+        });
+        subMenu.classList.toggle('active');
+      }
+    });
+
+    subMenu.addEventListener('mouseenter', function() {
+      if (window.innerWidth > 835) {
+        this.classList.add('active');
+      }
+    });
+
+    subMenu.addEventListener('mouseleave', function() {
+      if (window.innerWidth > 835) {
+        this.classList.remove('active');
+      }
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.sub-menu') && window.innerWidth <= 835) {
+      subMenus.forEach(subMenu => {
+        subMenu.classList.remove('active');
+      });
+    }
+  });
 });

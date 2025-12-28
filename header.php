@@ -19,17 +19,30 @@ $socials = [
     ],
 ];
 
+
+$uslugi_posts = get_posts([
+    'post_type' => 'uslugi',
+    'posts_per_page' => -1,
+    'orderby' => 'title',
+    'order' => 'ASC',
+]);
+
+
+$uslugi_submenu = [];
+foreach ($uslugi_posts as $post) {
+    $uslugi_submenu[] = [
+        'title' => $post->post_title,
+        'url' => get_permalink($post->ID),
+    ];
+}
+
 $menu_items = [
-    // [
-    //     'title' => 'Услуги',
-    //     'url' => get_post_type_archive_link('uslugi'),
-    // ],
     [
         'title' => 'Услуги',
-        'url'   => get_post_type_archive_link('uslugi'), 
+        'url' => get_post_type_archive_link('uslugi'),
         'class' => 'has-submenu',
         'submenu' => [
-            ['title' => 'Бухгалтерия для ИП', 'url' => home_url('/buhgalteria-ip/')], 
+            ['title' => 'Бухгалтерия для ИП', 'url' => home_url('/buhgalteria-ip/')],
             ['title' => 'Бухгалтерия для ООО', 'url' => home_url('/buhgalteria-ooo/')],
             ['title' => 'Бухгалтерия для ОАО', 'url' => home_url('/buhgalteria-oao/')],
             ['title' => 'Для городов', 'url' => home_url('/dlya-gorodov/')],
@@ -38,23 +51,12 @@ $menu_items = [
             ['title' => 'Для отраслей', 'url' => home_url('/dlya-otraslei/')],
         ]
     ],
-    // [
-    //     'title' => 'Документы',
-    //     'url' => get_post_type_archive_link('buh_dokumenty'),
-    // ],
     [
         'title' => 'Сферы бизнеса',
-        'url' => get_post_type_archive_link('consultation'),
+        'url' => get_post_type_archive_link('buhgalterskie-keysi'),
         'class' => 'has-submenu',
-        'submenu' => [
-            ['title' => 'Бухгалтерия для ИП', 'url' => '#'], 
-            ['title' => 'Бухгалтерия для ООО', 'url' => '#'],
-            ['title' => 'Бухгалтерия для ОАО', 'url' => '#'],
-            ['title' => 'Для городов', 'url' => '#'],
-            ['title' => 'Восстановление бух. учета', 'url' => '#'],
-            ['title' => 'Экспресс аудит бухгалтерии', 'url' => '#'],
-            ['title' => 'Для отраслей', 'url' => '#'],
-        ]
+        'submenu_class' => 'sub-menu--wide',
+        'submenu' => $uslugi_submenu,
     ],
     [
         'title' => 'Кейсы',
@@ -62,15 +64,15 @@ $menu_items = [
     ],
     [
         'title' => 'О компании',
-        'url' => get_post_type_archive_link('clients'), // link
+        'url' => get_post_type_archive_link('clients'),
     ],
     [
         'title' => 'Отзывы',
-        'url' => get_post_type_archive_link('clients'), // link
+        'url' => home_url('/otzivi/'),
     ],
     [
         'title' => 'Блог',
-        'url' => home_url('/blog/'), // submenu 5 posts
+        'url' => home_url('/blog/'),
     ],
     [
         'title' => 'Контакты',
@@ -78,11 +80,12 @@ $menu_items = [
     ],
     [
         'title' => 'Калькулятор стоимости',
-        'url' => '#calculator',
+        'url' => home_url('/kalkulyator'),
         'class' => 'menu__link_calc',
     ],
 ];
 ?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -130,13 +133,13 @@ $menu_items = [
                         </div>
 
                         <div class="header__item">
-                            
+
                             <div class="contacts-row">
                                 <a href="tel:<?php echo esc_attr($contacts['phone_link']); ?>" class="contacts-row__tel">
                                     <?php echo esc_html($contacts['phone']); ?>
                                 </a>
                             </div>
-                            
+
                             <button id="short-phone-btn">
                                 <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/phone.svg">
                             </button>
@@ -171,31 +174,7 @@ $menu_items = [
                             </div>
                         </div>
 
-                        <!-- <div class="header__menu">
-                            <nav class="menu__body">
-                                <ul class="menu__list">
-                                    <li>
-                                        <button id="close-sidebar">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/hamburger.svg">
-                                        </button>
-                                    </li>
-                                    <?php foreach ($menu_items as $item) : ?>
-                                        <?php
-                                        $link_class = 'menu__link';
-                                        if (!empty($item['class'])) {
-                                            $link_class .= ' ' . $item['class'];
-                                        }
-                                        ?>
-                                        <li class="menu__item">
-                                            <a href="<?php echo esc_url($item['url']); ?>" class="<?php echo esc_attr($link_class); ?>">
-                                                <?php echo esc_html($item['title']); ?>
-                                            </a>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </nav>
-                            <div id="sidebar-overlay"></div>
-                        </div> -->
+
                         <div class="header__menu">
                             <nav class="menu__body">
                                 <ul class="menu__list">
@@ -204,39 +183,24 @@ $menu_items = [
                                             <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/hamburger.svg">
                                         </button>
                                     </li>
-                                    <?php foreach ($menu_items as $item) : ?>
-                                        <?php
-                                        $has_submenu = !empty($item['submenu']);
-                                        
-                                        $li_class = 'menu__item';
-                                        if ($has_submenu) {
-                                            $li_class .= ' sub-menu'; 
-                                        }
-                                        
-                                        $link_class = 'menu__link';
-                                        if (!empty($item['class'])) {
-                                            $link_class .= ' ' . $item['class'];
-                                        }
-                                        ?>
-                                        
-                                        <li class="<?php echo esc_attr($li_class); ?>">
-                                            <a href="<?php echo esc_url($item['url']); ?>" class="<?php echo esc_attr($link_class); ?>">
-                                                <?php echo esc_html($item['title']); ?>
-                                            </a>
-
-                                            <?php if ($has_submenu) : ?>
-                                                <ul class="sub-menu__list">
-                                                    <?php foreach ($item['submenu'] as $subitem) : ?>
-                                                        <li class="menu__item">
-                                                            <a href="<?php echo esc_url($subitem['url']); ?>" class="menu__link">
-                                                                <?php echo esc_html($subitem['title']); ?>
-                                                            </a>
-                                                        </li>
-                                                    <?php endforeach; ?>
-                                                </ul>
-                                            <?php endif; ?>
-                                        </li>
-                                    <?php endforeach; ?>
+                                  <?php foreach ($menu_items as $item): ?>
+                                    <?php if (!empty($item['submenu'])): ?>
+                                      <li class="menu__item sub-menu <?= $item['class'] ?? '' ?> <?= $item['submenu_class'] ?? '' ?>">
+                                        <a href="<?= $item['url'] ?>" class="menu__link"><?= $item['title'] ?></a>
+                                        <ul class="sub-menu__list">
+                                          <?php foreach ($item['submenu'] as $sub): ?>
+                                            <li class="menu__item">
+                                              <a href="<?= $sub['url'] ?>" class="menu__link"><?= $sub['title'] ?></a>
+                                            </li>
+                                          <?php endforeach; ?>
+                                        </ul>
+                                      </li>
+                                    <?php else: ?>
+                                      <li class="menu__item">
+                                        <a href="<?= $item['url'] ?>" class="menu__link <?= $item['class'] ?? '' ?>"><?= $item['title'] ?></a>
+                                      </li>
+                                    <?php endif; ?>
+                                  <?php endforeach; ?>
                                 </ul>
                             </nav>
                             <div id="sidebar-overlay"></div>
