@@ -1,20 +1,20 @@
 <?php get_header(); ?>
 
-<main class="page__case-single case-single first">
-    <div class="case-single__container">
+<main class="page__case-single case-single">
+    <section class="case-single__container">
 
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
             <?php
             $client_desc = get_field('case_client_desc');
-            
+
             $initial = get_field('case_initial');
             $problems = get_field('case_problems');
             $solution = get_field('case_solution');
             $result = get_field('case_result');
 
             $is_new_format = ($initial || $problems || $solution);
-            
+
             // URL для картинок
             $template_uri = get_template_directory_uri();
             $check_icon = $template_uri . '/static/img/icons/check.svg';
@@ -22,9 +22,9 @@
             ?>
 
             <div class="case-single__layout">
-                
+
                 <div class="case-single__main">
-                    
+
                     <h1 class="case-single__title">
                         <?php the_title(); ?>
                     </h1>
@@ -49,7 +49,7 @@
 
                     <?php if ($is_new_format) : ?>
                         <div class="case-structure">
-                            
+
                             <?php if($initial): ?>
                             <div class="case-structure__section">
                                 <h2 class="case-structure__heading">Исходные данные</h2>
@@ -114,7 +114,7 @@
             </div>
 
         <?php endwhile; endif; ?>
-    </div>
+    </section>
 </main>
 
 <?php get_footer(); ?>

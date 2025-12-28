@@ -3,11 +3,11 @@
 Template Name: Отзывы
 */
 
-get_header(); 
+get_header();
 ?>
 
     <section class="otzivi-header">
-        <div class="otzivi__container"> 
+        <div class="otzivi__container">
 
             <h1 class="otzivi__title">Отзывы и благодарственные письма</h1>
 
@@ -43,7 +43,7 @@ get_header();
 
     <section class="otzivi-tiles">
         <div class="otzivi-tiles__container">
-            
+
             <?php
 
             $letters_query = new WP_Query([
@@ -84,11 +84,11 @@ get_header();
                     <?php if ($letters_query->have_posts()) : while ($letters_query->have_posts()) : $letters_query->the_post(); ?>
                         <div class="otzivi-tiles__single-letter item-card">
                             <div class="otzivi-tiles__img-wrapper">
-                                <?php if (has_post_thumbnail()) : 
+                                <?php if (has_post_thumbnail()) :
                                     the_post_thumbnail('large');
                                 endif; ?>
                             </div>
-                            
+
                             <div class="otzivi-tiles__letter-text-body">
                                 <div class="otzivi-tiles__letter-text-comp"><?php the_title(); ?></div>
                                 <div class="otzivi-tiles__letter-text-main"><?php the_field('review_desc'); ?></div>
@@ -96,7 +96,7 @@ get_header();
                         </div>
                     <?php endwhile; endif; wp_reset_postdata(); ?>
                 </div>
-                
+
                 <?php if ($letters_query->found_posts > 9) : ?>
                     <button class="otzivi-tiles__show-more-btn">Показать еще</button>
                 <?php endif; ?>
@@ -105,7 +105,7 @@ get_header();
             <?php if ($video_query->have_posts()) : ?>
                 <div id="videos" class="otzivi-tiles__content">
                     <div class="otzivi-tiles__grid">
-                        <?php while ($video_query->have_posts()) : $video_query->the_post(); 
+                        <?php while ($video_query->have_posts()) : $video_query->the_post();
                             $video_link = get_field('review_video_link');
                         ?>
                             <div class="otzivi-tiles__single-video item-card">
@@ -113,7 +113,7 @@ get_header();
                                     <div class="video-overlay">
                                         <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/play-video.svg" alt="Play" class="play-icon">
                                     </div>
-                                    <?php 
+                                    <?php
                                     if (has_post_thumbnail()) {
                                         the_post_thumbnail('medium_large');
                                     } else {
@@ -130,7 +130,7 @@ get_header();
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
-            
+
         </div>
     </section>
 
