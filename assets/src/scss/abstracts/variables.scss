@@ -60,8 +60,8 @@ $spacers : (
 );
 
 $desktop: 1200px;
-$laptop: 976px;
-$tablet: 835px;
+$laptop: 981px;
+$tablet: 856px;
 $mobile: 630px;
 
 @mixin respond($breakpoint, $minmax: max) {

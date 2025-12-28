@@ -29,10 +29,10 @@ $uslugi_posts = get_posts([
 
 
 $uslugi_submenu = [];
-foreach ($uslugi_posts as $post) {
+foreach ($uslugi_posts as $usluga) {
     $uslugi_submenu[] = [
-        'title' => $post->post_title,
-        'url' => get_permalink($post->ID),
+        'title' => $usluga->post_title,
+        'url' => get_permalink($usluga->ID),
     ];
 }
 
@@ -65,6 +65,11 @@ $menu_items = [
     [
         'title' => 'О компании',
         'url' => get_post_type_archive_link('clients'),
+        'class' => 'has-submenu',
+        'submenu' => [
+            ['title' => 'Сотрудники', 'url' => home_url('/staff/')],
+            ['title' => 'Гарантии', 'url' => home_url('/garantii/')],
+        ]
     ],
     [
         'title' => 'Отзывы',
@@ -146,8 +151,12 @@ $menu_items = [
 
                             <button class="header-top__btn btn btn_arr">Заказать звонок</button>
 
-                            <button id="open-sidebar">
-                                <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/hamburger.svg">
+                            <button id="open-sidebar" class="sidebar-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </button>
                         </div>
 
@@ -177,12 +186,17 @@ $menu_items = [
 
                         <div class="header__menu">
                             <nav class="menu__body">
+
+                                <div class="menu__header">
+                                    <button id="close-sidebar" class="sidebar-btn" aria-label="Закрыть меню">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M18 6L6 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+
                                 <ul class="menu__list">
-                                    <li>
-                                        <button id="close-sidebar">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/hamburger.svg">
-                                        </button>
-                                    </li>
                                   <?php foreach ($menu_items as $item): ?>
                                     <?php if (!empty($item['submenu'])): ?>
                                       <li class="menu__item sub-menu <?= $item['class'] ?? '' ?> <?= $item['submenu_class'] ?? '' ?>">
@@ -202,6 +216,19 @@ $menu_items = [
                                     <?php endif; ?>
                                   <?php endforeach; ?>
                                 </ul>
+
+                                <div class="menu__footer">
+                                    <div class="socials-row">
+                                        <span>Мы онлайн</span>
+                                        <div class="socials-row__social-icons">
+                                            <?php foreach ($socials as $social) : ?>
+                                                <a href="<?php echo esc_url($social['url']); ?>" class="social__link">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/<?php echo esc_attr($social['icon']); ?>" alt="<?php echo esc_attr($social['name']); ?>">
+                                                </a>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </div>
                             </nav>
                             <div id="sidebar-overlay"></div>
                         </div>

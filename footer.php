@@ -2,10 +2,13 @@
 // Данные для футера
 $footer_menu = [
     ['title' => 'Цены', 'url' => '/ceny/'],
-    ['title' => 'О компании', 'url' => '/o-kompanii/'],
     ['title' => 'Контакты', 'url' => '/kontakty/'],
     ['title' => 'Гарантии', 'url' => '/garantii/'],
     ['title' => 'Кейсы', 'url' => '/kejsy/'],
+    ['title' => 'Наши сотрудники', 'url' => '/staff/'],
+    ['title' => 'Блог', 'url' => '/blog/'],
+    ['title' => 'Бухгалтерские документы', 'url' => '/bukhgalterskie-dokumenty/'],
+    ['title' => 'Отзывы', 'url' => '/otzivi/'],
 ];
 
 $company_info = [
