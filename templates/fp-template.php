@@ -316,7 +316,7 @@ get_header();
 
         <div class="stats-footer">
           <span class="footer-text">Расскажем, как быстро и безопасно передать бухгалтерию нам</span>
-          <a href="#" class="btn btn_arr">Получить консультацию</a>
+          <?php echo do_shortcode('[fluentform_modal css_class="btn btn_arr" form_id="3" btn_text="Получить консультацию"]'); ?>
         </div>
       </div>
     </section>
