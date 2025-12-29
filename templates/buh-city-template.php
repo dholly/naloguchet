@@ -214,7 +214,7 @@ get_header();
 
           <div class="stats-row">
             <div class="stat-btn-wrapper">
-              <a href="#" class="btn btn_arr">Аутсорсинг бухгалтерии для ИП</a>
+              <a href="<?php echo home_url('/buhgalteria-ip/'); ?>" class="btn btn_arr">Аутсорсинг бухгалтерии для ИП</a>
             </div>
             <div class="stat-content">
               <div class="stat-col">
@@ -230,7 +230,7 @@ get_header();
 
           <div class="stats-row">
             <div class="stat-btn-wrapper">
-              <a href="#" class="btn btn_arr">Аутсорсинг <br>бухгалтерии для ООО</a>
+              <a href="<?php echo home_url('/buhgalteria-ooo/'); ?>" class="btn btn_arr">Аутсорсинг <br>бухгалтерии для ООО</a>
             </div>
             <div class="stat-content">
               <div class="stat-col">
@@ -246,7 +246,7 @@ get_header();
 
           <div class="stats-row">
             <div class="stat-btn-wrapper">
-              <a href="#" class="btn btn_arr">Аутсорсинг бухгалтерии <br>для НКО, ОАО и др.</a>
+              <a href="<?php echo home_url('/buhgalteria-oao/'); ?>" class="btn btn_arr">Аутсорсинг бухгалтерии <br>для НКО, ОАО и др.</a>
             </div>
             <div class="stat-content">
               <div class="stat-col">
@@ -262,7 +262,7 @@ get_header();
 
           <div class="stats-row">
             <div class="stat-btn-wrapper">
-              <a href="#" class="btn btn_arr">Восстановление учёта</a>
+              <a href="<?php echo home_url('/buh-vosstanovlenie/'); ?>" class="btn btn_arr">Восстановление учёта</a>
             </div>
             <div class="stat-content">
               <div class="stat-result">
@@ -274,7 +274,7 @@ get_header();
 
           <div class="stats-row">
             <div class="stat-btn-wrapper">
-              <a href="#" class="btn btn_arr">Аудит бухгалтерии</a>
+              <a href="<?php echo home_url('/express-audit-buhgalterii/'); ?>" class="btn btn_arr">Аудит бухгалтерии</a>
             </div>
             <div class="stat-content">
               <div class="stat-result">
@@ -286,7 +286,7 @@ get_header();
 
           <div class="stats-row">
             <div class="stat-btn-wrapper">
-              <a href="#" class="btn btn_arr">Юридические услуги и <br>налоговый консалтинг</a>
+              <a href="<?php echo home_url('/dlya-otraslei/'); ?>" class="btn btn_arr">Юридические услуги и <br>налоговый консалтинг</a>
             </div>
             <div class="stat-content">
               <div class="stat-result">
@@ -679,7 +679,7 @@ get_header();
             </p>
           </div>
           <div class="money-wrapper__right">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/banner/money.png" alt="Пачка денег">
+            <img src="<?php echo get_template_directory_uri(); ?>/static/img/banner/stack.png" alt="Пачка денег">
           </div>
 
         </div>

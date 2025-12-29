@@ -66,3 +66,26 @@ function register_reviews_cpt() {
     ]);
 }
 add_action('init', 'register_reviews_cpt');
+
+
+// Вытаскивает картинки из контента, используется в single-staff
+function get_content_images_and_text() {
+    $content = get_the_content();
+    preg_match_all('/<img[^>]+>/i', $content, $matches);
+    $images = $matches[0]; 
+    $text_only = preg_replace('/<img[^>]+>/i', '', $content);
+    return ['text' => $text_only, 'images' => $images];
+}
+
+// Лайтбокс
+
+function my_theme_scripts() {
+    wp_enqueue_script( 
+        'fslightbox', 
+        'https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.0.9/index.min.js', 
+        array(), 
+        '3.0.9', 
+        true 
+    );
+}
+add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
