@@ -55,7 +55,7 @@ get_header();
             </ul>
 
             <div class="hero-buttons">
-              <a href="#" class="btn btn_arr" type="button">Узнать стоимость</a>
+              <a href="/kalkulyator/" class="btn btn_arr" type="button">Узнать стоимость</a>
               <a href="#" class="btn btn_play" type="button">Смотреть видео</a>
             </div>
           </div>
@@ -299,7 +299,7 @@ get_header();
 
         <div class="stats-footer">
           <span class="footer-text">Расскажем, как быстро и безопасно <br>передать бухгалтерию нам</span>
-          <a href="#" class="btn btn_arr">Получить консультацию</a>
+          <?php echo do_shortcode('[fluentform_modal css_class="btn btn_arr" form_id="3" btn_text="Получить консультацию"]'); ?>
         </div>
       </div>
     </section>
@@ -389,7 +389,7 @@ get_header();
                  alt="sphere icons" class="sphere-img">
             <span class="spheres-text">Ещё более 30 сфер</span>
           </div>
-          <a href="#" class="btn btn_arr">Найдите свою</a>
+          <a href="/buhgalterskie-keysi" class="btn btn_arr">Найдите свою</a>
         </div>
       </div>
     </section>
@@ -465,7 +465,7 @@ get_header();
           </h3>
 
         <div class="services-accordion">
-          
+
           <div class="services-accordion__item">
             <div class="services accordion__header">
               <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\check-white-bg.svg"
@@ -518,7 +518,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  Правильно рассчитываем и оформляем отпускные, командировочные, больничные листы, компенсации и доплаты.                
+                  Правильно рассчитываем и оформляем отпускные, командировочные, больничные листы, компенсации и доплаты.
                 </p>
                 <p class="accordion-body__bullets-title">Польза для вас:</p>
                 <ul class="accordion-body__bullets">
@@ -647,7 +647,7 @@ get_header();
 
         <div class="calculator__body">
           <div class="calc-body__left"></div>
-    
+
           <div class="calc-body__right">
             <h3 class="calc-body__right-header">
               Укажите параметры бизнеса и получите примерную цену
@@ -657,7 +657,7 @@ get_header();
               <a href="#" class="btn btn_arr">Начать</a>
             </div>
           </div>
-        
+
         </div>
 
       </div>
@@ -861,7 +861,7 @@ get_header();
               </p>
             </div>
           </div>
-      
+
         </div>
 
         <div class="industries-footer">
@@ -881,9 +881,9 @@ get_header();
         <div class="cases-badge">
           <p>• Реальные отзывы</p>
         </div>
-        
+
         <div class="reviews-wrapper">
-          
+
           <div class="reviews-wrapper__title">
             <h2 class="reviews__title">
             Что говорят наши клиенты?
@@ -996,7 +996,7 @@ get_header();
         </div>
 
         <div class="team-grid" id="teamScrollArea">
-            
+
           <div class="team-card team-card-large">
             <picture class="card__person-img-wrapper">
               <source srcset="<?php echo get_template_directory_uri(); ?>/static/img/team/bulat-avatar-small.png" media="(max-width: 796px)">
@@ -1015,7 +1015,7 @@ get_header();
 
           <div class="team-card">
             <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Alina.png" alt="Алина Яппарова" class="card__person-img">
-            
+
             <div class="team-card__info">
               <div class="card__person-name">Алина Яппарова</div>
               <div class="card__person-role">Главный бухгалтер</div>
@@ -1028,7 +1028,7 @@ get_header();
 
           <div class="team-card">
             <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Alexander.png" alt="Александр Сумин" class="card__person-img">
-            
+
             <div class="team-card__info">
               <div class="card__person-name">Александр Сумин</div>
               <div class="card__person-role">Юрист</div>
@@ -1041,7 +1041,7 @@ get_header();
 
           <div class="team-card">
             <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Elena.png" alt="Елена Колисниченко" class="card__person-img">
-            
+
             <div class="team-card__info">
               <div class="card__person-name">Елена Колисниченко</div>
               <div class="card__person-role">Финансовый директор</div>
@@ -1054,7 +1054,7 @@ get_header();
 
           <div class="team-card">
             <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Oleg.png" alt="Олег Левин" class="card__person-img">
-            
+
             <div class="team-card__info">
               <div class="card__person-name">Олег Левин</div>
               <div class="card__person-role">Внутренний аудитор</div>
@@ -1193,7 +1193,7 @@ get_header();
           <p>Оставьте заявку на
             бесплатную консультацию!</p>
 
-          <button class="btn btn_arr">Нужна консультация</button>
+          <?php echo do_shortcode('[fluentform_modal css_class="btn btn_arr" form_id="3" btn_text="Нужна консультация"]'); ?>
         </div>
 
       </div>
@@ -1211,7 +1211,7 @@ get_header();
           </h3>
 
         <div class="faq-accordion">
-          
+
           <div class="faq-accordion__item">
             <div class="faq accordion__header">
               <h3>Сколько стоит бухгалтерское обслуживание?</h3>

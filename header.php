@@ -149,8 +149,8 @@ $menu_items = [
                                 <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/phone.svg">
                             </button>
 
-                            <button class="header-top__btn btn btn_arr">Заказать звонок</button>
 
+                          <?php echo do_shortcode('[fluentform_modal css_class="header-top__btn btn btn_arr" form_id="3" btn_text="Заказать звонок"]'); ?>
                             <button id="open-sidebar" class="sidebar-btn">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -236,6 +236,11 @@ $menu_items = [
                 </div>
             </div>
         </div>
+      <?php
+      if ( function_exists('yoast_breadcrumb') ) {
+        yoast_breadcrumb( '<p class="breadcrumbs__container" id="breadcrumbs">','</p>' );
+      }
+      ?>
     </header>
 
     <main class="page">

@@ -55,7 +55,7 @@ get_header();
             </ul>
 
             <div class="hero-buttons">
-              <a href="#" class="btn btn_arr" type="button">Узнать стоимость</a>
+              <a href="/kalkulyator/" class="btn btn_arr" type="button">Узнать стоимость</a>
               <a href="#" class="btn btn_play" type="button">Смотреть видео</a>
             </div>
           </div>
@@ -192,7 +192,7 @@ get_header();
         </h3>
 
         <div class="services-accordion">
-          
+
           <div class="services-accordion__item">
             <div class="services accordion__header">
               <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\check-white-bg.svg"
@@ -455,7 +455,7 @@ get_header();
         <div class="subscribe-block">
           <p>
             Хотите начать прямо сегодня?
-          </p>          
+          </p>
           <button class="btn btn_arr">Готов начать</button>
         </div>
 
@@ -720,7 +720,7 @@ get_header();
               </p>
             </div>
           </div>
-      
+
         </div>
 
         <div class="industries-footer">
@@ -751,7 +751,7 @@ get_header();
         </div>
 
         <div class="team-grid" id="teamScrollArea">
-            
+
           <div class="team-card team-card-large">
             <picture class="card__person-img-wrapper">
               <source srcset="<?php echo get_template_directory_uri(); ?>/static/img/team/bulat-avatar-small.png" media="(max-width: 796px)">
@@ -770,7 +770,7 @@ get_header();
 
           <div class="team-card">
             <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Alina.png" alt="Алина Яппарова" class="card__person-img">
-            
+
             <div class="team-card__info">
               <div class="card__person-name">Алина Яппарова</div>
               <div class="card__person-role">Главный бухгалтер</div>
@@ -783,7 +783,7 @@ get_header();
 
           <div class="team-card">
             <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Alexander.png" alt="Александр Сумин" class="card__person-img">
-            
+
             <div class="team-card__info">
               <div class="card__person-name">Александр Сумин</div>
               <div class="card__person-role">Юрист</div>
@@ -796,7 +796,7 @@ get_header();
 
           <div class="team-card">
             <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Elena.png" alt="Елена Колисниченко" class="card__person-img">
-            
+
             <div class="team-card__info">
               <div class="card__person-name">Елена Колисниченко</div>
               <div class="card__person-role">Финансовый директор</div>
@@ -809,7 +809,7 @@ get_header();
 
           <div class="team-card">
             <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Oleg.png" alt="Олег Левин" class="card__person-img">
-            
+
             <div class="team-card__info">
               <div class="card__person-name">Олег Левин</div>
               <div class="card__person-role">Внутренний аудитор</div>
@@ -836,7 +836,7 @@ get_header();
           </h3>
 
         <div class="faq-accordion">
-          
+
           <div class="faq-accordion__item">
             <div class="faq accordion__header">
               <h3>Что такое экспресс-аудит и чем он отличается от обычного аудита?</h3>
