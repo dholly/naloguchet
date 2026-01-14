@@ -45,11 +45,13 @@ $menu_items = [
             ['title' => 'Бухгалтерия для ИП', 'url' => home_url('/buhgalteria-ip/')],
             ['title' => 'Бухгалтерия для ООО', 'url' => home_url('/buhgalteria-ooo/')],
             ['title' => 'Бухгалтерия для ОАО', 'url' => home_url('/buhgalteria-oao/')],
-            ['title' => 'Для городов', 'url' => home_url('/dlya-gorodov/')],
             ['title' => 'Восстановление бух. учета', 'url' => home_url('/buh-vosstanovlenie/')],
             ['title' => 'Экспресс аудит бухгалтерии', 'url' => home_url('/express-audit-buhgalterii/')],
-            ['title' => 'Для отраслей', 'url' => home_url('/dlya-otraslei/')],
         ]
+    ],
+    [
+        'title' => 'Цены',
+        'url' => home_url('/kalkulyator'),
     ],
     [
         'title' => 'Сферы бизнеса',
@@ -78,6 +80,11 @@ $menu_items = [
     [
         'title' => 'Блог',
         'url' => home_url('/blog/'),
+        'class' => 'has-submenu',
+        'submenu' => [
+            ['title' => 'Бухгалтерские документы', 'url' => home_url('/bukhgalterskie-dokumenty/')],
+            ['title' => 'Вопрос-ответ', 'url' => home_url('/consultation/')],
+        ]
     ],
     [
         'title' => 'Контакты',
@@ -145,9 +152,9 @@ $menu_items = [
                                 </a>
                             </div>
 
-                            <button id="short-phone-btn">
-                                <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/phone.svg">
-                            </button>
+                            <a href="tel:<?php echo esc_attr($contacts['phone_link']); ?>" id="short-phone-btn">
+                                <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/phone.svg" alt="Позвонить">
+                            </a>
 
                             <button class="header-top__btn btn btn_arr">Заказать звонок</button>
 

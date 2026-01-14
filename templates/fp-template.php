@@ -56,7 +56,7 @@ get_header();
 
             <div class="hero-buttons">
               <a href="#" class="btn btn_arr" type="button">Узнать стоимость</a>
-              <a href="#" class="btn btn_play" type="button">Смотреть видео</a>
+              <a href="https://rutube.ru/video/c040db92724a5a77fd74480167107e8f/" class="btn btn_play" target="_blank">Смотреть видео</a>
             </div>
           </div>
 
@@ -79,36 +79,37 @@ get_header();
         </div>
 
         <div class="social-proof-row">
-          <div class="proof-card">
-            <div class="proof-header">
-              <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi_ru.png"
-                    alt="Profi.ru" class="proof-logo-profi">
-              <span class="rating-score">4.92</span>
-              <div class="stars">★★★★★</div>
-            </div>
-            <div class="proof-footer">128 отзывов</div>
-          </div>
 
-          <div class="proof-card">
-            <div class="proof-header">
-              <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex.png"
-                    alt="Яндекс" class="proof-logo-yandex">
-              <span class="rating-score">5.0</span>
-              <div class="stars stars-gold">★★★★★</div>
-            </div>
-            <div class="proof-footer">72 отзыва</div>
-          </div>
+            <a href="https://profi.ru/profile/YapparovBZ/share" class="proof-card" target="_blank">
+                <div class="proof-header">
+                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi_ru.png"
+                        alt="Profi.ru" class="proof-logo-profi">
+                    <span class="rating-score">4.92</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="proof-footer">128 отзывов</div>
+            </a>
 
-          <div class="proof-card">
-            <div class="kp-content">
-              <div class="top-text">
-                <span class="top-num">ТОП 7</span>
-                <span>Аутсорс компаний Москвы по версии</span>
-            </div>
-              <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/kp.png" alt="KP.RU"
-                    class="proof-logo-kp">
-            </div>
-          </div>
+            <a href="https://yandex.ru/maps/org/tsentr_professionalnoy_bukhgalterii/1241002253/?ll=37.596201%2C55.706676&utm_campaign=v1&utm_medium=rating&utm_source=share&z=14" class="proof-card" target="_blank">
+                <div class="proof-header">
+                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex.png"
+                        alt="Яндекс" class="proof-logo-yandex">
+                    <span class="rating-score">5.0</span>
+                    <div class="stars stars-gold">★★★★★</div>
+                </div>
+                <div class="proof-footer">72 отзыва</div>
+            </a>
+
+            <a href="https://www.kp.ru/russia/moskva/luchshie-autsorsingovye-kompanii/" class="proof-card" target="_blank">
+                <div class="kp-content">
+                    <div class="top-text">
+                        <span class="top-num">ТОП 7</span>
+                        <span>Аутсорс компаний Москвы по версии</span>
+                    </div>
+                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/kp.png" alt="KP.RU"
+                        class="proof-logo-kp">
+                </div>
+            </a>
         </div>
 
       </div>
@@ -703,7 +704,7 @@ get_header();
             </p>
           </div>
           <div class="money-wrapper__right">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/banner/stack.png" alt="Пачка денег">
+            <img src="<?php echo get_template_directory_uri(); ?>/static/img/banner/stack.png">
           </div>
 
         </div>
@@ -1255,7 +1256,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Полный комплекс — от ведения первички до сдачи отчётности и расчёта зарплат.
                 </p>
               </div>
             </div>
@@ -1268,7 +1269,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Стартуем за 1–3 дня после подписания договора и передачи документов.
                 </p>
               </div>
             </div>
@@ -1281,7 +1282,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Ответственность компании застрахована на 3 млн ₽.
                 </p>
               </div>
             </div>
@@ -1294,7 +1295,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Да, полностью. Используем ЭДО и Zoom, при необходимости приедем в офис клиента.
                 </p>
               </div>
             </div>
@@ -1307,7 +1308,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Не нужно — с вами работает команда, которая дублирует процессы и не уходит «в отпуск с документами».
                 </p>
               </div>
             </div>

@@ -28,7 +28,7 @@ img {
 }
 
 .hero-title {
-  font-weight: 590;
+  font-weight: 600;
   font-size: 48px;
   line-height: 110%;
   letter-spacing: -0.03em;
@@ -150,6 +150,18 @@ img {
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 0 35px 0 rgba(47, 47, 48, 0.1);
+
+  color: inherit;
+  cursor: pointer;
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (any-hover: hover) {
+  .proof-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(47, 47, 48, 0.15); 
+  }
 }
 
 .proof-header {
@@ -425,9 +437,19 @@ img {
   padding: 28px;
   box-shadow: 0 0 35px 0 rgba(47, 47, 48, 0.1);
   background: #fff;
-display: flex;
+  display: flex;
   flex-direction: column;
-  gap: 0;
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (any-hover: hover) {
+  .advantage-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 45px rgba(47, 47, 48, 0.15); 
+    z-index: 2;
+    cursor: default;
+  }
 }
 
 .advantages-card-header {
@@ -1124,6 +1146,18 @@ display: flex;
   line-height: inherit;
 }
 
+.services.accordion__header::before,
+.services.accordion__header::after {
+    transition: transform 0.3s ease, right 0.3s ease; 
+}
+
+@media (any-hover: hover) {
+    .services.accordion__header:hover::before,
+    .services.accordion__header:hover::after {
+        right: calc(clamp(10px, 3vw, 1rem) + 8px); 
+    }
+}
+
 /* =============================================
    calculator TEMP
    ============================================= */
@@ -1689,6 +1723,18 @@ display: flex;
 
 .faq.accordion__header.active::after {
   transform: translateY(-50%) rotate(45deg);
+}
+
+.faq.accordion__header::before,
+.faq.accordion__header::after {
+  transition: transform 0.2s ease-in-out, right 0.3s ease;
+}
+
+@media (any-hover: hover) {
+  .faq.accordion__header:hover::before,
+  .faq.accordion__header:hover::after {
+    right: calc(1rem + 8px);
+  }
 }
 
 @media screen and (max-width: 420px) {

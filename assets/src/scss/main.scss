@@ -109,9 +109,21 @@ section:first-child {
     background-color: #fff;
     border-bottom: 2px solid #2d6281;
     flex: 0 1 31.6%;
-    // .contacts__item_big
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
     &_big {
       flex: 0 1 48.6%;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: translateY(-5px); 
+        box-shadow: 0 10px 30px rgba(47, 47, 48, 0.1); 
+        border-bottom-color: #f0572d;
+        
+        cursor: pointer;
+      }
     }
   }
 

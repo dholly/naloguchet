@@ -9,22 +9,30 @@
 	color: #fff;
 	display: inline-block;
 	transition: 0.3s;
+    text-decoration: none; 
+
+    &:visited {
+        color: #fff;
+    }
+
 	@media (any-hover: hover) {
 		&:hover {
-			opacity: 0.7;
+			opacity: 0.8;
+            color: #000000; 
 		}
 	}
+
 	&:active {
-		opacity: 0.5;
+		opacity: 0.8;
 	}
-	// .btn_arr
+
 	&_arr {
 		display: flex;
 		align-items: center;
 		gap: 16px;
 		justify-content: space-between;
-
 		padding: 6px 6px 6px 17px;
+
 		&::after {
 			content: "";
 			width: 32px;
@@ -36,6 +44,7 @@
 			background: url("@/img/icons/arr-right.svg") center/20px no-repeat #fff;
 		}
 	}
+
 	&_play {
 		background: transparent;
 		color: #f0572d;
@@ -46,6 +55,11 @@
 		justify-content: space-between;
 
 		padding: 6px 6px 6px 17px;
+
+        &:visited {
+            color: #f0572d;
+        }
+
 		&::after {
 			content: "";
 			width: 32px;
@@ -58,6 +72,12 @@
 				url('data:image/svg+xml;utf8,<svg viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L0.25 11.1962L0.25 0.803848L10 6Z" fill="white"/></svg>') center/14px no-repeat,
 				linear-gradient(360deg, #f0572d 0%, #ce441e 100%);
 		}
+        
+        @media (any-hover: hover) {
+            &:hover {
+                color: #f0572d;
+            }
+        }
 	}
 }
 
@@ -77,6 +97,7 @@
 		letter-spacing: -0.03em;
 	}
 }
+
 .first {
 	padding-top: 270px;
 }
@@ -101,6 +122,7 @@
 		letter-spacing: -0.03em;
 	}
 }
+
 .pagination {
 	display: flex;
 	gap: 10px;
@@ -194,6 +216,7 @@
 		opacity: 1;
 	}
 }
+
 .table {
 	border-left: 1px solid #e5e5e5;
 	border-top: 1px solid #e5e5e5;
