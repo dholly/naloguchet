@@ -47,7 +47,7 @@
                             <p class="expert-widget__name">Ольга Серебрякова</p>
                             <p class="expert-widget__prof">Главный бухгалтер ЦПБ</p>
 
-                            <button class="btn btn_arr">Получить консультацию</button>
+                          <?php echo do_shortcode('[fluentform_modal css_class="btn btn_arr" form_id="3" btn_text="Получить консультацию"]'); ?>
                         </div>
                     </div>
                 </aside>

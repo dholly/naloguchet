@@ -4,7 +4,7 @@ $footer_menu = [
     ['title' => 'Цены', 'url' => '/ceny/'],
     ['title' => 'Контакты', 'url' => '/kontakty/'],
     ['title' => 'Гарантии', 'url' => '/garantii/'],
-    ['title' => 'Кейсы', 'url' => '/kejsy/'],
+    ['title' => 'Кейсы', 'url' => '/buhgalterskie-keysi/'],
     ['title' => 'Наши сотрудники', 'url' => '/staff/'],
     ['title' => 'Блог', 'url' => '/blog/'],
     ['title' => 'Бухгалтерские документы', 'url' => '/bukhgalterskie-dokumenty/'],
@@ -44,13 +44,9 @@ $copyright = [
           <h2 class="section-form__title title">
             Готовы передать бухгалтерию профессионалам?
           </h2>
-          <form action="#" class="section-form__form">
-            <input type="text" placeholder="Имя" name="firstname">
-            <input type="text" class="input-tel" placeholder="Номер телефона" name="phone">
-            <button type="submit" class="section-form__btn btn btn_arr">
-              Жду звонка
-            </button>
-          </form>
+          <div class="section-form__form">
+            <?php echo do_shortcode('[fluentform id="3"]'); ?>
+          </div>
         </div>
         <div class="section-form__image-block">
           <div class="section-form__image">
@@ -126,7 +122,7 @@ $copyright = [
                             <?php echo esc_html($contacts['worktime']); ?>
                         </li>
                         <li class="footer__li">
-                            <button data-popup="#order" class="footer__link" style="text-decoration: underline;">Заказать звонок</button>
+                          <?php echo do_shortcode('[fluentform_modal css_class="footer__link" form_id="3" btn_text="Заказать звонок"]'); ?>
                         </li>
                     </ul>
                 </div>

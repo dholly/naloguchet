@@ -55,7 +55,7 @@ get_header();
             </ul>
 
             <div class="hero-buttons">
-              <a href="#" class="btn btn_arr" type="button">Узнать стоимость</a>
+              <a href="/kalkulyator/" class="btn btn_arr" type="button">Узнать стоимость</a>
               <a href="https://rutube.ru/video/c040db92724a5a77fd74480167107e8f/" class="btn btn_play" target="_blank">Смотреть видео</a>
             </div>
           </div>
@@ -317,7 +317,7 @@ get_header();
 
         <div class="stats-footer">
           <span class="footer-text">Расскажем, как быстро и безопасно передать бухгалтерию нам</span>
-          <a href="#" class="btn btn_arr">Получить консультацию</a>
+          <?php echo do_shortcode('[fluentform_modal css_class="btn btn_arr" form_id="3" btn_text="Получить консультацию"]'); ?>
         </div>
       </div>
     </section>
@@ -407,7 +407,7 @@ get_header();
                  alt="sphere icons" class="sphere-img">
             <span class="spheres-text">Ещё более 30 сфер</span>
           </div>
-          <a href="#" class="btn btn_arr">Найдите свою</a>
+          <a href="/buhgalterskie-keysi" class="btn btn_arr">Найдите свою</a>
         </div>
       </div>
     </section>
@@ -1217,7 +1217,7 @@ get_header();
           <p>Оставьте заявку на
             бесплатную консультацию!</p>
 
-          <button class="btn btn_arr">Нужна консультация</button>
+          <?php echo do_shortcode('[fluentform_modal css_class="btn btn_arr" form_id="3" btn_text="Нужна консультация"]'); ?>
         </div>
 
       </div>
