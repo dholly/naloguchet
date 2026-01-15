@@ -90,3 +90,29 @@ function my_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
 
+// Каноникал 
+
+add_filter( 'wpseo_canonical', 'fix_pagination_canonical_yoast' );
+
+function fix_pagination_canonical_yoast( $canonical ) {
+    if ( is_paged() ) {
+        if ( is_archive() ) {
+            $obj = get_queried_object();
+            if ( isset($obj->term_id) ) {
+                return get_term_link( $obj ); 
+            }
+            return get_post_type_archive_link( get_post_type() );
+        }
+        
+        if ( is_page() ) {
+            global $post;
+            return get_permalink( $post->ID );
+        }
+        
+        if ( is_home() ) {
+            return home_url( '/' ); 
+        }
+    }
+    
+    return $canonical;
+}

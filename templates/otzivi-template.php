@@ -16,27 +16,34 @@ get_header();
             </p>
 
             <div class="reviews-wrapper__comp">
-                <div class="companies-card">
-                <div class="card__img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex-maps.png"
-                        alt="Яндекс Карты">
-                </div>
-                <div class="card__score">
-                    <span class="rating__score">Рейтинг 5.0</span>
-                    <span class="rating__stars">★★★★★</span>
-                </div>
 
-                </div>
-                <div class="companies-card">
-                <div class="card__img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi-ru-2.png"
-                        alt="Profi.ru">
-                </div>
-                <div class="card__score">
-                    <span class="rating__score">Рейтинг 4.92</span>
-                    <span class="rating__stars">★★★★★</span>
-                </div>
-                </div>
+                <a href="https://yandex.ru/maps/-/CLXdU23e" 
+                class="companies-card" 
+                target="_blank" 
+                rel="nofollow noopener">
+                    <div class="card__img">
+                        <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex-maps.png"
+                            alt="Яндекс Карты">
+                    </div>
+                    <div class="card__score">
+                        <span class="rating__score">Рейтинг 5.0</span>
+                        <span class="rating__stars">★★★★★</span>
+                    </div>
+                </a>
+
+                <a href="https://profi.ru/profile/YapparovBZ/share" 
+                class="companies-card" 
+                target="_blank" 
+                rel="nofollow noopener">
+                    <div class="card__img">
+                        <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi-ru-2.png"
+                            alt="Profi.ru">
+                    </div>
+                    <div class="card__score">
+                        <span class="rating__score">Рейтинг 4.92</span>
+                        <span class="rating__stars">★★★★★</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>

@@ -70,7 +70,7 @@
 }
 
 section:first-child {
-  padding-top: 160px;
+  padding-top: 190px; // НАДО ИСПРАВИТЬ БЫЛО 160
 }
 
 
@@ -787,37 +787,39 @@ section:first-child {
 //                                  SINGLE CASE
 //====================================================================================================
 
-.case-single__layout {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 60px;
+.case-single {
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 60px;
+  }
+
+  &__main {
+    max-width: 665px;
+    width: 100%;
+  }
+
+  &__title {
+    font-weight: 590;
+    font-size: 38px;
+    line-height: 110%;
+    letter-spacing: -0.03em;
+    color: #2f2f30;
+    margin-bottom: 20px;
+  }
+
+  &__excerpt {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 135%;
+    letter-spacing: -0.03em;
+    color: #2f2f30;
+    margin-bottom: 40px;
+  }
 }
 
-.case-single__main {
-  max-width: 665px;
-  width: 100%;
-}
-
-.case-single__title {
-  font-weight: 590;
-  font-size: 38px;
-  line-height: 110%;
-  letter-spacing: -0.03em;
-  color: #2f2f30;
-  margin-bottom: 20px;
-}
-
-.case-single__excerpt {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 135%;
-  letter-spacing: -0.03em;
-  color: #2f2f30;
-  margin-bottom: 40px;
-}
-
-/* Заголовки */
-.case-structure__heading {
+.case-structure {
+  &__heading {
   font-weight: 590;
   font-size: 26px;
   line-height: 100%;
@@ -825,45 +827,50 @@ section:first-child {
   color: #2f2f30;
   margin-bottom: 15px;
   margin-top: 40px;
+  text-align: start;
+  }
+
+  &__section:first-child .case-structure__heading {
+    margin-top: 0;
+  }
 }
 
-.case-structure__section:first-child .case-structure__heading {
-  margin-top: 0;
-}
+.case-single__main {
+  .text-block p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 135%;
+    letter-spacing: -0.03em;
+    color: #2f2f30;
+    padding-bottom: 18px;
+  }
 
-.text-block p {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 135%;
-  letter-spacing: -0.03em;
-  color: #2f2f30;
-}
+  .text-block ol {
+    counter-reset: my-counter;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
 
-.text-block ol {
-  counter-reset: my-counter;
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 20px;
-}
+  .text-block ol li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
 
-.text-block ol li {
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-
-.text-block ol li::before {
-  content: counter(my-counter) ".";
-  counter-increment: my-counter;
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 135%;
-  letter-spacing: -0.03em;
-  color: #2f2f30;
+  .text-block ol li::before {
+    content: counter(my-counter) ".";
+    counter-increment: my-counter;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 135%;
+    letter-spacing: -0.03em;
+    color: #2f2f30;
+  }
 }
 
 .client-card {
@@ -2423,6 +2430,96 @@ section:first-child {
   font-style: italic;
   font-size: 18px;
   margin-bottom: 18px;
+}
+
+.ask-question {
+  margin-top: 28px; 
+  padding-top: 28px; 
+  border-top: 1px solid #E5E5E5; 
+
+  &__title {
+    font-weight: 590;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #2f2f30;
+    margin-bottom: 22px;
+  }
+}
+
+.ask-question .fluentform {
+
+  .ff-el-form-control {
+    background-color: #f3f3f3;
+    border: none; 
+    border-radius: 0; 
+    padding: 18px; 
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #8e8e8e;
+
+    width: 100%;
+    
+    &::placeholder {
+       
+    }
+
+    &:focus {
+      outline: 1px solid #ccc; 
+      background-color: #fff;
+    }
+  }
+
+  .ff-btn-submit {
+    width: 100%; 
+  }
+  
+  .ff-el-input--label {
+      display: none; 
+  }
+}
+
+.ask-question .fluentform .ff-el-tc,
+.ask-question .fluentform .ff-el-form-check {
+    display: flex !important;
+    flex-direction: row !important; 
+    align-items: center !important;
+    width: auto !important;
+}
+
+.ask-question .fluentform .ff-el-form-check label {
+    display: flex !important; 
+    align-items: center !important;
+    width: auto !important;
+    margin-bottom: 0 !important;
+}
+
+.ask-question .fluentform input[type="checkbox"] {
+    margin-right: 10px !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    width: auto !important;
+    float: none !important; 
+}
+
+.ask-question .fluentform .ff-el-form-check-label span,
+.ask-question .fluentform .ff-el-form-check-label {
+   display: inline-block !important; 
+   width: auto !important;
+}
+
+@media screen and (max-width: 576px) {
+  .ask-question {
+    margin-top: 22px;
+    padding-top: 22px;
+    
+    &__title {
+      font-size: 24px;
+    }
+  }
 }
 
 @media screen and (max-width: 576px) {
