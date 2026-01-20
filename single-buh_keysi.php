@@ -87,9 +87,27 @@
                             <?php endif; ?>
 
                         </div>
+                        
                     <?php else : ?>
                         <div class="text-block">
-                            <?php the_content(); ?>
+                            <?php 
+                            $content = get_the_content();
+                            $excerpt = get_the_excerpt();
+
+                            $content = apply_filters('the_content', $content);
+
+                            $clean_excerpt = trim(preg_replace('/\[[^\]]+\]$/', '', $excerpt));
+                            $excerpt_start = mb_substr($clean_excerpt, 0, 50);
+                            
+                            if ( strpos(strip_tags($content), $excerpt_start) !== false ) {
+                                $content = preg_replace('/'.preg_quote($clean_excerpt, '/').'/iu', '', $content, 1);
+                                
+                                $content = str_replace('<p></p>', '', $content);
+                                $content = str_replace('<p>&nbsp;</p>', '', $content);
+                            }
+
+                            echo $content; 
+                            ?>
                         </div>
                     <?php endif; ?>
 

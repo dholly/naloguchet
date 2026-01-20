@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <section class="cons-post">
+    <section class="cons-post first">
         <div class="cons-post__container">
             <h1 class="cons-post__title">
                 <?php the_title(); ?>
@@ -16,15 +16,25 @@
                         <p class="cons-sidebar__text">
                             Отвечает эксперт профессиональной бухгалтерии. Экономическое высшее, опыт бухгалтером 25 лет.
                         </p>
-                        <button class="cons-sidebar__btn btn btn_arr">
+                        <a href="#ask-form" class="cons-sidebar__btn btn btn_arr">
                             Задать вопрос
-                        </button>
+                        </a>
                     </div>
                 </div>
 
                 <div class="cons__content">
                     <?php the_field( 'answer' ); ?>
+
+                    <div class="ask-question" id="ask-form">
+                        <h2 class="ask-question__title">
+                            Задать свой вопрос
+                        </h2>
+
+                        <?php echo do_shortcode('[fluentform id="4"]'); ?>
+
+                    </div>
                 </div>
+
             </div>            
         </div>
     </section>
@@ -68,38 +78,6 @@
                         </a>
                     <?php endwhile; ?>
                 </div>
-
-                <?php 
-                if ($similar_query->max_num_pages > 1) : 
-                ?>
-                    <div class="documents__pagination">
-                        <div class="pagination">
-                            <?php
-                            $links = paginate_links([
-                                'base'      => add_query_arg('cons_page', '%#%'),
-                                'format'    => '',
-                                'current'   => $current_paged,
-                                'total'     => $similar_query->max_num_pages,
-                                'type'      => 'array',
-                                'prev_text' => '<img src="' . get_template_directory_uri() . '/static/img/icons/blue-left.svg" alt="Left" style="transform: rotate(180deg);">',
-                                'next_text' => '<img src="' . get_template_directory_uri() . '/static/img/icons/blue-right.svg" alt="Right">',
-                                'mid_size'  => 2,
-                            ]);
-
-                            if ($links) {
-                                foreach ($links as $link) {
-                                    $link = str_replace('page-numbers', 'pagination__num', $link);
-                                    $link = str_replace('pagination__num current', 'pagination__num pagination__num_active', $link);
-                                    $link = str_replace('pagination__num next', 'pagination__link', $link);
-                                    $link = str_replace('pagination__num prev', 'pagination__link pagination__link_prev', $link);
-                                    
-                                    echo $link;
-                                }
-                            }
-                            ?>
-                        </div>
-                    </div>
-                <?php endif; ?>
 
             </div>
         </section>

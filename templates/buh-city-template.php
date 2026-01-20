@@ -56,7 +56,10 @@ get_header();
 
             <div class="hero-buttons">
               <a href="/kalkulyator/" class="btn btn_arr" type="button">Узнать стоимость</a>
-              <a href="#" class="btn btn_play" type="button">Смотреть видео</a>
+              <a href="<?php echo esc_url(convert_to_embed('https://rutube.ru/video/c040db92724a5a77fd74480167107e8f/')); ?>"
+                 class="btn btn_play glightbox">
+                Смотреть видео
+              </a>
             </div>
           </div>
 
@@ -679,7 +682,7 @@ get_header();
             </p>
           </div>
           <div class="money-wrapper__right">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/banner/stack.png" alt="Пачка денег">
+            <img src="<?php echo get_template_directory_uri(); ?>/static/img/banner/stack.png">
           </div>
 
         </div>

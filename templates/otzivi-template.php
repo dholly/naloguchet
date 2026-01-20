@@ -16,27 +16,34 @@ get_header();
             </p>
 
             <div class="reviews-wrapper__comp">
-                <div class="companies-card">
-                <div class="card__img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex-maps.png"
-                        alt="Яндекс Карты">
-                </div>
-                <div class="card__score">
-                    <span class="rating__score">Рейтинг 5.0</span>
-                    <span class="rating__stars">★★★★★</span>
-                </div>
 
-                </div>
-                <div class="companies-card">
-                <div class="card__img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi-ru-2.png"
-                        alt="Profi.ru">
-                </div>
-                <div class="card__score">
-                    <span class="rating__score">Рейтинг 4.92</span>
-                    <span class="rating__stars">★★★★★</span>
-                </div>
-                </div>
+                <a href="https://yandex.ru/maps/-/CLXdU23e"
+                class="companies-card"
+                target="_blank"
+                rel="nofollow noopener">
+                    <div class="card__img">
+                        <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex-maps.png"
+                            alt="Яндекс Карты">
+                    </div>
+                    <div class="card__score">
+                        <span class="rating__score">Рейтинг 5.0</span>
+                        <span class="rating__stars">★★★★★</span>
+                    </div>
+                </a>
+
+                <a href="https://profi.ru/profile/YapparovBZ/share"
+                class="companies-card"
+                target="_blank"
+                rel="nofollow noopener">
+                    <div class="card__img">
+                        <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi-ru-2.png"
+                            alt="Profi.ru">
+                    </div>
+                    <div class="card__score">
+                        <span class="rating__score">Рейтинг 4.92</span>
+                        <span class="rating__stars">★★★★★</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -109,7 +116,9 @@ get_header();
                             $video_link = get_field('review_video_link');
                         ?>
                             <div class="otzivi-tiles__single-video item-card">
-                                <a href="<?php echo esc_url($video_link); ?>" class="video-link" data-fslightbox="videos">
+                              <a href="<?php echo esc_url(convert_to_embed(get_field('review_video_link'))); ?>"
+                                 class="glightbox video-link"
+                                 data-gallery="videos">
                                     <div class="video-overlay">
                                         <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/play-video.svg" alt="Play" class="play-icon">
                                     </div>

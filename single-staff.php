@@ -2,14 +2,14 @@
 
 <main class="employee">
     <section class="employee__container">
-        
-        <?php while (have_posts()) : the_post(); 
+
+        <?php while (have_posts()) : the_post();
 
             $content_data = get_content_images_and_text();
-            
+
             $photo = get_field('employee_single_photo');
             $photo_url = $photo ? $photo['url'] : get_template_directory_uri() . '/static/img/no-photo.svg';
-            
+
             $positions_str = get_field('employee_positions');
             $positions = $positions_str ? explode(',', $positions_str) : [];
         ?>
@@ -41,18 +41,18 @@
             <div class="employee__docs docs-section">
                 <h2 class="docs-section__title">Документы об образовании и повышении квалификации</h2>
 
-                <div class="docs-grid" id="docsScrollArea">
-                    <?php foreach ($content_data['images'] as $img_tag) : 
-                        preg_match('/src="([^"]+)"/', $img_tag, $src_match);
-                        $full_src = isset($src_match[1]) ? $src_match[1] : '';
-                    ?>
-                        <div class="docs-item">
-                            <a href="<?php echo esc_url($full_src); ?>" data-fslightbox="docs" class="docs-link">
-                                <?php echo $img_tag; ?>
-                            </a>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+              <div class="docs-grid" id="docsScrollArea">
+                <?php foreach ($content_data['images'] as $img_tag) :
+                  preg_match('/src="([^"]+)"/', $img_tag, $src_match);
+                  $full_src = isset($src_match[1]) ? $src_match[1] : '';
+                  ?>
+                  <div class="docs-item">
+                    <a href="<?php echo esc_url($full_src); ?>" class="glightbox docs-link" data-gallery="docs">
+                      <?php echo $img_tag; ?>
+                    </a>
+                  </div>
+                <?php endforeach; ?>
+              </div>
             </div>
         <?php endif; ?>
 
