@@ -245,6 +245,7 @@ $menu_items = [
             </div>
         </div>
 
+<<<<<<< HEAD
     <?php
     if ( function_exists('yoast_breadcrumb') && ! is_front_page() ) : ?>
 
@@ -252,6 +253,15 @@ $menu_items = [
              <?php yoast_breadcrumb( '<div class="breadcrumbs__row">', '</div>' ); ?>
         </div>
 
+=======
+    <?php 
+    if ( function_exists('yoast_breadcrumb') && ! is_front_page() ) : ?>
+    
+        <div class="breadcrumbs__container">
+             <?php yoast_breadcrumb( '<div class="breadcrumbs__row">', '</div>' ); ?>
+        </div>
+        
+>>>>>>> 44598a57cc4f9bc984e193f143b201a22947c4fe
     <?php endif; ?>
 
     </header>

@@ -56,10 +56,14 @@ get_header();
 
             <div class="hero-buttons">
               <a href="/kalkulyator/" class="btn btn_arr" type="button">Узнать стоимость</a>
+<<<<<<< HEAD
               <a href="<?php echo esc_url(convert_to_embed('https://rutube.ru/video/c040db92724a5a77fd74480167107e8f/')); ?>"
                  class="btn btn_play glightbox">
                 Смотреть видео
               </a>
+=======
+              <a href="https://rutube.ru/video/c040db92724a5a77fd74480167107e8f/" class="btn btn_play" target="_blank">Смотреть видео</a>
+>>>>>>> 44598a57cc4f9bc984e193f143b201a22947c4fe
             </div>
           </div>
 
@@ -981,7 +985,11 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
+<<<<<<< HEAD
                   У вас будет персональный бухгалтер и главный бухгалтер-наставник. Всегда на связи в мессенджере, по телефону или Zoom.
+=======
+                  У вас будет персональный бухгалтер и главный бухгалтер-наставник. Всегда на связи в мессенджере, по телефону или Zoom. 
+>>>>>>> 44598a57cc4f9bc984e193f143b201a22947c4fe
                   <br>Раз в месяц — отчёт и сверка. По необходимости — консультации в любое время.
                 </p>
               </div>

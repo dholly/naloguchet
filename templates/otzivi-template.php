@@ -17,9 +17,15 @@ get_header();
 
             <div class="reviews-wrapper__comp">
 
+<<<<<<< HEAD
                 <a href="https://yandex.ru/maps/-/CLXdU23e"
                 class="companies-card"
                 target="_blank"
+=======
+                <a href="https://yandex.ru/maps/-/CLXdU23e" 
+                class="companies-card" 
+                target="_blank" 
+>>>>>>> 44598a57cc4f9bc984e193f143b201a22947c4fe
                 rel="nofollow noopener">
                     <div class="card__img">
                         <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex-maps.png"
@@ -31,9 +37,15 @@ get_header();
                     </div>
                 </a>
 
+<<<<<<< HEAD
                 <a href="https://profi.ru/profile/YapparovBZ/share"
                 class="companies-card"
                 target="_blank"
+=======
+                <a href="https://profi.ru/profile/YapparovBZ/share" 
+                class="companies-card" 
+                target="_blank" 
+>>>>>>> 44598a57cc4f9bc984e193f143b201a22947c4fe
                 rel="nofollow noopener">
                     <div class="card__img">
                         <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi-ru-2.png"
