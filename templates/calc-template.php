@@ -15,9 +15,13 @@ $calc_org_types = [
 ];
 
 $calc_tax_types = [
-  ['value' => 'usn6', 'label' => 'УСН 6% от «доходы»', 'checked' => true, 'big' => false],
-  ['value' => 'usn15', 'label' => 'УСН 15% от «доходы−расходы»', 'checked' => false, 'big' => true],
-  ['value' => 'osn', 'label' => 'Общий (с НДС)', 'checked' => false, 'big' => false],
+  ['value' => 'usn6', 'label' => 'УСН 6% «доходы»', 'checked' => true],
+  ['value' => 'usn15', 'label' => 'УСН 15% «доходы−расходы»', 'checked' => false],
+  ['value' => 'usn6nds', 'label' => 'УСН 6% + НДС', 'checked' => false],
+  ['value' => 'usn15nds', 'label' => 'УСН 15% + НДС', 'checked' => false],
+  ['value' => 'ausn8', 'label' => 'АУСН 8% «доходы»', 'checked' => false],
+  ['value' => 'ausn20', 'label' => 'АУСН 20% «доходы−расходы»', 'checked' => false],
+  ['value' => 'osn', 'label' => 'Общая (с НДС)', 'checked' => false],
 ];
 
 $calc_doc_counts = [
@@ -156,9 +160,9 @@ get_header();
 
                   <div class="block-calc__form-block">
                     <div class="block-calc__label">Система налогообложения</div>
-                    <div class="block-calc__inputs">
+                    <div class="block-calc__inputs block-calc__inputs_tax">
                       <?php foreach ($calc_tax_types as $tax) : ?>
-                        <label class="checkbox<?php echo $tax['big'] ? ' checkbox_big' : ''; ?>">
+                        <label class="checkbox">
                           <input type="radio" name="tax_type" value="<?php echo esc_attr($tax['value']); ?>" <?php checked($tax['checked']); ?>>
                           <span><?php echo esc_html($tax['label']); ?></span>
                         </label>
@@ -258,16 +262,25 @@ get_header();
 
   <script>
     (function() {
+      // Цены из Excel-таблицы (Прайс_лист_для_калькулятора.xlsx)
       const prices = {
         ip: {
-          usn6:  { d50: 12000, d100: 19000, d150: 26000, d200: 34000 },
-          usn15: { d50: 19000, d100: 28000, d150: 35000, d200: 44000 },
-          osn:   { d50: 26000, d100: 36000, d150: 45000, d200: 55000 }
+          usn6:     { d50: 12000, d100: 19000, d150: 26000, d200: 34000 },
+          usn15:    { d50: 19000, d100: 28000, d150: 35000, d200: 42000 },
+          usn6nds:  { d50: 17000, d100: 26000, d150: 31000, d200: 39000 },
+          usn15nds: { d50: 24000, d100: 33000, d150: 40000, d200: 47000 }, // d150: в Excel 29000 - вероятно опечатка
+          ausn8:    { d50: 12000, d100: 19000, d150: 26000, d200: 34000 },
+          ausn20:   { d50: 19000, d100: 28000, d150: 35000, d200: 42000 },
+          osn:      { d50: 26000, d100: 36000, d150: 45000, d200: 55000 }
         },
         ooo: {
-          usn6:  { d50: 23000, d100: 30000, d150: 37000, d200: 44000 },
-          usn15: { d50: 28000, d100: 37000, d150: 46000, d200: 56000 },
-          osn:   { d50: 30000, d100: 45000, d150: 60000, d200: 75000 }
+          usn6:     { d50: 20000, d100: 27000, d150: 34000, d200: 41000 },
+          usn15:    { d50: 26000, d100: 34000, d150: 42000, d200: 50000 },
+          usn6nds:  { d50: 25000, d100: 32000, d150: 39000, d200: 46000 },
+          usn15nds: { d50: 30000, d100: 39000, d150: 47000, d200: 55000 },
+          ausn8:    { d50: 20000, d100: 27000, d150: 34000, d200: 41000 },
+          ausn20:   { d50: 26000, d100: 34000, d150: 42000, d200: 50000 },
+          osn:      { d50: 32000, d100: 42000, d150: 54000, d200: 66000 }
         }
       };
 

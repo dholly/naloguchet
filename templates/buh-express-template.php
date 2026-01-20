@@ -56,7 +56,10 @@ get_header();
 
             <div class="hero-buttons">
               <a href="/kalkulyator/" class="btn btn_arr" type="button">Узнать стоимость</a>
-              <a href="https://rutube.ru/video/c040db92724a5a77fd74480167107e8f/" class="btn btn_play" target="_blank">Смотреть видео</a>
+              <a href="<?php echo esc_url(convert_to_embed('https://rutube.ru/video/c040db92724a5a77fd74480167107e8f/')); ?>"
+                 class="btn btn_play glightbox">
+                Смотреть видео
+              </a>
             </div>
           </div>
 

@@ -227,9 +227,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!link || !list) return;
 
     link.addEventListener('click', function(e) {
-      e.preventDefault();
-
       if (window.innerWidth <= 835) {
+        e.preventDefault();
+
         subMenus.forEach(other => {
           if (other !== subMenu) {
             other.classList.remove('active');
@@ -259,4 +259,10 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
+});
+
+GLightbox({
+  selector: '.glightbox',
+  touchNavigation: true,
+  loop: true
 });

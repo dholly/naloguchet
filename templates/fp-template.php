@@ -56,7 +56,10 @@ get_header();
 
             <div class="hero-buttons">
               <a href="/kalkulyator/" class="btn btn_arr" type="button">Узнать стоимость</a>
-              <a href="https://rutube.ru/video/c040db92724a5a77fd74480167107e8f/" class="btn btn_play" target="_blank">Смотреть видео</a>
+              <a href="<?php echo esc_url(convert_to_embed('https://rutube.ru/video/c040db92724a5a77fd74480167107e8f/')); ?>"
+                 class="btn btn_play glightbox">
+                Смотреть видео
+              </a>
             </div>
           </div>
 
@@ -664,29 +667,7 @@ get_header();
       </div>
     </section>
 
-    <section class="calculator-temp">
-      <div class="calculator__container">
-        <h2 class="calculator__header">
-          Рассчитайте стоимость обслуживания <span class="text-blue" >за 1 минуту!</span>
-        </h2>
-
-        <div class="calculator__body">
-          <div class="calc-body__left"></div>
-
-          <div class="calc-body__right">
-            <h3 class="calc-body__right-header">
-              Укажите параметры бизнеса и получите примерную цену
-            </h3>
-            <div class="calc-body__sub-wrapper">
-              <p>Подготовим детальный расчёт через 10 минут после заявки</p>
-              <a href="#" class="btn btn_arr">Начать</a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
+    <?php get_template_part('template-parts/caluclator'); ?>
 
     <section class="trust-money">
 
