@@ -45,7 +45,7 @@ $copyright = [
             Готовы передать бухгалтерию профессионалам?
           </h2>
           <div class="section-form__form">
-            <?php echo do_shortcode('[fluentform id="3"]'); ?>
+            <?php echo do_shortcode('[fluentform id="5"]'); ?>
           </div>
         </div>
         <div class="section-form__image-block">

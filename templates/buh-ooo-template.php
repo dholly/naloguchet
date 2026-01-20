@@ -404,31 +404,34 @@ get_header();
     <section class="reviews">
       <div class="reviews__container">
 
+        <div class="cases-badge">
+          <p>• Реальные отзывы</p>
+        </div>
+
         <div class="reviews-wrapper">
 
           <div class="reviews-wrapper__title">
             <h2 class="reviews__title">
-            Что говорят наши клиенты?
+              Что говорят наши клиенты?
             </h2>
           </div>
 
           <div class="reviews-wrapper__comp">
             <div class="companies-card">
-              <div class="card__img">
+              <a href="https://yandex.ru/maps/org/tsentr_professionalnoy_bukhgalterii/1241002253/?ll=37.596201%2C55.706676&utm_campaign=v1&utm_medium=rating&utm_source=share&z=14" target="_blank" class="card__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex-maps.png"
-                    alt="Яндекс Карты">
-              </div>
+                     alt="Яндекс Карты">
+              </a>
               <div class="card__score">
                 <span class="rating__score">Рейтинг 5.0</span>
                 <span class="rating__stars">★★★★★</span>
               </div>
-
             </div>
             <div class="companies-card">
-              <div class="card__img">
+              <a href="https://profi.ru/profile/YapparovBZ/share" target="_blank" class="card__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi-ru-2.png"
-                      alt="Profi.ru">
-              </div>
+                     alt="Profi.ru">
+              </a>
               <div class="card__score">
                 <span class="rating__score">Рейтинг 4.92</span>
                 <span class="rating__stars">★★★★★</span>
@@ -437,46 +440,36 @@ get_header();
           </div>
 
           <div class="reviews-tiles" id="reviewsScrollArea">
+            <?php
+            $reviews_query = new WP_Query([
+              'post_type'      => 'clients',
+              'posts_per_page' => 6,
+              'post_status'    => 'publish',
+            ]);
 
-            <div class="reviews__tile">
-              <div class="tile__bage-date">
-                <p>23/05/25</p>
-              </div>
-              <p class="tile__body-text">
-                Перешли из штатного бухгалтера в ЦПБ. Экономим более 500 тыс ₽ в год, отчётность всегда вовремя. Удобно, что можно работать полностью онлайн....
-              </p>
-              <p class="tile__person-date">
-                Анна, Москва (интернет-магазин)
-              </p>
-              <a href="#" class="tile__review-link">Смотреть полностью</a>
-            </div>
-
-            <div class="reviews__tile">
-              <div class="tile__bage-date">
-                <p>23/05/25</p>
-              </div>
-              <p class="tile__body-text">
-                Перешли из штатного бухгалтера в ЦПБ. Экономим более 500 тыс ₽ в год, отчётность всегда вовремя. Удобно, что можно работать полностью онлайн....
-              </p>
-              <p class="tile__person-date">
-                Анна, Москва (интернет-магазин)
-              </p>
-              <a href="#" class="tile__review-link">Смотреть полностью</a>
-            </div>
-
-            <div class="reviews__tile">
-              <div class="tile__bage-date">
-                <p>23/05/25</p>
-              </div>
-              <p class="tile__body-text">
-                Перешли из штатного бухгалтера в ЦПБ. Экономим более 500 тыс ₽ в год, отчётность всегда вовремя. Удобно, что можно работать полностью онлайн....
-              </p>
-              <p class="tile__person-date">
-                Анна, Москва (интернет-магазин)
-              </p>
-              <a href="#" class="tile__review-link">Смотреть полностью</a>
-            </div>
-
+            if ($reviews_query->have_posts()) :
+              while ($reviews_query->have_posts()) : $reviews_query->the_post();
+                $date = get_the_date('d/m/y');
+                $person = get_the_title();
+                $short_text = wp_trim_words(get_the_content(), 20, '...');
+                ?>
+                <div class="reviews__tile">
+                  <div class="tile__bage-date">
+                    <p><?php echo esc_html($date); ?></p>
+                  </div>
+                  <p class="tile__body-text">
+                    <?php echo esc_html($short_text); ?>
+                  </p>
+                  <p class="tile__person-date">
+                    <?php echo esc_html($person); ?>
+                  </p>
+                  <a href="<?php the_permalink(); ?>" class="tile__review-link">Смотреть полностью</a>
+                </div>
+              <?php
+              endwhile;
+              wp_reset_postdata();
+            endif;
+            ?>
           </div>
 
           <div class="slider-navigation">
@@ -490,9 +483,11 @@ get_header();
 
           <div class="industries-footer">
             <div class="footer-left">
-              <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\tiles\spheres3.png"
-                  alt="sphere icons" class="sphere-img">
-              <span class="spheres-text">120+ положительных отзывов <br>от бизнеса Москвы и МО</span>
+              <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/tiles/spheres3.png"
+                   alt="sphere icons" class="sphere-img">
+              <span class="spheres-text">
+            <?php echo $reviews_query->found_posts; ?>+ положительных отзывов <br>от бизнеса Москвы и МО
+          </span>
             </div>
             <a href="<?php echo home_url('/otzivi/'); ?>" class="btn btn_arr">Все отзывы</a>
           </div>
@@ -725,78 +720,88 @@ get_header();
           </button>
         </div>
 
-        <div class="team-grid" id="teamScrollArea">
+        <?php
+        $args = [
+          'post_type'      => 'staff',
+          'posts_per_page' => 5,
+          'post_status'    => 'publish',
+        ];
 
-          <div class="team-card team-card-large">
-            <picture class="card__person-img-wrapper">
-              <source srcset="<?php echo get_template_directory_uri(); ?>/static/img/team/bulat-avatar-small.png" media="(max-width: 796px)">
-              <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Bulat.png" alt="Булат Яппаров" class="card__person-img">
-            </picture>
+        $team_query = new WP_Query($args);
 
-            <div class="team-card__info">
-              <div class="card__person-name">Булат Яппаров</div>
-              <div class="card__person-role">Директор ЦПБ</div>
-              <div class="card__divider"></div>
-              <p class="card__person-desc">
-                30 лет в бухгалтерии и налогах. Эксперт по налоговому планированию.
-              </p>
-            </div>
+        if ($team_query->have_posts()) :
+
+          $posts_array = $team_query->posts;
+
+          $director = null;
+          $team = [];
+
+          foreach ($posts_array as $post_item) {
+            if (stripos($post_item->post_title, 'Булат') !== false && stripos($post_item->post_title, 'Яппаров') !== false) {
+              $director = $post_item;
+            } else {
+              $team[] = $post_item;
+            }
+          }
+
+          if ($director) {
+            array_unshift($team, $director);
+          } else {
+            $team = $posts_array;
+          }
+          ?>
+
+          <div class="team-grid" id="teamScrollArea">
+
+            <?php foreach ($team as $index => $post) : setup_postdata($post); ?>
+
+              <div class="team-card<?php echo ($index === 0) ? ' team-card-large' : ''; ?>">
+
+                <a href="<?php the_permalink(); ?>">
+                  <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('large', ['class' => 'card__person-img', 'alt' => get_the_title()]); ?>
+                  <?php else : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/no-photo.svg" alt="<?php the_title(); ?>" class="card__person-img">
+                  <?php endif; ?>
+                </a>
+
+                <div class="team-card__info">
+                  <a href="<?php the_permalink(); ?>" class="card__person-name-link">
+                    <div class="card__person-name"><?php the_title(); ?></div>
+                  </a>
+
+                  <?php $position = get_field('employee_positions'); ?>
+                  <?php if ($position) : ?>
+                    <div class="card__person-role"><?php echo esc_html($position); ?></div>
+                  <?php endif; ?>
+
+                  <div class="card__divider"></div>
+
+                  <p class="card__person-desc">
+                    <?php
+                    $education = get_field('employee_education');
+                    if ($education) {
+                      echo esc_html($education);
+                    } else {
+                      echo get_the_excerpt();
+                    }
+                    ?>
+                  </p>
+                </div>
+              </div>
+
+            <?php endforeach; wp_reset_postdata(); ?>
+
+
+
           </div>
 
-          <div class="team-card">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Alina.png" alt="Алина Яппарова" class="card__person-img">
+        <?php else : ?>
+          <p style="text-align: center;">Сотрудников пока нет.</p>
+        <?php endif; ?>
 
-            <div class="team-card__info">
-              <div class="card__person-name">Алина Яппарова</div>
-              <div class="card__person-role">Главный бухгалтер</div>
-              <div class="card__divider"></div>
-              <p class="card__person-desc">
-                Два высших образования, опыт работы более 20 лет, в том числе в крупных и известных компаниях.
-              </p>
-            </div>
-          </div>
-
-          <div class="team-card">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Alexander.png" alt="Александр Сумин" class="card__person-img">
-
-            <div class="team-card__info">
-              <div class="card__person-name">Александр Сумин</div>
-              <div class="card__person-role">Юрист</div>
-              <div class="card__divider"></div>
-              <p class="card__person-desc">
-                Российский государственный университет правосудия. Опыт работы более 15 лет.
-              </p>
-            </div>
-          </div>
-
-          <div class="team-card">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Elena.png" alt="Елена Колисниченко" class="card__person-img">
-
-            <div class="team-card__info">
-              <div class="card__person-name">Елена Колисниченко</div>
-              <div class="card__person-role">Финансовый директор</div>
-              <div class="card__divider"></div>
-              <p class="card__person-desc">
-                Московский государственный университет имени М.В. Ломоносова. Опыт работы более 25 лет.
-              </p>
-            </div>
-          </div>
-
-          <div class="team-card">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Oleg.png" alt="Олег Левин" class="card__person-img">
-
-            <div class="team-card__info">
-              <div class="card__person-name">Олег Левин</div>
-              <div class="card__person-role">Внутренний аудитор</div>
-              <div class="card__divider"></div>
-              <p class="card__person-desc">
-                Московский юридический институт. Аттестат аудитора. Опыт работы более 30 лет.
-              </p>
-            </div>
-          </div>
-
-        </div>
       </div>
+
     </section>
 
     <section class="steps">

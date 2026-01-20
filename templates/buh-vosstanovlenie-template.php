@@ -618,27 +618,26 @@ get_header();
 
           <div class="reviews-wrapper__title">
             <h2 class="reviews__title">
-            Что говорят наши клиенты?
+              Что говорят наши клиенты?
             </h2>
           </div>
 
           <div class="reviews-wrapper__comp">
             <div class="companies-card">
-              <div class="card__img">
+              <a href="https://yandex.ru/maps/org/tsentr_professionalnoy_bukhgalterii/1241002253/?ll=37.596201%2C55.706676&utm_campaign=v1&utm_medium=rating&utm_source=share&z=14" target="_blank" class="card__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex-maps.png"
-                    alt="Яндекс Карты">
-              </div>
+                     alt="Яндекс Карты">
+              </a>
               <div class="card__score">
                 <span class="rating__score">Рейтинг 5.0</span>
                 <span class="rating__stars">★★★★★</span>
               </div>
-
             </div>
             <div class="companies-card">
-              <div class="card__img">
+              <a href="https://profi.ru/profile/YapparovBZ/share" target="_blank" class="card__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi-ru-2.png"
-                      alt="Profi.ru">
-              </div>
+                     alt="Profi.ru">
+              </a>
               <div class="card__score">
                 <span class="rating__score">Рейтинг 4.92</span>
                 <span class="rating__stars">★★★★★</span>
@@ -647,46 +646,36 @@ get_header();
           </div>
 
           <div class="reviews-tiles" id="reviewsScrollArea">
+            <?php
+            $reviews_query = new WP_Query([
+              'post_type'      => 'clients',
+              'posts_per_page' => 6,
+              'post_status'    => 'publish',
+            ]);
 
-            <div class="reviews__tile">
-              <div class="tile__bage-date">
-                <p>23/05/25</p>
-              </div>
-              <p class="tile__body-text">
-                Перешли из штатного бухгалтера в ЦПБ. Экономим более 500 тыс ₽ в год, отчётность всегда вовремя. Удобно, что можно работать полностью онлайн....
-              </p>
-              <p class="tile__person-date">
-                Анна, Москва (интернет-магазин)
-              </p>
-              <a href="#" class="tile__review-link">Смотреть полностью</a>
-            </div>
-
-            <div class="reviews__tile">
-              <div class="tile__bage-date">
-                <p>23/05/25</p>
-              </div>
-              <p class="tile__body-text">
-                Перешли из штатного бухгалтера в ЦПБ. Экономим более 500 тыс ₽ в год, отчётность всегда вовремя. Удобно, что можно работать полностью онлайн....
-              </p>
-              <p class="tile__person-date">
-                Анна, Москва (интернет-магазин)
-              </p>
-              <a href="#" class="tile__review-link">Смотреть полностью</a>
-            </div>
-
-            <div class="reviews__tile">
-              <div class="tile__bage-date">
-                <p>23/05/25</p>
-              </div>
-              <p class="tile__body-text">
-                Перешли из штатного бухгалтера в ЦПБ. Экономим более 500 тыс ₽ в год, отчётность всегда вовремя. Удобно, что можно работать полностью онлайн....
-              </p>
-              <p class="tile__person-date">
-                Анна, Москва (интернет-магазин)
-              </p>
-              <a href="#" class="tile__review-link">Смотреть полностью</a>
-            </div>
-
+            if ($reviews_query->have_posts()) :
+              while ($reviews_query->have_posts()) : $reviews_query->the_post();
+                $date = get_the_date('d/m/y');
+                $person = get_the_title();
+                $short_text = wp_trim_words(get_the_content(), 20, '...');
+                ?>
+                <div class="reviews__tile">
+                  <div class="tile__bage-date">
+                    <p><?php echo esc_html($date); ?></p>
+                  </div>
+                  <p class="tile__body-text">
+                    <?php echo esc_html($short_text); ?>
+                  </p>
+                  <p class="tile__person-date">
+                    <?php echo esc_html($person); ?>
+                  </p>
+                  <a href="<?php the_permalink(); ?>" class="tile__review-link">Смотреть полностью</a>
+                </div>
+              <?php
+              endwhile;
+              wp_reset_postdata();
+            endif;
+            ?>
           </div>
 
           <div class="slider-navigation">
@@ -700,9 +689,11 @@ get_header();
 
           <div class="industries-footer">
             <div class="footer-left">
-              <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\tiles\spheres3.png"
-                  alt="sphere icons" class="sphere-img">
-              <span class="spheres-text">120+ положительных отзывов <br>от бизнеса Москвы и МО</span>
+              <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/tiles/spheres3.png"
+                   alt="sphere icons" class="sphere-img">
+              <span class="spheres-text">
+            <?php echo $reviews_query->found_posts; ?>+ положительных отзывов <br>от бизнеса Москвы и МО
+          </span>
             </div>
             <a href="<?php echo home_url('/otzivi/'); ?>" class="btn btn_arr">Все отзывы</a>
           </div>
