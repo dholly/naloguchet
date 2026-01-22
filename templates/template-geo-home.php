@@ -1,28 +1,37 @@
 <?php
 /**
- * Template Name: Главная страница
+ * Template Name: Гео-главная
  */
 
+// Получаем данные города
+$city = get_current_geo_city();
+if (!$city) {
+  wp_redirect(home_url('/'));
+  exit;
+}
+
+$city_name = $city['name'];
+$city_prep = $city['name_prepositional'];
+
 get_header();
+
+
 ?>
 
   <div class="page-wrapper">
 
     <section class="hero-section first">
       <div class="hero-section__container">
-
         <div class="hero-wrapper">
-
           <div class="hero-content">
             <h1 class="hero-title">
-              Аутсорсинг бухгалтерии для малого и среднего бизнеса
+              Аутсорсинг бухгалтерии в <?php echo esc_html($city_prep); ?> для малого и среднего бизнеса
             </h1>
-
             <ul class="hero-features">
               <li class="feature-item">
               <span class="check-icon">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
+                         xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M5.57085 10.5L2.24585 7.175L3.0771 6.34375L5.57085 8.8375L10.9229 3.48541L11.7542 4.31666L5.57085 10.5Z"
                       fill="white"/>
@@ -33,7 +42,7 @@ get_header();
               <li class="feature-item">
                 <span class="check-icon">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                               xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M5.57085 10.5L2.24585 7.175L3.0771 6.34375L5.57085 8.8375L10.9229 3.48541L11.7542 4.31666L5.57085 10.5Z"
                             fill="white"/>
@@ -44,7 +53,7 @@ get_header();
               <li class="feature-item">
                       <span class="check-icon">
                               <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
+                                   xmlns="http://www.w3.org/2000/svg">
                               <path
                                 d="M5.57085 10.5L2.24585 7.175L3.0771 6.34375L5.57085 8.8375L10.9229 3.48541L11.7542 4.31666L5.57085 10.5Z"
                                 fill="white"/>
@@ -83,36 +92,36 @@ get_header();
 
         <div class="social-proof-row">
 
-            <a href="https://profi.ru/profile/YapparovBZ/share" class="proof-card" target="_blank">
-                <div class="proof-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi_ru.png"
-                        alt="Profi.ru" class="proof-logo-profi">
-                    <span class="rating-score">4.92</span>
-                    <div class="stars">★★★★★</div>
-                </div>
-                <div class="proof-footer">128 отзывов</div>
-            </a>
+          <a href="https://profi.ru/profile/YapparovBZ/share" class="proof-card" target="_blank">
+            <div class="proof-header">
+              <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi_ru.png"
+                   alt="Profi.ru" class="proof-logo-profi">
+              <span class="rating-score">4.92</span>
+              <div class="stars">★★★★★</div>
+            </div>
+            <div class="proof-footer">128 отзывов</div>
+          </a>
 
-            <a href="https://yandex.ru/maps/org/tsentr_professionalnoy_bukhgalterii/1241002253/?ll=37.596201%2C55.706676&utm_campaign=v1&utm_medium=rating&utm_source=share&z=14" class="proof-card" target="_blank">
-                <div class="proof-header">
-                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex.png"
-                        alt="Яндекс" class="proof-logo-yandex">
-                    <span class="rating-score">5.0</span>
-                    <div class="stars stars-gold">★★★★★</div>
-                </div>
-                <div class="proof-footer">72 отзыва</div>
-            </a>
+          <a href="https://yandex.ru/maps/org/tsentr_professionalnoy_bukhgalterii/1241002253/?ll=37.596201%2C55.706676&utm_campaign=v1&utm_medium=rating&utm_source=share&z=14" class="proof-card" target="_blank">
+            <div class="proof-header">
+              <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex.png"
+                   alt="Яндекс" class="proof-logo-yandex">
+              <span class="rating-score">5.0</span>
+              <div class="stars stars-gold">★★★★★</div>
+            </div>
+            <div class="proof-footer">72 отзыва</div>
+          </a>
 
-            <a href="https://www.kp.ru/russia/moskva/luchshie-autsorsingovye-kompanii/" class="proof-card" target="_blank">
-                <div class="kp-content">
-                    <div class="top-text">
-                        <span class="top-num">ТОП 7</span>
-                        <span>Аутсорс компаний Москвы по версии</span>
-                    </div>
-                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/kp.png" alt="KP.RU"
-                        class="proof-logo-kp">
-                </div>
-            </a>
+          <a href="https://www.kp.ru/russia/moskva/luchshie-autsorsingovye-kompanii/" class="proof-card" target="_blank">
+            <div class="kp-content">
+              <div class="top-text">
+                <span class="top-num">ТОП 7</span>
+                <span>Аутсорс компаний Москвы по версии</span>
+              </div>
+              <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/kp.png" alt="KP.RU"
+                   class="proof-logo-kp">
+            </div>
+          </a>
         </div>
 
       </div>
@@ -137,7 +146,7 @@ get_header();
             <div class="advantages-card-header">
               <div class="icon-wrapper">
                 <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\1.svg"
-                    alt="Опытные специалисты" class="main-icon">
+                     alt="Опытные специалисты" class="main-icon">
               </div>
               <h3 class="advantage-card__title">Опытные специалисты</h3>
             </div>
@@ -151,7 +160,7 @@ get_header();
             <div class="advantages-card-header">
               <div class="icon-wrapper">
                 <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\2.svg"
-                    alt="Юридическая защита" class="main-icon">
+                     alt="Юридическая защита" class="main-icon">
               </div>
               <h3 class="advantage-card__title">Юридическая защита</h3>
             </div>
@@ -166,7 +175,7 @@ get_header();
             <div class="advantages-card-header">
               <div class="icon-wrapper">
                 <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\3.svg"
-                    alt="Двойной контроль качества" class="main-icon">
+                     alt="Двойной контроль качества" class="main-icon">
               </div>
               <h3 class="advantage-card__title">Двойной контроль качества</h3>
             </div>
@@ -181,7 +190,7 @@ get_header();
             <div class="advantages-card-header">
               <div class="icon-wrapper">
                 <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\4.svg"
-                    alt="Гарантия стабильности" class="main-icon">
+                     alt="Гарантия стабильности" class="main-icon">
               </div>
               <h3 class="advantage-card__title">Гарантия стабильности</h3>
             </div>
@@ -196,7 +205,7 @@ get_header();
             <div class="advantages-card-header">
               <div class="icon-wrapper">
                 <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\5.svg"
-                    alt="Работаем в CRM клиента" class="main-icon">
+                     alt="Работаем в CRM клиента" class="main-icon">
               </div>
               <h3 class="advantage-card__title">Работаем в CRM клиента</h3>
             </div>
@@ -211,7 +220,7 @@ get_header();
             <div class="advantages-card-header">
               <div class="icon-wrapper">
                 <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\6.svg"
-                    alt="Партнёрская атмосфера" class="main-icon">
+                     alt="Партнёрская атмосфера" class="main-icon">
               </div>
               <h3 class="advantage-card__title">Партнёрская атмосфера</h3>
             </div>
@@ -484,13 +493,13 @@ get_header();
     <section class="services-accordion-section">
       <div class="services-accordion__container">
 
-          <h2 class="services-accordion__title">
-            Все услуги включены в фиксированную цену
-          </h2>
+        <h2 class="services-accordion__title">
+          Все услуги включены в фиксированную цену
+        </h2>
 
-          <h3 class="services-accordion__subtitle">
-            Никаких скрытых платежей — всё учётное сопровождение <span class="text-blue" style="font-weight: 590">уже входит в стоимость.</span> От первички до сдачи отчётности.
-          </h3>
+        <h3 class="services-accordion__subtitle">
+          Никаких скрытых платежей — всё учётное сопровождение <span class="text-blue" style="font-weight: 590">уже входит в стоимость.</span> От первички до сдачи отчётности.
+        </h3>
 
         <div class="services-accordion">
 
@@ -667,7 +676,7 @@ get_header();
       </div>
     </section>
 
-    <?php get_template_part('template-parts/caluclator'); ?>
+   <!-- --><?php /*get_template_part('template-parts/caluclator'); */?>
 
     <section class="trust-money">
 
@@ -1083,96 +1092,28 @@ get_header();
 
     <section class="accordion-faq">
       <div class="faq-accordion__container">
-
-          <h2 class="faq-accordion__title">
-            Частые вопросы
-          </h2>
-
-          <h3 class="faq-accordion__subtitle">
-            Мы собрали ответы на самые важные вопросы. Если не нашли нужное — оставьте заявку, и мы проконсультируем вас лично.
-          </h3>
+        <h2 class="faq-accordion__title">Частые вопросы</h2>
 
         <div class="faq-accordion">
-
-          <div class="faq-accordion__item">
-            <div class="faq accordion__header">
-              <h3>Сколько стоит бухгалтерское обслуживание?</h3>
-            </div>
-            <div class="accordion-item__body">
-              <div class="accordion-item__content">
-                <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
-                </p>
+          <?php
+          $faq_items = get_geo_faq($city_prep);
+          foreach ($faq_items as $faq):
+            ?>
+            <div class="faq-accordion__item">
+              <div  class="faq accordion__header">
+                <h3 style="max-width:1000px;"><?php echo esc_html($faq['question']); ?></h3>
+              </div>
+              <div class="accordion-item__body">
+                <div class="accordion-item__content">
+                  <p class="accordion-body__main-text">
+                    <?php echo esc_html($faq['answer']); ?>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="faq-accordion__item">
-            <div class="faq accordion__header">
-              <h3>Что входит в стоимость обслуживания?</h3>
-            </div>
-            <div class="accordion-item__body">
-              <div class="accordion-item__content">
-                <p class="accordion-body__main-text">
-                  Полный комплекс — от ведения первички до сдачи отчётности и расчёта зарплат.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-accordion__item">
-            <div class="faq accordion__header">
-              <h3>Как быстро вы начинаете работу?</h3>
-            </div>
-            <div class="accordion-item__body">
-              <div class="accordion-item__content">
-                <p class="accordion-body__main-text">
-                  Стартуем за 1–3 дня после подписания договора и передачи документов.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-accordion__item">
-            <div class="faq accordion__header">
-              <h3>Кто отвечает за ошибки?</h3>
-            </div>
-            <div class="accordion-item__body">
-              <div class="accordion-item__content">
-                <p class="accordion-body__main-text">
-                  Ответственность компании застрахована на 3 млн ₽.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-accordion__item">
-            <div class="faq accordion__header">
-              <h3>Можно работать удалённо?</h3>
-            </div>
-            <div class="accordion-item__body">
-              <div class="accordion-item__content">
-                <p class="accordion-body__main-text">
-                  Да, полностью. Используем ЭДО и Zoom, при необходимости приедем в офис клиента.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-accordion__item">
-            <div class="faq accordion__header">
-              <h3>Могу ли я поменять бухгалтера в процессе?</h3>
-            </div>
-            <div class="accordion-item__body">
-              <div class="accordion-item__content">
-                <p class="accordion-body__main-text">
-                  Не нужно — с вами работает команда, которая дублирует процессы и не уходит «в отпуск с документами».
-                </p>
-              </div>
-            </div>
-          </div>
-
+          <?php endforeach; ?>
         </div>
+      </div>
     </section>
 
   </div>

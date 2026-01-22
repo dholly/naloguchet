@@ -2,15 +2,14 @@
 
     <section class="page__blog blog first">
         <div class="blog__container">
-            <h1 class="blog__title title title_center">Блог</h1>
+            
+            <h1 class="blog__title title title_center">
+                Результаты поиска: "<?php echo get_search_query(); ?>"
+            </h1>
 
             <div class="section-search-wrapper">
                 <form role="search" method="get" class="section-search-form" action="<?php echo home_url( '/' ); ?>">
-                    <input type="text" 
-                           class="section-search-input" 
-                           placeholder="Поиск по статьям..." 
-                           value="<?php echo get_search_query(); ?>" 
-                           name="s">
+                    <input type="text" class="section-search-input" placeholder="Поиск по статьям..." value="<?php echo get_search_query(); ?>" name="s">
                     <button type="submit" class="section-search-btn">Найти</button>
                     <input type="hidden" name="post_type" value="post" />
                 </form>
@@ -19,6 +18,7 @@
             <?php if (have_posts()) : ?>
                 <div class="blog__items">
                     <?php while (have_posts()) : the_post(); ?>
+                        
                         <div class="blog__item item-blog">
                             <div class="item-blog__body">
                                 <?php if (has_post_thumbnail()) : ?>
@@ -35,6 +35,7 @@
                                 </div>
                             </div>
                         </div>
+
                     <?php endwhile; ?>
                 </div>
 
@@ -42,7 +43,10 @@
                     <?php get_template_part('template-parts/pagination'); ?>
                 </div>
             <?php else : ?>
-                <p>Записей пока нет.</p>
+                <div style="text-align: center; margin-top: 40px;">
+                    <p class="title title_small">По вашему запросу ничего не найдено.</p>
+                    <p>Попробуйте изменить формулировку или используйте другие ключевые слова.</p>
+                </div>
             <?php endif; ?>
         </div>
     </section>

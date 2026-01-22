@@ -10,13 +10,13 @@ $socials = [
     [
         'name' => 'Telegram',
         'icon' => 'tg.svg',
-        'url' => '#',
+        'url' => 'https://t.me/cpb_info',
     ],
-    [
+/*    [
         'name' => 'WhatsApp',
         'icon' => 'wh.svg',
         'url' => '#',
-    ],
+    ],*/
 ];
 
 
@@ -66,7 +66,7 @@ $menu_items = [
     ],
     [
         'title' => 'О компании',
-        'url' => get_post_type_archive_link('clients'),
+      'url' => home_url('/about-company'),
         'class' => 'has-submenu',
         'submenu' => [
             ['title' => 'Сотрудники', 'url' => home_url('/staff/')],
@@ -112,6 +112,7 @@ $menu_items = [
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+
 
 <div class="wrapper">
     <header>
@@ -243,11 +244,16 @@ $menu_items = [
                 </div>
             </div>
         </div>
-      <?php
-      if ( function_exists('yoast_breadcrumb') ) {
-        yoast_breadcrumb( '<p class="breadcrumbs__container" id="breadcrumbs">','</p>' );
-      }
-      ?>
+
+    <?php
+    if ( function_exists('yoast_breadcrumb') && ! is_front_page() ) : ?>
+
+        <div class="breadcrumbs__container">
+             <?php yoast_breadcrumb( '<div class="breadcrumbs__row">', '</div>' ); ?>
+        </div>
+
+    <?php endif; ?>
+
     </header>
 
     <main class="page">

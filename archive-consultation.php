@@ -6,6 +6,24 @@
                 Вопросы к Центру Профессиональной Бухгалтерии
             </h1>
 
+            <div class="section-search-wrapper">
+                <form role="search" method="get" class="section-search-form" action="<?php echo home_url( '/' ); ?>">
+                    
+                    <input type="text" 
+                           class="section-search-input" 
+                           placeholder="Найти ответ на вопрос..." 
+                           value="<?php echo get_search_query(); ?>" 
+                           name="s">
+                    
+                    <button type="submit" class="section-search-btn">
+                        Найти
+                    </button>
+
+                    <input type="hidden" name="post_type" value="<?php echo get_post_type() ? get_post_type() : 'post'; ?>" />
+                
+                </form>
+            </div>
+            
             <?php if (have_posts()) : ?>
                 <div class="documents__items">
                     <?php while (have_posts()) : the_post(); ?>

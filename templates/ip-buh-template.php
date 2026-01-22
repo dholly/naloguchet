@@ -56,14 +56,17 @@ get_header();
 
             <div class="hero-buttons">
               <a href="/kalkulyator/" class="btn btn_arr" type="button">Узнать стоимость</a>
-              <a href="#" class="btn btn_play" type="button">Смотреть видео</a>
+              <a href="<?php echo esc_url(convert_to_embed('https://rutube.ru/video/c040db92724a5a77fd74480167107e8f/')); ?>"
+                 class="btn btn_play glightbox">
+                Смотреть видео
+              </a>
             </div>
           </div>
 
           <div class="hero-image-block">
             <img
               src="<?php echo get_template_directory_uri(); ?>/static/img/team/Alina-main.png"
-              alt="Булат Яппаров"
+              alt="Алина Яппарова"
               class="hero-person-img"
             >
 
@@ -77,33 +80,37 @@ get_header();
         </div>
 
         <div class="social-proof-row">
-          <div class="proof-card">
-            <div class="proof-header">
-              <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi_ru.png"
-                    alt="Profi.ru" class="proof-logo-profi">
-              <span class="rating-score">4.92</span>
-              <div class="stars">★★★★★</div>
-            </div>
-            <div class="proof-footer">128 отзывов</div>
-          </div>
 
-          <div class="proof-card">
-            <div class="proof-header">
-              <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex.png"
-                    alt="Яндекс" class="proof-logo-yandex">
-              <span class="rating-score">5.0</span>
-              <div class="stars stars-gold">★★★★★</div>
-            </div>
-            <div class="proof-footer">72 отзыва</div>
-          </div>
+            <a href="https://profi.ru/profile/YapparovBZ/share" class="proof-card" target="_blank">
+                <div class="proof-header">
+                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi_ru.png"
+                        alt="Profi.ru" class="proof-logo-profi">
+                    <span class="rating-score">4.92</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="proof-footer">128 отзывов</div>
+            </a>
 
-          <div class="proof-card">
-            <div class="kp-content">
-              <span class="top-text"><span class="top-num">ТОП 7</span> Аутсорс компаний Москвы по версии</span>
-              <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/kp.png" alt="KP.RU"
-                    class="proof-logo-kp">
-            </div>
-          </div>
+            <a href="https://yandex.ru/maps/org/tsentr_professionalnoy_bukhgalterii/1241002253/?ll=37.596201%2C55.706676&utm_campaign=v1&utm_medium=rating&utm_source=share&z=14" class="proof-card" target="_blank">
+                <div class="proof-header">
+                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex.png"
+                        alt="Яндекс" class="proof-logo-yandex">
+                    <span class="rating-score">5.0</span>
+                    <div class="stars stars-gold">★★★★★</div>
+                </div>
+                <div class="proof-footer">72 отзыва</div>
+            </a>
+
+            <a href="https://www.kp.ru/russia/moskva/luchshie-autsorsingovye-kompanii/" class="proof-card" target="_blank">
+                <div class="kp-content">
+                    <div class="top-text">
+                        <span class="top-num">ТОП 7</span>
+                        <span>Аутсорс компаний Москвы по версии</span>
+                    </div>
+                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/kp.png" alt="KP.RU"
+                        class="proof-logo-kp">
+                </div>
+            </a>
         </div>
 
       </div>
@@ -294,19 +301,29 @@ get_header();
           <div class="table-header-cell">Система налогообложения</div>
           <div class="table-header-cell">Стоимость в месяц</div>
 
-          <div class="table-cell">
-            ИП на УСН доходы
-          </div>
-          <div class="table-cell">от 8000 руб.</div>
+          <div class="table-cell">ИП на УСН доходы</div>
+          <div class="table-cell">от 12000 руб.</div>
 
           <div class="table-cell">ИП на патенте</div>
-          <div class="table-cell">от 8000 руб.</div>
+          <div class="table-cell">от 12000 руб.</div>
 
           <div class="table-cell">ИП на УСН доходы минус расходы</div>
-          <div class="table-cell">от 10000 руб.</div>
+          <div class="table-cell">от 19000 руб.</div>
+
+          <div class="table-cell">ИП на АУСН доходы</div>
+          <div class="table-cell">от 12000 руб.</div>
+
+          <div class="table-cell">ИП на АУСН доходы минус расходы</div>
+          <div class="table-cell">от 19000 руб.</div>
+
+          <div class="table-cell">ИП на УСН доходы с НДС </div>
+          <div class="table-cell">от 17000 руб.</div>
+
+          <div class="table-cell">ИП на УСН доходы минус расходы с НДС</div>
+          <div class="table-cell">от 24000 руб.</div>
 
           <div class="table-cell">ИП на общем режиме с НДС</div>
-          <div class="table-cell">от 15000 руб.</div>
+          <div class="table-cell">от 26000 руб.</div>
         </div>
       </div>
     </section>
@@ -412,7 +429,7 @@ get_header();
             </p>
           </div>
           <div class="money-wrapper__right">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/banner/stack.png" alt="Пачка денег">
+            <img src="<?php echo get_template_directory_uri(); ?>/static/img/banner/stack.png">
           </div>
 
         </div>
@@ -615,7 +632,7 @@ get_header();
 
           <div class="reviews-wrapper__title">
             <h2 class="reviews__title">
-            Что говорят наши клиенты?
+              Что говорят наши клиенты?
             </h2>
           </div>
 
@@ -623,18 +640,17 @@ get_header();
             <div class="companies-card">
               <div class="card__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex-maps.png"
-                    alt="Яндекс Карты">
+                     alt="Яндекс Карты">
               </div>
               <div class="card__score">
                 <span class="rating__score">Рейтинг 5.0</span>
                 <span class="rating__stars">★★★★★</span>
               </div>
-
             </div>
             <div class="companies-card">
               <div class="card__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi-ru-2.png"
-                      alt="Profi.ru">
+                     alt="Profi.ru">
               </div>
               <div class="card__score">
                 <span class="rating__score">Рейтинг 4.92</span>
@@ -644,46 +660,36 @@ get_header();
           </div>
 
           <div class="reviews-tiles" id="reviewsScrollArea">
+            <?php
+            $reviews_query = new WP_Query([
+              'post_type'      => 'clients',
+              'posts_per_page' => 6,
+              'post_status'    => 'publish',
+            ]);
 
-            <div class="reviews__tile">
-              <div class="tile__bage-date">
-                <p>23/05/25</p>
-              </div>
-              <p class="tile__body-text">
-                Перешли из штатного бухгалтера в ЦПБ. Экономим более 500 тыс ₽ в год, отчётность всегда вовремя. Удобно, что можно работать полностью онлайн....
-              </p>
-              <p class="tile__person-date">
-                Анна, Москва (интернет-магазин)
-              </p>
-              <a href="#" class="tile__review-link">Смотреть полностью</a>
-            </div>
-
-            <div class="reviews__tile">
-              <div class="tile__bage-date">
-                <p>23/05/25</p>
-              </div>
-              <p class="tile__body-text">
-                Перешли из штатного бухгалтера в ЦПБ. Экономим более 500 тыс ₽ в год, отчётность всегда вовремя. Удобно, что можно работать полностью онлайн....
-              </p>
-              <p class="tile__person-date">
-                Анна, Москва (интернет-магазин)
-              </p>
-              <a href="#" class="tile__review-link">Смотреть полностью</a>
-            </div>
-
-            <div class="reviews__tile">
-              <div class="tile__bage-date">
-                <p>23/05/25</p>
-              </div>
-              <p class="tile__body-text">
-                Перешли из штатного бухгалтера в ЦПБ. Экономим более 500 тыс ₽ в год, отчётность всегда вовремя. Удобно, что можно работать полностью онлайн....
-              </p>
-              <p class="tile__person-date">
-                Анна, Москва (интернет-магазин)
-              </p>
-              <a href="#" class="tile__review-link">Смотреть полностью</a>
-            </div>
-
+            if ($reviews_query->have_posts()) :
+              while ($reviews_query->have_posts()) : $reviews_query->the_post();
+                $date = get_the_date('d/m/y');
+                $person = get_the_title();
+                $short_text = wp_trim_words(get_the_content(), 20, '...');
+                ?>
+                <div class="reviews__tile">
+                  <div class="tile__bage-date">
+                    <p><?php echo esc_html($date); ?></p>
+                  </div>
+                  <p class="tile__body-text">
+                    <?php echo esc_html($short_text); ?>
+                  </p>
+                  <p class="tile__person-date">
+                    <?php echo esc_html($person); ?>
+                  </p>
+                  <a href="<?php the_permalink(); ?>" class="tile__review-link">Смотреть полностью</a>
+                </div>
+              <?php
+              endwhile;
+              wp_reset_postdata();
+            endif;
+            ?>
           </div>
 
           <div class="slider-navigation">
@@ -697,9 +703,11 @@ get_header();
 
           <div class="industries-footer">
             <div class="footer-left">
-              <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\tiles\spheres3.png"
-                  alt="sphere icons" class="sphere-img">
-              <span class="spheres-text">120+ положительных отзывов <br>от бизнеса Москвы и МО</span>
+              <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/tiles/spheres3.png"
+                   alt="sphere icons" class="sphere-img">
+              <span class="spheres-text">
+            <?php echo $reviews_query->found_posts; ?>+ положительных отзывов <br>от бизнеса Москвы и МО
+          </span>
             </div>
             <a href="<?php echo home_url('/otzivi/'); ?>" class="btn btn_arr">Все отзывы</a>
           </div>
@@ -724,78 +732,88 @@ get_header();
           </button>
         </div>
 
-        <div class="team-grid" id="teamScrollArea">
+        <?php
+        $args = [
+          'post_type'      => 'staff',
+          'posts_per_page' => 5,
+          'post_status'    => 'publish',
+        ];
 
-          <div class="team-card team-card-large">
-            <picture class="card__person-img-wrapper">
-              <source srcset="<?php echo get_template_directory_uri(); ?>/static/img/team/bulat-avatar-small.png" media="(max-width: 796px)">
-              <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Bulat.png" alt="Булат Яппаров" class="card__person-img">
-            </picture>
+        $team_query = new WP_Query($args);
 
-            <div class="team-card__info">
-              <div class="card__person-name">Булат Яппаров</div>
-              <div class="card__person-role">Директор ЦПБ</div>
-              <div class="card__divider"></div>
-              <p class="card__person-desc">
-                30 лет в бухгалтерии и налогах. Эксперт по налоговому планированию.
-              </p>
-            </div>
+        if ($team_query->have_posts()) :
+
+          $posts_array = $team_query->posts;
+
+          $director = null;
+          $team = [];
+
+          foreach ($posts_array as $post_item) {
+            if (stripos($post_item->post_title, 'Булат') !== false && stripos($post_item->post_title, 'Яппаров') !== false) {
+              $director = $post_item;
+            } else {
+              $team[] = $post_item;
+            }
+          }
+
+          if ($director) {
+            array_unshift($team, $director);
+          } else {
+            $team = $posts_array;
+          }
+          ?>
+
+          <div class="team-grid" id="teamScrollArea">
+
+            <?php foreach ($team as $index => $post) : setup_postdata($post); ?>
+
+              <div class="team-card<?php echo ($index === 0) ? ' team-card-large' : ''; ?>">
+
+                <a href="<?php the_permalink(); ?>">
+                  <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('large', ['class' => 'card__person-img', 'alt' => get_the_title()]); ?>
+                  <?php else : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/no-photo.svg" alt="<?php the_title(); ?>" class="card__person-img">
+                  <?php endif; ?>
+                </a>
+
+                <div class="team-card__info">
+                  <a href="<?php the_permalink(); ?>" class="card__person-name-link">
+                    <div class="card__person-name"><?php the_title(); ?></div>
+                  </a>
+
+                  <?php $position = get_field('employee_positions'); ?>
+                  <?php if ($position) : ?>
+                    <div class="card__person-role"><?php echo esc_html($position); ?></div>
+                  <?php endif; ?>
+
+                  <div class="card__divider"></div>
+
+                  <p class="card__person-desc">
+                    <?php
+                    $education = get_field('employee_education');
+                    if ($education) {
+                      echo esc_html($education);
+                    } else {
+                      echo get_the_excerpt();
+                    }
+                    ?>
+                  </p>
+                </div>
+              </div>
+
+            <?php endforeach; wp_reset_postdata(); ?>
+
+
+
           </div>
 
-          <div class="team-card">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Alina.png" alt="Алина Яппарова" class="card__person-img">
+        <?php else : ?>
+          <p style="text-align: center;">Сотрудников пока нет.</p>
+        <?php endif; ?>
 
-            <div class="team-card__info">
-              <div class="card__person-name">Алина Яппарова</div>
-              <div class="card__person-role">Главный бухгалтер</div>
-              <div class="card__divider"></div>
-              <p class="card__person-desc">
-                Два высших образования, опыт работы более 20 лет, в том числе в крупных и известных компаниях.
-              </p>
-            </div>
-          </div>
-
-          <div class="team-card">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Alexander.png" alt="Александр Сумин" class="card__person-img">
-
-            <div class="team-card__info">
-              <div class="card__person-name">Александр Сумин</div>
-              <div class="card__person-role">Юрист</div>
-              <div class="card__divider"></div>
-              <p class="card__person-desc">
-                Российский государственный университет правосудия. Опыт работы более 15 лет.
-              </p>
-            </div>
-          </div>
-
-          <div class="team-card">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Elena.png" alt="Елена Колисниченко" class="card__person-img">
-
-            <div class="team-card__info">
-              <div class="card__person-name">Елена Колисниченко</div>
-              <div class="card__person-role">Финансовый директор</div>
-              <div class="card__divider"></div>
-              <p class="card__person-desc">
-                Московский государственный университет имени М.В. Ломоносова. Опыт работы более 25 лет.
-              </p>
-            </div>
-          </div>
-
-          <div class="team-card">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/Oleg.png" alt="Олег Левин" class="card__person-img">
-
-            <div class="team-card__info">
-              <div class="card__person-name">Олег Левин</div>
-              <div class="card__person-role">Внутренний аудитор</div>
-              <div class="card__divider"></div>
-              <p class="card__person-desc">
-                Московский юридический институт. Аттестат аудитора. Опыт работы более 30 лет.
-              </p>
-            </div>
-          </div>
-
-        </div>
       </div>
+
     </section>
 
     <section class="steps">
@@ -961,7 +979,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Мы проводим экспресс-аудит текущего состояния, формируем перечень документов и берём на себя передачу данных. Ваш бизнес не останавливается ни на день — всё проходит “в фоновом режиме”.
                 </p>
               </div>
             </div>
@@ -974,7 +992,8 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  У вас будет персональный бухгалтер и главный бухгалтер-наставник. Всегда на связи в мессенджере, по телефону или Zoom.
+                  <br>Раз в месяц — отчёт и сверка. По необходимости — консультации в любое время.
                 </p>
               </div>
             </div>
@@ -987,7 +1006,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Стоимость зависит от системы налогообложения и объёма документов. Оставьте заявку и мы сделаем точный расчёт.
                 </p>
               </div>
             </div>
@@ -1000,7 +1019,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Мы полностью сопровождаем клиента: готовим пояснения, представляем интересы перед ФНС и берём ответственность на себя. Если ошибка за нами — ущерб покрывается страховой компанией.
                 </p>
               </div>
             </div>
@@ -1013,7 +1032,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Да, и мы часто с этого начинаем. Проводим аудит, восстанавливаем учёт за прошлые периоды, сдаём корректировки и выстраиваем систему, чтобы ситуация не повторялась.
                 </p>
               </div>
             </div>
@@ -1029,9 +1048,34 @@ get_header();
         </h1>
 
         <div class="buh-servises-short__text-wrapper" id="seo-text-wrapper">
-            <p class="buh-servises-short__text">
-                ЦПБ ведёт бухгалтерию акционерных обществ на аутсорсе, обеспечивает прозрачность учёта, точность отчётности и уверенность при внешнем аудите. Мы берем на себя все рутинные процессы, чтобы вы могли сосредоточиться на развитии бизнеса. Наши специалисты обладают многолетним опытом работы с крупными предприятиями и знают все тонкости законодательства для ОАО.
-            </p>
+            <div class="buh-servises-short__text">
+              <p>Сейчас самое время подумать о бухгалтерском обслуживании ИП на аутсорсе. Особенно, если вы только собираетесь открыть ИП или планируете расширять бизнес, наращивая обороты, направления, и вам некому делегировать бухгалтерию.</p>
+              <p>Все дело в том, в 2023 году вступают в силу поистине глобальные изменения, касающиеся всех налогоплательщиков.</p>
+              <h3>Объединение платежей</h3>
+              <p>Теперь НДФЛ, авансовые, страховые, пени, штрафы, проценты нужно платить единым налоговым платежом, ЕНП. Распределять поступившую сумму с единого счета налогоплательщика будет налоговая инспекция. Исключение сделано для НДФЛ иностранных граждан, НПД, госпошлин.</p>
+              <p>Налогоплательщик перечисляет сумму совокупной обязанности к уплате на единый счет, который открывает ФНС. Со счета в первую очередь списываются недоимки, затем по порядку: очередные платежи в бюджет и фонды, пени, проценты и штрафы. Платить авансом или платить большими суммами не требуется.</p>
+              <p>Много изменений и в порядке исчисления, уплаты и отчетности по налогам. И здесь значительно облегчат задачу бухгалтерские услуги для ИП.</p>
+              <h3>Изменения для ИП</h3>
+              <p>Меняются сроки уплаты налогов и отчетности по ним, бланки деклараций УСН, порядок возмещения НДС. Например, обеспечительный платеж больше не считается доходом и расходом для целей расчета базы налога на прибыль. Вплоть до 2024 года действуют налоговые каникулы для вновь зарегистрированных ИП на УСН. Изменятся лимиты применения УСН согласно новым коэффициентам-дефляторам. АУСН можно будет применять не только новым, но и существующим ИП.</p>
+              <h3>Объединение страховых взносов</h3>
+              <p>Рассчитывать страховые взносы теперь нужно от единой базы в размере 1,917 млн. рублей на одного работника в год. Тариф тоже станет единым — 30% для расчета в пределах единой базы, 15,1% — свыше нее. Будет еще три льготных тарифа для особых условий и налогоплательщиков — 0%, 7,6%, 15%, продолжают действовать сниженные тарифы для отдельных организаций и ниш.</p>
+              <p>Страховые, как и налоговые, начисления нужно платить одной суммой, которую впоследствии распределит по государственным фондам казначейство. И даже сроки уплаты изменяться: теперь перечисление надо сделать до 28-го числа следующего месяца, а отправить отчет — до 25 числа.</p>
+              <h3>Профессиональное ведение бухучета ИП на аутсорсинге</h3>
+              <p>Специалисты работают в Центре профессиональной бухгалтерии с момента появления компании в 2009 году и ведут бухгалтерский учет ИП на УСН. Они накопили опыт в 30+ нишах, регулярно проходят профессиональное обучение и следят за изменениями законодательства.</p>
+              <p><strong>Какие функции можно делегировать специалистам Центра профессиональной бухгалтерии?</strong></p>
+              <ol>
+                <li>Открытие ИП. Да, сейчас очень просто открыть ИП через цифровые сервисы, но если вы не успеваете или не понимаете, как это сделать, обратитесь к бухгалтерам компании.
+                <li>Оптимизация бухгалтерского учета: разработка индивидуального плана счетов и учетной политики, исключение лишних и параллельных операций.
+                <li>Постановка и восстановление учета, в том числе, первичных документов, ТМЦ, расчетов с поставщиками и подрядчиками и прочих.
+                <li>Оптимизация налоговой нагрузки: выбор системы налогообложения, заблаговременный расчет сумм начислений, оспаривание требований налоговой и защита интересов клиента, поиск законных путей сокращения налогооблагаемой базы и получения льготных ставок.
+                <li>Автоматизация, интеграция с CRM и продажами, объединение налогового и бухгалтерского учета в единой базе.
+                <li>Развитие бизнеса. Подготовка аналитики для целей управления и планирования.
+                <li>Закрытие ИП в связи с открытием ООО и по иным причинам. Проведение сверок, исправление ошибок, подготовка документов и отчетности.
+              </ol>
+              <p>Центр профессиональной бухгалтерии страхует ответственность специалистов на 3 000 000 рублей, потому что проводит двойную проверку их работы, силами собственных и привлеченных аудиторов.</p>
+              <p>Для стандартных пакетов ведения услуг разработаны тарифы с фиксированной оплатой. В остальных случаях стоимость бухуслуг ИП рассчитывается после беседы с клиентом, индивидуально.</p>
+              <p>Уже при первом разговоре специалист предложит варианты снижения расходов, оптимизации бухгалтерского учета и комфортный тариф. Если вы не хотите разбираться с изменениями бухгалтерского учета в 2023 году, доверьтесь профессионалам и экономьте время и средства.</p>
+          </div>
         </div>
 
         <button class="buh-servises-short__expand-btn" id="seo-expand-btn">

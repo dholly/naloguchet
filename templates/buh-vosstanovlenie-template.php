@@ -56,7 +56,10 @@ get_header();
 
             <div class="hero-buttons">
               <a href="/kalkulyator/" class="btn btn_arr" type="button">Узнать стоимость</a>
-              <a href="#" class="btn btn_play" type="button">Смотреть видео</a>
+              <a href="<?php echo esc_url(convert_to_embed('https://rutube.ru/video/c040db92724a5a77fd74480167107e8f/')); ?>"
+                 class="btn btn_play glightbox">
+                Смотреть видео
+              </a>
             </div>
           </div>
 
@@ -79,33 +82,37 @@ get_header();
         </div>
 
         <div class="social-proof-row">
-          <div class="proof-card">
-            <div class="proof-header">
-              <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi_ru.png"
-                    alt="Profi.ru" class="proof-logo-profi">
-              <span class="rating-score">4.92</span>
-              <div class="stars">★★★★★</div>
-            </div>
-            <div class="proof-footer">128 отзывов</div>
-          </div>
 
-          <div class="proof-card">
-            <div class="proof-header">
-              <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex.png"
-                    alt="Яндекс" class="proof-logo-yandex">
-              <span class="rating-score">5.0</span>
-              <div class="stars stars-gold">★★★★★</div>
-            </div>
-            <div class="proof-footer">72 отзыва</div>
-          </div>
+            <a href="https://profi.ru/profile/YapparovBZ/share" class="proof-card" target="_blank">
+                <div class="proof-header">
+                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi_ru.png"
+                        alt="Profi.ru" class="proof-logo-profi">
+                    <span class="rating-score">4.92</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="proof-footer">128 отзывов</div>
+            </a>
 
-          <div class="proof-card">
-            <div class="kp-content">
-              <span class="top-text"><span class="top-num">ТОП 7</span> Аутсорс компаний Москвы по версии</span>
-              <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/kp.png" alt="KP.RU"
-                    class="proof-logo-kp">
-            </div>
-          </div>
+            <a href="https://yandex.ru/maps/org/tsentr_professionalnoy_bukhgalterii/1241002253/?ll=37.596201%2C55.706676&utm_campaign=v1&utm_medium=rating&utm_source=share&z=14" class="proof-card" target="_blank">
+                <div class="proof-header">
+                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex.png"
+                        alt="Яндекс" class="proof-logo-yandex">
+                    <span class="rating-score">5.0</span>
+                    <div class="stars stars-gold">★★★★★</div>
+                </div>
+                <div class="proof-footer">72 отзыва</div>
+            </a>
+
+            <a href="https://www.kp.ru/russia/moskva/luchshie-autsorsingovye-kompanii/" class="proof-card" target="_blank">
+                <div class="kp-content">
+                    <div class="top-text">
+                        <span class="top-num">ТОП 7</span>
+                        <span>Аутсорс компаний Москвы по версии</span>
+                    </div>
+                    <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/kp.png" alt="KP.RU"
+                        class="proof-logo-kp">
+                </div>
+            </a>
         </div>
 
       </div>
@@ -611,27 +618,26 @@ get_header();
 
           <div class="reviews-wrapper__title">
             <h2 class="reviews__title">
-            Что говорят наши клиенты?
+              Что говорят наши клиенты?
             </h2>
           </div>
 
           <div class="reviews-wrapper__comp">
             <div class="companies-card">
-              <div class="card__img">
+              <a href="https://yandex.ru/maps/org/tsentr_professionalnoy_bukhgalterii/1241002253/?ll=37.596201%2C55.706676&utm_campaign=v1&utm_medium=rating&utm_source=share&z=14" target="_blank" class="card__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/yandex-maps.png"
-                    alt="Яндекс Карты">
-              </div>
+                     alt="Яндекс Карты">
+              </a>
               <div class="card__score">
                 <span class="rating__score">Рейтинг 5.0</span>
                 <span class="rating__stars">★★★★★</span>
               </div>
-
             </div>
             <div class="companies-card">
-              <div class="card__img">
+              <a href="https://profi.ru/profile/YapparovBZ/share" target="_blank" class="card__img">
                 <img src="<?php echo get_template_directory_uri(); ?>/static/img/social-proof-logos/profi-ru-2.png"
-                      alt="Profi.ru">
-              </div>
+                     alt="Profi.ru">
+              </a>
               <div class="card__score">
                 <span class="rating__score">Рейтинг 4.92</span>
                 <span class="rating__stars">★★★★★</span>
@@ -640,46 +646,36 @@ get_header();
           </div>
 
           <div class="reviews-tiles" id="reviewsScrollArea">
+            <?php
+            $reviews_query = new WP_Query([
+              'post_type'      => 'clients',
+              'posts_per_page' => 6,
+              'post_status'    => 'publish',
+            ]);
 
-            <div class="reviews__tile">
-              <div class="tile__bage-date">
-                <p>23/05/25</p>
-              </div>
-              <p class="tile__body-text">
-                Перешли из штатного бухгалтера в ЦПБ. Экономим более 500 тыс ₽ в год, отчётность всегда вовремя. Удобно, что можно работать полностью онлайн....
-              </p>
-              <p class="tile__person-date">
-                Анна, Москва (интернет-магазин)
-              </p>
-              <a href="#" class="tile__review-link">Смотреть полностью</a>
-            </div>
-
-            <div class="reviews__tile">
-              <div class="tile__bage-date">
-                <p>23/05/25</p>
-              </div>
-              <p class="tile__body-text">
-                Перешли из штатного бухгалтера в ЦПБ. Экономим более 500 тыс ₽ в год, отчётность всегда вовремя. Удобно, что можно работать полностью онлайн....
-              </p>
-              <p class="tile__person-date">
-                Анна, Москва (интернет-магазин)
-              </p>
-              <a href="#" class="tile__review-link">Смотреть полностью</a>
-            </div>
-
-            <div class="reviews__tile">
-              <div class="tile__bage-date">
-                <p>23/05/25</p>
-              </div>
-              <p class="tile__body-text">
-                Перешли из штатного бухгалтера в ЦПБ. Экономим более 500 тыс ₽ в год, отчётность всегда вовремя. Удобно, что можно работать полностью онлайн....
-              </p>
-              <p class="tile__person-date">
-                Анна, Москва (интернет-магазин)
-              </p>
-              <a href="#" class="tile__review-link">Смотреть полностью</a>
-            </div>
-
+            if ($reviews_query->have_posts()) :
+              while ($reviews_query->have_posts()) : $reviews_query->the_post();
+                $date = get_the_date('d/m/y');
+                $person = get_the_title();
+                $short_text = wp_trim_words(get_the_content(), 20, '...');
+                ?>
+                <div class="reviews__tile">
+                  <div class="tile__bage-date">
+                    <p><?php echo esc_html($date); ?></p>
+                  </div>
+                  <p class="tile__body-text">
+                    <?php echo esc_html($short_text); ?>
+                  </p>
+                  <p class="tile__person-date">
+                    <?php echo esc_html($person); ?>
+                  </p>
+                  <a href="<?php the_permalink(); ?>" class="tile__review-link">Смотреть полностью</a>
+                </div>
+              <?php
+              endwhile;
+              wp_reset_postdata();
+            endif;
+            ?>
           </div>
 
           <div class="slider-navigation">
@@ -693,9 +689,11 @@ get_header();
 
           <div class="industries-footer">
             <div class="footer-left">
-              <img src="<?php echo get_template_directory_uri(); ?>\static\img\icons\tiles\spheres3.png"
-                  alt="sphere icons" class="sphere-img">
-              <span class="spheres-text">120+ положительных отзывов <br>от бизнеса Москвы и МО</span>
+              <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/tiles/spheres3.png"
+                   alt="sphere icons" class="sphere-img">
+              <span class="spheres-text">
+            <?php echo $reviews_query->found_posts; ?>+ положительных отзывов <br>от бизнеса Москвы и МО
+          </span>
             </div>
             <a href="<?php echo home_url('/otzivi/'); ?>" class="btn btn_arr">Все отзывы</a>
           </div>
@@ -720,7 +718,7 @@ get_header();
             </p>
           </div>
           <div class="money-wrapper__right">
-            <img src="<?php echo get_template_directory_uri(); ?>/static/img/banner/stack.png" alt="Пачка денег">
+            <img src="<?php echo get_template_directory_uri(); ?>/static/img/banner/stack.png">
           </div>
 
         </div>
@@ -1165,7 +1163,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  От 5 до 30 дней — зависит от количества месяцев и объёма операций. После экспресс-аудита (до 48 часов) вы получите точный срок в смете.
                 </p>
               </div>
             </div>
@@ -1178,7 +1176,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Да. Если базы нет — мы создадим новую и перенесём данные из банков, Excel или отчётности. Также можем подключиться к вашей облачной 1С или организовать доступ через ЭДО.
                 </p>
               </div>
             </div>
@@ -1191,7 +1189,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Работаем по NDA и шифруем переданные файлы. Доступ имеют только бухгалтер и аудитор проекта. Передача документов — через защищённое облако, без мессенджеров и почты.
                 </p>
               </div>
             </div>
@@ -1204,7 +1202,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Мы запускаем срочный аудит и готовим корректную отчётность в течение 2–3 дней. Это помогает закрыть требование до начала проверки.
                 </p>
               </div>
             </div>
@@ -1217,7 +1215,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Да, всегда. После аудита вы получаете финальную смету, где указана цена, сроки и объём. Стоимость не меняется в процессе — никаких “доплат за допработы”.
                 </p>
               </div>
             </div>
@@ -1230,7 +1228,7 @@ get_header();
             <div class="accordion-item__body">
               <div class="accordion-item__content">
                 <p class="accordion-body__main-text">
-                  От 4 000 ₽/мес за нулевую отчётность. Цена фиксируется в договоре и не меняется.
+                  Да. После восстановления можно заключить договор на ежемесячное обслуживание. Это позволит сохранить порядок и избежать повторных ошибок.
                 </p>
               </div>
             </div>
@@ -1246,9 +1244,54 @@ get_header();
         </h1>
 
         <div class="buh-servises-short__text-wrapper" id="seo-text-wrapper">
-            <p class="buh-servises-short__text">
-                Мы восстанавливаем бухгалтерию за любой период — от одного месяца до нескольких лет, даже если часть документов утеряна. Специалисты Центра Профессиональной Бухгалтерии проводят аудит, проверяют корректность данных в 1С, сверяют расчёты с ИФНС и фондами, подготавливают и сдают отчётность.
-            </p>
+            <div class="buh-servises-short__text">
+                <h3>Восстановление учета — без помехи работе</h3>
+                <p>Восстановление учета, наведение порядка в бухгалтерии за любой период деятельности фирмы. Для ООО, для ИП и компаний других форм собственности в Москве. Определим, сколько стоит восстановление. Не дожидайтесь проверок и огромных штрафов! Работаем удаленно на аутсорсинге — эффективно помогаем, не мешая рабочему процессу.</p>
+
+                <h3>А вы уверены в своей бухгалтерии?</h3>
+                <p>Если в бухгалтерии не все «гладко», намного дешевле восстановить все документы и отчеты заранее, до того, как эти ошибки найдут фискалы. Быстро и конфиденциально найдем ошибки, восстановим нужные документы, сделаем все проводки в 1С, получим от контрагентов акты, накладные, договора. Порядок в бухгалтерии экономит деньги фирмы и нервы руководства.</p>
+                <p>Центр Профессиональной Бухгалтерии предлагает предприятиям всех форм собственности услуги по восстановлению бухгалтерского и налогового учета. Работаем быстро, конфиденциально, грамотно.</p>
+                <p>Необходимо в короткие сроки получить идеальный порядок в документации? Звоните! Мы специализируемся на восстановлении бухучета и добиваемся успеха даже в самых «запущенных» случаях.</p>
+
+                <h3>В каких случаях может понадобиться восстановление учета</h3>
+                <ol>
+                    <li>Восстановление бухучета необходимо перед предстоящей налоговой проверкой. Если вы знаете, что есть какие-то пробелы в ведении бухгалтерии, намного дешевле подстраховаться заранее, чем платить потом большие штрафы.</li>
+                    <li>После смены главного бухгалтера или сотрудников отдела, отвечающих за отдельные направления бухгалтерского или налогового учета. Полный «бардак» в документах — явление достаточно распространенное, и часто руководитель компании узнает о нем в самый неподходящий момент, например, во время внеплановой проверки. Мы поможем избежать проблем.</li>
+                    <li>В случае несовпадения данных «бумажных» вариантов документации и электронной версии. Мы проверим все сведения, найдем ошибки и найдем оптимальный способ, как восстановить данные.</li>
+                    <li>Когда часть документации (первичная бухгалтерия, отчеты в налоговую) просто отсутствуют. Такие ситуации встречаются сплошь и рядом и часто происходят из-за «человеческого фактора». Мы умеем оперативно находить все пробелы в документации и приводить бухгалтерию в идеальное состояние. Стоимость восстановления бухучета в этом случае будет несопоставимой с возможными штрафными санкциями.</li>
+                </ol>
+
+                <h3>Как ведется восстановление бухгалтерского учета</h3>
+                <ol>
+                    <li>Выясняем текущее положение с документацией.</li>
+                    <li>Составляем план восстановительных работ.</li>
+                    <li>Получаем нужные документы от контрагентов. Корректируем данные в 1С.</li>
+                    <li>Составляем все недостающие внутренние документы — приказы, авансовые отчеты, акты и пр.</li>
+                    <li>На основании восстановленных данных проводим корректировку налоговой документации и подаем ее в контролирующие органы.</li>
+                </ol>
+
+                <h3>Этапы по восстановлению бухучета</h3>
+
+                <h4>1. Диагностика, аудит бухгалтерии</h4>
+                <p>Первым важным этапом является несомненно диагностика. Обычно на старте применяется экспресс аудит — это срочный аудит бухгалтерского учета, который позволяет определить значимые пробелы и нарушения в сжатые сроки. Экспресс аудит можно так же заказать как отдельную услугу в нашей компании. В зависимости от ситуации, диагностика всех дел и документов в бухгалтерии проводится комплексно посредством детальной профессиональной экспертизы учета.</p>
+                <p><strong>Важно!</strong> Бухгалтерский аудит проводится за весь отчетный период. Это связано с неразрывным процессом в цепочках ошибок или неточностей. По итогу надо разбирать все внутренние проблемы бухгалтерии.</p>
+                <p>Для профессиональной оценки состояния учета наша компания выполняет сверку с контрагентами контролирующими организациями (ИФНС, ПФР и ФСС). Проверяет правильность начисления всех платежей в бюджет. Если предприятие осуществляет сделки в рамках ВЭД, особое внимание уделяется НДС.</p>
+
+                <h4>2. Восстановление бухгалтерского и налогового учета</h4>
+                <p>Экспертная оценка состояния бухгалтерии приводит к выявлению принципиальных или менее значительных нарушений бухучета, однако все их надо исправить. Это и называется — восстановить учет. Наведение порядка во всех документах бухгалтерии показывает реальное положение в компании со всеми финансовыми потоками и на всех уровнях. Это важно также при учете сделок с контрагентами.</p>
+
+                <h4>3. Вернуть налоговые переплаты</h4>
+                <p>Говоря о том, что восстановление учета — это в большей степени экономия, чем траты, мы во многом опираемся на опыт возврата налоговых переплат, которые зачастую могут даже покрыть все расходы на оказание услуги по восстановлению.</p>
+
+                <h3>Цена восстановления бухгалтерского учета</h3>
+                <p>Расценки зависят от объема документации, подлежащей восстановлению. Мы сможем назвать точную стоимость после первичного ознакомления с объемом работы. На то, сколько стоит восстановление бухгалтерского учета, влияют так же следующие факторы. Например — для ООО или ИП, в какой сфере бизнеса организация. Иногда цена за восстановление учета для компаний в сфере услуг, предприятий торговли, для турагентств может быть одинаковой или различаться.</p>
+                <p><strong>Важно!</strong> Для определения стоимости, как и вообще в работе по восстановлению бухгалтерского учета, мы всегда применяем индивидуальный подход, обеспечивая полную конфиденциальность.</p>
+
+                <h3>Конфиденциальность</h3>
+                <p>Мы понимаем, как важно для руководителей компаний, которые обратились к нам, сохранение полной конфиденциальности. Поэтому относимся к своей работе так, как адвокаты к своим клиентам: максимум помощи и никаких сведений, которые могут нанести заказчику хоть малейший ущерб.</p>
+                <p>Звоните! Мы проконсультируем вас по любым вопросам, связанным с восстановлением бухгалтерского и налогового учета. Цены на наши услуги — одни из самых лояльных.</p>
+                <p>Восстановление бухгалтерии — это не расходы, а экономия денег и нервов руководителя компании и главного бухгалтера.</p>
+            </div>
         </div>
 
         <button class="buh-servises-short__expand-btn" id="seo-expand-btn">
