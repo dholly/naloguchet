@@ -31,8 +31,8 @@ $calc_doc_counts = [
   ['value' => 'd200', 'label' => '151-200', 'checked' => false],
 ];
 
-$pricing_title = 'Стоимость обслуживания 2025';
-$pricing_description = 'Цены по тарифам на бухгалтерские услуги на 2025 год в компании ООО «Центр профессиональной бухгалтерии»';
+$pricing_title = 'Стоимость обслуживания 2026';
+$pricing_description = 'Цены по тарифам на бухгалтерские услуги на 2026 год в компании ООО «Центр профессиональной бухгалтерии»';
 
 $pricing_headers = [
   'Отрасль / Тип бизнеса',
@@ -190,9 +190,8 @@ get_header();
                           12 000 ₽
                         </div>
                       </div>
-                      <button type="button" class="block-calc__btn btn btn_arr">
-                        Отправить заявку
-                      </button>
+
+                      <?php echo do_shortcode('[fluentform_modal css_class="block-calc__btn btn btn_arr" form_id="3" btn_text="Отправить заявку"]'); ?>
                     </div>
                   </div>
 

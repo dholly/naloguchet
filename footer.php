@@ -1,35 +1,42 @@
 <?php
+// Проверяем, есть ли гео-город
+$geo_city = get_current_geo_city();
+
 // Данные для футера
 $footer_menu = [
-    ['title' => 'Цены', 'url' => '/ceny/'],
-    ['title' => 'Контакты', 'url' => '/kontakty/'],
-    ['title' => 'Гарантии', 'url' => '/garantii/'],
-    ['title' => 'Кейсы', 'url' => '/buhgalterskie-keysi/'],
-    ['title' => 'Наши сотрудники', 'url' => '/staff/'],
-    ['title' => 'Блог', 'url' => '/blog/'],
-    ['title' => 'Бухгалтерские документы', 'url' => '/bukhgalterskie-dokumenty/'],
-    ['title' => 'Отзывы', 'url' => '/otzivi/'],
+  ['title' => 'Цены', 'url' => '/ceny/'],
+  ['title' => 'Контакты', 'url' => '/kontakty/'],
+  ['title' => 'Гарантии', 'url' => '/garantii/'],
+  ['title' => 'Кейсы', 'url' => '/buhgalterskie-keysi/'],
+  ['title' => 'Наши сотрудники', 'url' => '/staff/'],
+  ['title' => 'Блог', 'url' => '/blog/'],
+  ['title' => 'Бухгалтерские документы', 'url' => '/bukhgalterskie-dokumenty/'],
+  ['title' => 'Отзывы', 'url' => '/otzivi/'],
 ];
 
 $company_info = [
-    ['text' => 'ИП Яппаров Булат Зуфарович'],
-    ['text' => 'ОГРНИП 321774600538560'],
-    ['text' => 'ИНН 771372793813'],
-    ['text' => 'Политика конфиденциальности', 'url' => '/politika-konfidencialnosti/'],
+  ['text' => 'ИП Яппаров Булат Зуфарович'],
+  ['text' => 'ОГРНИП 321774600538560'],
+  ['text' => 'ИНН 771372793813'],
+  ['text' => 'Политика конфиденциальности', 'url' => '/politika-konfidencialnosti/'],
 ];
 
+// Адрес зависит от гео-страницы
+$default_address = 'г. Москва, ул. Орджоникидзе, 11';
+$current_address = $geo_city ? $geo_city['address'] : $default_address;
+
 $contacts = [
-    'phone' => '+7 (495) 445-60-80',
-    'phone_link' => '+74954456080',
-    'email' => 'info@uchetnalogipravo.ru',
-    'address' => 'г. Москва, ул. Орджоникидзе, 11',
-    'worktime' => 'Пн–Пт, 9:00–18:00',
+  'phone' => '+7 (495) 445-60-80',
+  'phone_link' => '+74954456080',
+  'email' => 'info@uchetnalogipravo.ru',
+  'address' => $current_address,
+  'worktime' => 'Пн–Пт, 9:00–18:00',
 ];
 
 $copyright = [
-    'year_start' => '2009',
-    'year_end' => date('Y'),
-    'company' => 'Центр Профессиональной Бухгалтерии',
+  'year_start' => '2009',
+  'year_end' => date('Y'),
+  'company' => 'Центр Профессиональной Бухгалтерии',
 ];
 ?>
 

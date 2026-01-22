@@ -148,7 +148,11 @@ $calc_image = get_template_directory_uri() . '/static/img/calc/image-01.jpg';
             </div>
             <div class="calc-step__nav">
               <button type="button" class="calc-step__nav-btn calc-step__nav-btn_prev" data-prev>Назад</button>
-              <button type="button" class="calc-step__nav-btn calc-step__nav-btn_submit btn btn_arr" data-submit>Оставить заявку</button>
+
+              <div class="data-submit">
+                <?php echo do_shortcode('[fluentform_modal css_class="calc-step__nav-btn calc-step__nav-btn_submit btn btn_arr" form_id="3" btn_text="Оставить заявку"]'); ?>
+              </div>
+
             </div>
           </div>
 

@@ -5616,6 +5616,8 @@ section:first-child {
     flex-direction: column;
     min-height: 350px;
 
+    position: relative;
+
     @media (max-width: 600px) {
       min-height: 300px;
     }

@@ -10,13 +10,13 @@ $socials = [
     [
         'name' => 'Telegram',
         'icon' => 'tg.svg',
-        'url' => '#',
+        'url' => 'https://t.me/cpb_info',
     ],
-    [
+/*    [
         'name' => 'WhatsApp',
         'icon' => 'wh.svg',
         'url' => '#',
-    ],
+    ],*/
 ];
 
 
