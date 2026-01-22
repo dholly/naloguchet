@@ -18,7 +18,8 @@ $company_info = [
   ['text' => 'ИП Яппаров Булат Зуфарович'],
   ['text' => 'ОГРНИП 321774600538560'],
   ['text' => 'ИНН 771372793813'],
-  ['text' => 'Политика конфиденциальности', 'url' => '/politika-konfidencialnosti/'],
+  ['text' => 'Политика обработки и защиты персональных данных', 'url' => '/politika-konfidencialnosti/'],
+  ['text' => 'Условия использования материалов сайта', 'url' => '/terms/'],
 ];
 
 // Адрес зависит от гео-страницы
@@ -138,9 +139,21 @@ $copyright = [
     </div>
 </footer>
 
-</div><!-- .wrapper -->
+</div>
 
 <?php wp_footer(); ?>
+
+<div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-banner__wrapper">
+        <p class="cookie-banner__text">
+            Мы обрабатываем данные посетителей и используем cookie согласно
+            <a href="/politika-konfidencialnosti/" target="_blank">политике конфиденциальности</a>.
+        </p>
+        <button id="cookie-accept" class="cookie-banner__btn">
+            Хорошо
+        </button>
+    </div>
+</div>
 
 </body>
 </html>

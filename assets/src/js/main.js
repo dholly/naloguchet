@@ -261,6 +261,26 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// ================= куки =======================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieBtn = document.getElementById('cookie-accept');
+
+    if (!localStorage.getItem('cookie_accepted')) {
+        setTimeout(() => {
+            cookieBanner.classList.add('is-visible');
+        }, 1000);
+    }
+
+    if (cookieBtn) {
+        cookieBtn.addEventListener('click', () => {
+            cookieBanner.classList.remove('is-visible');
+            localStorage.setItem('cookie_accepted', 'true');
+        });
+    }
+});
+
 GLightbox({
   selector: '.glightbox',
   touchNavigation: true,

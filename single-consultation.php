@@ -5,16 +5,30 @@
             <h1 class="cons-post__title">
                 <?php the_title(); ?>
             </h1>
+
+            <div class="cons-post__meta">
+                <span class="cons-post__date">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6667 2.66667H3.33333C2.59695 2.66667 2 3.26362 2 4V13.3333C2 14.0697 2.59695 14.6667 3.33333 14.6667H12.6667C13.403 14.6667 14 14.0697 14 13.3333V4C14 3.26362 13.403 2.66667 12.6667 2.66667Z" stroke="#999999" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.6667 1.33333V4" stroke="#999999" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5.33333 1.33333V4" stroke="#999999" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 6.66667H14" stroke="#999999" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
+                    Дата ответа: <?php echo get_the_date('d F Y'); ?>
+                </span>
+            </div>
+
             <div class="cons-post__columns">
                 <div class="cons-sidebar">
                     <div class="cons-sidebar__body">
                         <div class="cons-sidebar__person-info">
-                            <img src="<?php echo get_template_directory_uri(); ?>/static/img/faq-post/avatar.jpg" alt="Avatar">
+                            <img src="<?php echo get_template_directory_uri(); ?>/static/img/faq-post/avatar.png" alt="Avatar">
                             <span>Булат Япаров</span>
                         </div>
 
                         <p class="cons-sidebar__text">
-                            Отвечает эксперт профессиональной бухгалтерии. Экономическое высшее, опыт бухгалтером 25 лет.
+                            Отвечает эксперт профессиональной бухгалтерии. Экономическое высшее, опыт бухгалтером 30 лет.
                         </p>
                         <a href="#ask-form" class="cons-sidebar__btn btn btn_arr">
                             Задать вопрос

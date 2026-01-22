@@ -304,13 +304,25 @@ get_header();
           <div class="table-header-cell">Стоимость в месяц</div>
 
           <div class="table-cell">ООО на УСН доходы</div>
-          <div class="table-cell">от 10000 руб.</div>
+          <div class="table-cell">от 20000 руб.</div>
 
           <div class="table-cell">ООО на УСН доходы минус расходы</div>
-          <div class="table-cell">от 15000 руб.</div>
+          <div class="table-cell">от 26000 руб.</div>
+
+          <div class="table-cell">ООО на УСН доходы с НДС </div>
+          <div class="table-cell">от 25000 руб.</div>
+
+          <div class="table-cell">ООО на УСН доходы минус расходы с НДС </div>
+          <div class="table-cell">от 30000 руб.</div>
+
+          <div class="table-cell">ООО на АУСН доходы</div>
+          <div class="table-cell">от 20000 руб.</div>
+
+          <div class="table-cell">ООО на АУСН доходы минус расходы</div>
+          <div class="table-cell">от 26000 руб.</div>
 
           <div class="table-cell">ООО на общем режиме с НДС</div>
-          <div class="table-cell">от 19000 руб.</div>
+          <div class="table-cell">от 32000 руб.</div>
         </div>
       </div>
     </section>

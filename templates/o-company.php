@@ -25,7 +25,7 @@ get_header();
             </div>
 
             <div class="pro-center__stats">
-                
+
                 <div class="pro-center__card">
                     <div class="pro-center__card-header">
                         <span class="text-blue">350+</span>
@@ -156,12 +156,12 @@ get_header();
                 <div class="partners-amount__card-first">
                     <p class="partners-amount__card-first-title">Количество компаний</p>
                     <div class="partners-amount__card-first-body">
-                        
+
                         <div class="partners-amount__card-first-body-row">
                             <p class="partners-amount__card-first-body-row-name">Торговля</p>
                             <div class="partners-amount__card-first-body-row-stats">
 
-                                <div class="partners-amount__card-first-body-row-stats-bar" style="width: 100%;"></div> 
+                                <div class="partners-amount__card-first-body-row-stats-bar" style="width: 100%;"></div>
                                 <p class="partners-amount__card-first-body-row-stats-amount">95 клиентов</p>
                             </div>
                         </div>
@@ -178,7 +178,7 @@ get_header();
                             <p class="partners-amount__card-first-body-row-name">Производство</p>
                             <div class="partners-amount__card-first-body-row-stats">
 
-                                <div class="partners-amount__card-first-body-row-stats-bar" style="width: 40%;"></div> 
+                                <div class="partners-amount__card-first-body-row-stats-bar" style="width: 40%;"></div>
                                 <p class="partners-amount__card-first-body-row-stats-amount">30 клиентов</p>
                             </div>
                         </div>
@@ -195,7 +195,7 @@ get_header();
                             <p class="partners-amount__card-first-body-row-name">НКО</p>
                             <div class="partners-amount__card-first-body-row-stats">
 
-                                <div class="partners-amount__card-first-body-row-stats-bar" style="width: 10%;"></div> 
+                                <div class="partners-amount__card-first-body-row-stats-bar" style="width: 10%;"></div>
                                 <p class="partners-amount__card-first-body-row-stats-amount">7 клиентов</p>
                             </div>
                         </div>
@@ -216,7 +216,7 @@ get_header();
                     </p>
 
                     <div class="partners-amount__card-second-chart">
-                        
+
                         <div class="partners-amount__card-second-chart-col">
                             <div class="partners-amount__card-second-chart-col-label">до 50</div>
                             <div class="partners-amount__card-second-chart-col-bar" style="--h: 20%;">
@@ -249,13 +249,13 @@ get_header();
             </div>
 
             <h1 class="partners-amount__title">Решили проблемы с <br>бухгалтерией для <span class="text-blue">145 клиентов</span></h1>
-        
+
             <div class="partners-amount__second-card-wrapper">
-                
+
                 <div class="partners-amount__second-card-first-part">
-                    
+
                     <div class="partners-amount__second-card-first-part-first-half">
-                        
+
                         <div class="partners-amount__second-card-first-part-first-half-rows">
                             <div class="partners-amount__second-card-first-part-first-half-rows-circle circle-blue"></div>
                             <div class="partners-amount__second-card-first-part-first-half-rows-name">Торговля</div>
@@ -318,7 +318,7 @@ get_header();
         <div class="progress__container">
             <h1 class="progress__title">За 16 лет помогли <br> <span class="text-blue">более 500 компаниям</span> </h1>
             <p class="progress__subtitle">Среди наших клиентов — популярные бренды, резиденты Сколково и Forbes</p>
-            
+
             <div class="scroll-indicator">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.19795 1.51494L0.497952 1.51294V3.51294L2.36995 3.51394C-1.21305 8.58794 -0.733048 15.6519 3.80795 20.1939L4.51495 20.8999L5.92895 19.4859L5.22195 18.7789C1.29995 14.8569 0.958952 8.70994 4.19795 4.39994V6.49994H6.19795V1.51494ZM7.97395 6.63794C7.45496 6.93767 7.07628 7.43127 6.92119 8.01018C6.7661 8.58909 6.84731 9.2059 7.14695 9.72494L11.179 16.7079L8.59595 17.5879C7.87695 17.8339 7.37595 18.4879 7.32795 19.2459L7.21795 20.9559L13.736 23.6479C14.528 23.9749 15.426 23.9159 16.167 23.4879L22.304 19.9449C22.8046 19.6552 23.2016 19.2155 23.4388 18.688C23.676 18.1605 23.7415 17.5717 23.626 17.0049L22.494 11.4789C22.3663 10.8594 22.0298 10.3026 21.5406 9.90154C21.0515 9.50051 20.4395 9.27966 19.807 9.27594L15.61 9.25594C15.1214 9.25389 14.641 9.38158 14.218 9.62594L12.786 10.4519L11.061 7.46494C10.7612 6.94595 10.2676 6.56726 9.68871 6.41218C9.1098 6.25709 8.49299 6.3383 7.97395 6.63794Z" fill="#D4D4D4" />
@@ -411,8 +411,8 @@ get_header();
                         <div class="progress__grid-card-list-item">Геннис Групп</div>
                     </div>
                 </div>
-            </div>    
-            <h2 class="progress__bottom-title"><span class="text-blue">84% клиентов остаются с нами более трёх лет</span> — потому что ценят стабильность, точность и честный сервис</h2>                
+            </div>
+            <h2 class="progress__bottom-title"><span class="text-blue">84% клиентов остаются с нами более трёх лет</span> — потому что ценят стабильность, точность и честный сервис</h2>
         </div>
     </section>
 
@@ -420,7 +420,7 @@ get_header();
         <div class="audit-steps__container">
             <h1 class="audit-steps__title">Пять уровней контроля</h1>
             <div class="audit-steps">
-                
+
                 <div class="audit-steps__item">
                     <div class="audit-steps__item-header">
                         <span class="audit-steps__item-num">01</span>
@@ -495,8 +495,8 @@ get_header();
 
                 <div class="founder-block__col-photo">
                     <div class="founder-block__photo-container">
-                        <img src="<?php echo get_template_directory_uri(); ?>/static/img/human/bulat-yapparov-founder-block.png" 
-                            alt="Булат Яппаров" 
+                        <img src="<?php echo get_template_directory_uri(); ?>/static/img/human/bulat-yapparov-founder-block.png"
+                            alt="Булат Яппаров"
                             class="founder-block__photo-img">
                     </div>
                 </div>
@@ -519,14 +519,14 @@ get_header();
                     </div>
 
                     <div class="founder-block__list">
-                        
+
                         <div class="founder-block__list-item">
                             <div class="founder-block__list-icon">
                                 <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1 5L4.5 8.5L11 1" stroke="#DA4F39" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
-                            <p class="founder-block__list-text">В профессии более 25 лет, из них 16 лет руководит командой аутсорсинговых бухгалтеров</p>
+                            <p class="founder-block__list-text">В профессии более 30 лет, из них 16 лет руководит командой аутсорсинговых бухгалтеров</p>
                         </div>
 
                         <div class="founder-block__list-item">
@@ -570,7 +570,7 @@ get_header();
 
                 <div class="founder-block__philosophy">
                     <p class="founder-block__philosophy-text">
-                        <span>Наша философия проста: надёжность, ответственность и уважение к бизнесу клиента.</span> 
+                        <span>Наша философия проста: надёжность, ответственность и уважение к бизнесу клиента.</span>
                         Эти принципы не меняются с 2009 года — именно они сделали ЦПБ тем, чем она является сегодня.
                     </p>
                 </div>

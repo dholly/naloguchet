@@ -66,7 +66,7 @@ get_header();
           <div class="hero-image-block">
             <img
               src="<?php echo get_template_directory_uri(); ?>/static/img/team/Alina-main.png"
-              alt="Булат Яппаров"
+              alt="Алина Яппарова"
               class="hero-person-img"
             >
 
@@ -301,19 +301,29 @@ get_header();
           <div class="table-header-cell">Система налогообложения</div>
           <div class="table-header-cell">Стоимость в месяц</div>
 
-          <div class="table-cell">
-            ИП на УСН доходы
-          </div>
-          <div class="table-cell">от 8000 руб.</div>
+          <div class="table-cell">ИП на УСН доходы</div>
+          <div class="table-cell">от 12000 руб.</div>
 
           <div class="table-cell">ИП на патенте</div>
-          <div class="table-cell">от 8000 руб.</div>
+          <div class="table-cell">от 12000 руб.</div>
 
           <div class="table-cell">ИП на УСН доходы минус расходы</div>
-          <div class="table-cell">от 10000 руб.</div>
+          <div class="table-cell">от 19000 руб.</div>
+
+          <div class="table-cell">ИП на АУСН доходы</div>
+          <div class="table-cell">от 12000 руб.</div>
+
+          <div class="table-cell">ИП на АУСН доходы минус расходы</div>
+          <div class="table-cell">от 19000 руб.</div>
+
+          <div class="table-cell">ИП на УСН доходы с НДС </div>
+          <div class="table-cell">от 17000 руб.</div>
+
+          <div class="table-cell">ИП на УСН доходы минус расходы с НДС</div>
+          <div class="table-cell">от 24000 руб.</div>
 
           <div class="table-cell">ИП на общем режиме с НДС</div>
-          <div class="table-cell">от 15000 руб.</div>
+          <div class="table-cell">от 26000 руб.</div>
         </div>
       </div>
     </section>

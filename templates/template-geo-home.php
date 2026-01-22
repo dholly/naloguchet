@@ -1101,7 +1101,8 @@ get_header();
             ?>
             <div class="faq-accordion__item">
               <div class="faq accordion__header">
-                <h3><?php echo esc_html($faq['question']); ?></h3>
+              <div  class="faq accordion__header">
+                <h3 style="max-width:1000px;"><?php echo esc_html($faq['question']); ?></h3>
               </div>
               <div class="accordion-item__body">
                 <div class="accordion-item__content">
