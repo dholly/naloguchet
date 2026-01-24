@@ -208,7 +208,8 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
-                Сверяем выписки, остатки, корректность кассовых операций и движения по расчётным счетам.
+                <p class="accordion-body__main-text"> Сверяем выписки, остатки, корректность кассовых операций и движения по расчётным счетам.</p>
+
               </div>
             </div>
           </div>
@@ -221,7 +222,7 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
-                Проверяем первичные документы, счета-фактуры, книги покупок и продаж, корректность отражения НДС.
+                <p class="accordion-body__main-text">Проверяем первичные документы, счета-фактуры, книги покупок и продаж, корректность отражения НДС.</p>
               </div>
             </div>
           </div>
@@ -234,7 +235,7 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
-                Анализируем правильность расчётов по УСН/ОСНО, проверяем декларации, 6-НДФЛ, РСВ и отчёты по фондам.
+                <p class="accordion-body__main-text"> Анализируем правильность расчётов по УСН/ОСНО, проверяем декларации, 6-НДФЛ, РСВ и отчёты по фондам.</p>
               </div>
             </div>
           </div>
@@ -247,7 +248,7 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
-                Проверяем начисления, удержания, соответствие сумм в отчётности и данных по сотрудникам.
+                <p class="accordion-body__main-text">Проверяем начисления, удержания, соответствие сумм в отчётности и данных по сотрудникам.</p>
               </div>
             </div>
           </div>
@@ -260,7 +261,7 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
-                Анализируем движение ТМЦ, остатки, себестоимость, выявляем расхождения между учётом и реальностью.
+                <p class="accordion-body__main-text">Анализируем движение ТМЦ, остатки, себестоимость, выявляем расхождения между учётом и реальностью.</p>
               </div>
             </div>
           </div>
@@ -273,7 +274,7 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
-                Проверяем амортизацию, карточки учёта, корректность отражения операций.
+                <p class="accordion-body__main-text">Проверяем амортизацию, карточки учёта, корректность отражения операций.</p>
               </div>
             </div>
           </div>
@@ -286,7 +287,7 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
-                Проводим сверки по налогам и взносам, выявляем долги и переплаты.
+                <p class="accordion-body__main-text">Проводим сверки по налогам и взносам, выявляем долги и переплаты.</p>
               </div>
             </div>
           </div>
@@ -299,7 +300,7 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
-                Проверяем корректность проводок, настройку плана счетов, наличие первички и соответствие данным отчётности.
+                <p class="accordion-body__main-text">Проверяем корректность проводок, настройку плана счетов, наличие первички и соответствие данным отчётности.</p>
               </div>
             </div>
           </div>
@@ -565,169 +566,45 @@ get_header();
         </h2>
 
         <div class="case-tiles__grid">
+          <?php
+          $cases_query = new WP_Query([
+            'post_type'      => 'buh_keysi',
+            'posts_per_page' => 6,
+            'post_status'    => 'publish',
+          ]);
 
-          <div class="case-card">
-            <div class="case-card__case-number">
-              <p>Кейс #1</p>
-            </div>
-            <img class="case-card__icon"
-                 src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\online-white.svg"
-                 alt="Online shops Icon">
-            <h3 class="case-card__title">Интернет-магазин</h3>
-            <div class="case-card__desc">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M8.75417 16.5005L3.52917 11.2755L4.83542 9.96921L8.75417 13.888L17.1646 5.47754L18.4708 6.78379L8.75417 16.5005Z"
-                  fill="url(#paint0_linear_262_1127)"/>
-                <defs>
-                  <linearGradient id="paint0_linear_262_1127" x1="11.0372" y1="16.5005" x2="11.0372" y2="5.47754"
-                                  gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#F0572D"/>
-                    <stop offset="1" stop-color="#CE441E"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-              <p>
-                Снизили задолженность по налогам на <span class="text-blue" style="font-weight: 590">3,7 млн ₽ (–88%)</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-card__case-number">
-              <p>Кейс #2</p>
-            </div>
-            <img class="case-card__icon"
-                 src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\online-white.svg"
-                 alt="Online shops Icon">
-            <h3 class="case-card__title">Строительная компания</h3>
-            <div class="case-card__desc">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M8.75417 16.5005L3.52917 11.2755L4.83542 9.96921L8.75417 13.888L17.1646 5.47754L18.4708 6.78379L8.75417 16.5005Z"
-                  fill="url(#paint0_linear_262_1127)"/>
-                <defs>
-                  <linearGradient id="paint0_linear_262_1127" x1="11.0372" y1="16.5005" x2="11.0372" y2="5.47754"
-                                  gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#F0572D"/>
-                    <stop offset="1" stop-color="#CE441E"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-              <p>
-                Вернули переплаченные налоги: <span class="text-blue" style="font-weight: 590">205 000 ₽</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-card__case-number">
-              <p>Кейс #3</p>
-            </div>
-            <img class="case-card__icon"
-                 src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\cafe-white.svg"
-                 alt="Online shops Icon">
-            <h3 class="case-card__title">Строительная компания</h3>
-            <div class="case-card__desc">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M8.75417 16.5005L3.52917 11.2755L4.83542 9.96921L8.75417 13.888L17.1646 5.47754L18.4708 6.78379L8.75417 16.5005Z"
-                  fill="url(#paint0_linear_262_1127)"/>
-                <defs>
-                  <linearGradient id="paint0_linear_262_1127" x1="11.0372" y1="16.5005" x2="11.0372" y2="5.47754"
-                                  gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#F0572D"/>
-                    <stop offset="1" stop-color="#CE441E"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-              <p>
-                Вернули переплаченные налоги: <span class="text-blue" style="font-weight: 590">205 000 ₽</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-card__case-number">
-              <p>Кейс #4</p>
-            </div>
-            <img class="case-card__icon"
-                 src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\online-white.svg"
-                 alt="Online shops Icon">
-            <h3 class="case-card__title">Интернет-магазин</h3>
-            <div class="case-card__desc">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M8.75417 16.5005L3.52917 11.2755L4.83542 9.96921L8.75417 13.888L17.1646 5.47754L18.4708 6.78379L8.75417 16.5005Z"
-                  fill="url(#paint0_linear_262_1127)"/>
-                <defs>
-                  <linearGradient id="paint0_linear_262_1127" x1="11.0372" y1="16.5005" x2="11.0372" y2="5.47754"
-                                  gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#F0572D"/>
-                    <stop offset="1" stop-color="#CE441E"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-              <p>
-                Снизили задолженность по налогам на <span class="text-blue" style="font-weight: 590">3,7 млн ₽ (–88%)</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-card__case-number">
-              <p>Кейс #2</p>
-            </div>
-            <img class="case-card__icon"
-                 src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\online-white.svg"
-                 alt="Online shops Icon">
-            <h3 class="case-card__title">Строительная компания</h3>
-            <div class="case-card__desc">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M8.75417 16.5005L3.52917 11.2755L4.83542 9.96921L8.75417 13.888L17.1646 5.47754L18.4708 6.78379L8.75417 16.5005Z"
-                  fill="url(#paint0_linear_262_1127)"/>
-                <defs>
-                  <linearGradient id="paint0_linear_262_1127" x1="11.0372" y1="16.5005" x2="11.0372" y2="5.47754"
-                                  gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#F0572D"/>
-                    <stop offset="1" stop-color="#CE441E"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-              <p>
-                Вернули переплаченные налоги: <span class="text-blue" style="font-weight: 590">205 000 ₽</span>
-              </p>
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-card__case-number">
-              <p>Кейс #3</p>
-            </div>
-            <img class="case-card__icon"
-                 src="<?php echo get_template_directory_uri(); ?>\static\img\icons\main-page\cafe-white.svg"
-                 alt="Online shops Icon">
-            <h3 class="case-card__title">Строительная компания</h3>
-            <div class="case-card__desc">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M8.75417 16.5005L3.52917 11.2755L4.83542 9.96921L8.75417 13.888L17.1646 5.47754L18.4708 6.78379L8.75417 16.5005Z"
-                  fill="url(#paint0_linear_262_1127)"/>
-                <defs>
-                  <linearGradient id="paint0_linear_262_1127" x1="11.0372" y1="16.5005" x2="11.0372" y2="5.47754"
-                                  gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#F0572D"/>
-                    <stop offset="1" stop-color="#CE441E"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-              <p>
-                Вернули переплаченные налоги: <span class="text-blue" style="font-weight: 590">205 000 ₽</span>
-              </p>
-            </div>
-          </div>
-
+          if ($cases_query->have_posts()) :
+            $case_num = 0;
+            while ($cases_query->have_posts()) : $cases_query->the_post();
+              $case_num++;
+              $icon = get_field('case_icon');
+              ?>
+              <div class="case-card">
+                <div class="case-card__case-number">
+                  <p>Кейс #<?php echo $case_num; ?></p>
+                </div>
+                <img class="case-card__icon"
+                     src="<?php echo $icon ? esc_url($icon['url']) : get_template_directory_uri() . '/static/img/icons/main-page/online-white.svg'; ?>"
+                     alt="<?php the_title_attribute(); ?>">
+                <h3 class="case-card__title"><?php the_title(); ?></h3>
+                <div class="case-card__desc">
+                  <svg style="display: none" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.75417 16.5005L3.52917 11.2755L4.83542 9.96921L8.75417 13.888L17.1646 5.47754L18.4708 6.78379L8.75417 16.5005Z" fill="url(#paint0_linear_<?php echo $case_num; ?>)"/>
+                    <defs>
+                      <linearGradient id="paint0_linear_<?php echo $case_num; ?>" x1="11.0372" y1="16.5005" x2="11.0372" y2="5.47754" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#F0572D"/>
+                        <stop offset="1" stop-color="#CE441E"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <p><?php echo get_the_excerpt(); ?></p>
+                </div>
+              </div>
+            <?php
+            endwhile;
+            wp_reset_postdata();
+          endif;
+          ?>
         </div>
 
         <div class="industries-footer">

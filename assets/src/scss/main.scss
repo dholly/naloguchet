@@ -75,7 +75,7 @@ $color-text-light: #2f2f30;
 }
 
 section:first-child {
-  padding-top: 160px;
+  padding-top: 240px;
 }
 
 // =============================================
@@ -184,9 +184,17 @@ section:first-child {
   &__items {
     display: flex;
     gap: 30px;
-    justify-content: space-between;
     flex-wrap: wrap;
   }
+
+  @media (max-width: 1200px) {
+    // .contacts__items
+    &__items {
+     display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+
 
   // .contacts__item
   &__item {
@@ -6058,4 +6066,94 @@ section:first-child {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+
+.address-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+}
+
+.cities-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.cities-modal.is-open {
+  display: block;
+}
+
+.cities-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.cities-modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.cities-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #999;
+}
+
+.cities-modal__title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.cities-modal__list {
+  display: grid;
+  gap: 12px;
+}
+
+.cities-modal__item {
+  display: block;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s;
+}
+
+.cities-modal__item:hover {
+  background: #e9ecef;
+}
+
+.cities-modal__city {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.cities-modal__address {
+  font-size: 14px;
+  color: #666;
 }
