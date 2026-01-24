@@ -379,7 +379,7 @@ get_header();
               <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/tiles/spheres3.png"
                    alt="sphere icons" class="sphere-img">
               <span class="spheres-text">
-            <?php echo $reviews_query->found_posts; ?>+ положительных отзывов <br>от бизнеса Москвы и МО
+            120+ положительных отзывов <br>от бизнеса Москвы и МО
           </span>
             </div>
             <a href="<?php echo home_url('/otzivi/'); ?>" class="btn btn_arr">Все отзывы</a>

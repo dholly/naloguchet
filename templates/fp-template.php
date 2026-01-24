@@ -749,7 +749,7 @@ get_header();
           <div class="footer-left">
             <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/tiles/spheres2.png"
                  alt="sphere icons" class="sphere-img">
-            <span class="spheres-text">Еще более 120+ реальных результатов наших клиентов</span>
+            <span class="spheres-text">Еще более 40+ реальных результатов наших клиентов</span>
           </div>
           <a href="<?php echo get_post_type_archive_link('buh_keysi'); ?>" class="btn btn_arr">Все кейсы</a>
         </div>
@@ -841,7 +841,7 @@ get_header();
               <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/tiles/spheres3.png"
                    alt="sphere icons" class="sphere-img">
               <span class="spheres-text">
-            <?php echo $reviews_query->found_posts; ?>+ положительных отзывов <br>от бизнеса Москвы и МО
+            120+ положительных отзывов от <br>бизнеса Москвы и МО
           </span>
             </div>
             <a href="<?php echo home_url('/otzivi/'); ?>" class="btn btn_arr">Все отзывы</a>

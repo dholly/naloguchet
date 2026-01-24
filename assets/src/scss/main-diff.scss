@@ -1508,9 +1508,9 @@ img {
   align-items: center;
 }
 
-.spheres-text {
-  max-width: 380px;
-}
+// .spheres-text {
+//   max-width: 400px;
+// }
 
 @media screen and (max-width: 420px) {
   .calc-body__sub-wrapper a {
@@ -3410,6 +3410,17 @@ img {
   .faq-accordion__subtitle {
     max-width: 590px;
     margin: 0 auto;
+  }
+}
+
+.pricing__link {
+  color: #2d6281; 
+  text-decoration: underline;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #da4f39;
+    text-decoration: none;
   }
 }
 

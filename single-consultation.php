@@ -24,7 +24,7 @@
                     <div class="cons-sidebar__body">
                         <div class="cons-sidebar__person-info">
                             <img src="<?php echo get_template_directory_uri(); ?>/static/img/faq-post/avatar.png" alt="Avatar">
-                            <span>Булат Япаров</span>
+                            <span>Булат Яппаров</span>
                         </div>
 
                         <p class="cons-sidebar__text">

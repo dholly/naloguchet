@@ -16,7 +16,7 @@ get_header();
             </h1>
 
             <div class="pro-center__avatars-wrapper">
-                <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/round-1.jpg"
+                <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/round-1.png"
                 alt="Команда часть 1"
                 class="pro-center__avatar-img">
                 <img src="<?php echo get_template_directory_uri(); ?>/static/img/team/round-2.png"

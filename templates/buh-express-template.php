@@ -480,7 +480,7 @@ get_header();
             alt="fire" id="pricing__icon">
 
         <p class="pricing__subtitle">
-            При заказе <span class="text-blue" style="text-decoration: underline #2d6281;">восстановления бухгалтерии</span> — аудит проводится бесплатно.
+            При заказе <a href="/buh-vosstanovlenie/" class="pricing__link">восстановления бухгалтерии</a> — аудит проводится бесплатно.
         </p>
 
         <div class="scroll-indicator">

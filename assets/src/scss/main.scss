@@ -1125,7 +1125,67 @@ section:first-child {
     font-size: 14px;
     line-height: 120%;
   }
+}
 
+// это стили для блока с файлом
+
+.text-block {
+  .ren8 {
+    background: #f9f9f9; 
+    border: 1px solid #e5e5e5; 
+    border-radius: 4px;
+    padding: 25px;
+    margin: 40px 0; 
+    box-sizing: border-box;
+
+    & > p:first-child {
+      font-weight: 600; 
+      font-size: 18px;
+      color: #2f2f30;
+      margin-bottom: 12px;
+    }
+
+    & > p:last-child {
+      display: flex; 
+      align-items: center;
+    }
+
+    img.fileico {
+      width: 32px;
+      height: auto;
+      margin-right: 15px;
+      display: block;
+    }
+
+    a.bilnk {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      color: #2d6281; 
+      text-decoration: underline;
+      transition: color 0.3s ease;
+      word-break: break-word; 
+
+      &:hover {
+        text-decoration: none;
+        color: #da4f39; 
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .text-block .ren8 {
+    padding: 20px;
+    
+    & > p:first-child {
+      font-size: 16px;
+    }
+
+    a.bilnk {
+      font-size: 14px;
+    }
+  }
 }
 
 //====================================================================================================
