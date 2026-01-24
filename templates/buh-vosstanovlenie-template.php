@@ -207,7 +207,8 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
-                Проверяем выписки, сверяем остатки, восстанавливаем кассовые ордера и движение денежных средств.
+                <p class="accordion-body__main-text">  Проверяем выписки, сверяем остатки, восстанавливаем кассовые ордера и движение денежных средств.</p>
+
               </div>
             </div>
           </div>
@@ -220,7 +221,9 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
+                <p class="accordion-body__main-text">
                 Восстанавливаем первичные документы, счета-фактуры, книги покупок/продаж, НДС.
+                </p>
               </div>
             </div>
           </div>
@@ -233,7 +236,9 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
+                <p class="accordion-body__main-text">
                 Пересчитываем налоги (УСН, ОСНО, НДС, страховые), формируем и сдаём корректные декларации.
+                </p>
               </div>
             </div>
           </div>
@@ -246,7 +251,9 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
+                <p class="accordion-body__main-text">
                 Пересчитываем начисления, формируем отчёты по ФСС/ПФР, корректируем ошибки в 6-НДФЛ и РСВ.
+                </p>
               </div>
             </div>
           </div>
@@ -259,7 +266,9 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
+                <p class="accordion-body__main-text">
                 Восстанавливаем движение ТМЦ, инвентаризируем остатки, настраиваем учёт МПЗ и себестоимости.
+                </p>
               </div>
             </div>
           </div>
@@ -272,7 +281,9 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
+                <p class="accordion-body__main-text">
                 Восстанавливаем карточки ОС, амортизацию, учёт НМА и лизинга.
+                </p>
               </div>
             </div>
           </div>
@@ -285,7 +296,9 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
+                <p class="accordion-body__main-text">
                 Формируем недостающие приказы, трудовые договоры, личные карточки.
+                </p>
               </div>
             </div>
           </div>
@@ -298,7 +311,9 @@ get_header();
             </div>
             <div class="accordion-item__body">
               <div class="accordion-item__content">
+                <p class="accordion-body__main-text">
                 Проводим сверки по актам, уточняем долги и переплаты, восстанавливаем корректные сальдо.
+                </p>
               </div>
             </div>
           </div>

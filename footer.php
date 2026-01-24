@@ -1,6 +1,9 @@
 <?php
 // Проверяем, есть ли гео-город
 $geo_city = get_current_geo_city();
+// Адрес зависит от гео-страницы
+$default_address = 'г. Москва, ул. Орджоникидзе, 11';
+$current_address = $geo_city ? $geo_city['address'] : $default_address;
 
 // Данные для футера
 $footer_menu = [
@@ -22,9 +25,7 @@ $company_info = [
   ['text' => 'Условия использования материалов сайта', 'url' => '/terms/'],
 ];
 
-// Адрес зависит от гео-страницы
-$default_address = 'г. Москва, ул. Орджоникидзе, 11';
-$current_address = $geo_city ? $geo_city['address'] : $default_address;
+
 
 $contacts = [
   'phone' => '+7 (495) 445-60-80',

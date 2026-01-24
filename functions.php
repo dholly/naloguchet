@@ -334,3 +334,96 @@ add_action('wp_head', function() {
     echo '<!-- GEO DEBUG: city=' . get_query_var('geo_city') . ' home=' . get_query_var('geo_home') . ' -->';
   }
 });
+
+/**
+ * SEO данные для городов
+ */
+function get_geo_seo_data($city_prepositional) {
+  return [
+    'title' => "Аутсорсинг бухгалтерии в {$city_prepositional} — бухгалтерское обслуживание для бизнеса | ЦПБ",
+    'description' => "Аутсорсинг бухгалтерии в {$city_prepositional}: ведение бухгалтерского и налогового учёта, отчётность, взаимодействие с ИФНС и фондами. Работаем по договору.",
+  ];
+}
+
+/**
+ * Yoast SEO: Title для гео-страниц
+ */
+add_filter('wpseo_title', function($title) {
+  $city = get_current_geo_city();
+
+  if ($city && get_query_var('geo_home')) {
+    $seo = get_geo_seo_data($city['name_prepositional']);
+    return $seo['title'];
+  }
+
+  return $title;
+});
+
+/**
+ * Yoast SEO: Meta description для гео-страниц
+ */
+add_filter('wpseo_metadesc', function($description) {
+  $city = get_current_geo_city();
+
+  if ($city && get_query_var('geo_home')) {
+    $seo = get_geo_seo_data($city['name_prepositional']);
+    return $seo['description'];
+  }
+
+  return $description;
+});
+
+/**
+ * Yoast SEO: Canonical URL для гео-страниц
+ */
+add_filter('wpseo_canonical', function($canonical) {
+  $city = get_current_geo_city();
+
+  if ($city && get_query_var('geo_home')) {
+    return home_url('/' . $city['slug'] . '/');
+  }
+
+  return $canonical;
+});
+
+/**
+ * Yoast SEO: OG Title для гео-страниц
+ */
+add_filter('wpseo_opengraph_title', function($title) {
+  $city = get_current_geo_city();
+
+  if ($city && get_query_var('geo_home')) {
+    $seo = get_geo_seo_data($city['name_prepositional']);
+    return $seo['title'];
+  }
+
+  return $title;
+});
+
+/**
+ * Yoast SEO: OG Description для гео-страниц
+ */
+add_filter('wpseo_opengraph_desc', function($description) {
+  $city = get_current_geo_city();
+
+  if ($city && get_query_var('geo_home')) {
+    $seo = get_geo_seo_data($city['name_prepositional']);
+    return $seo['description'];
+  }
+
+  return $description;
+});
+
+/**
+ * Yoast SEO: OG URL для гео-страниц
+ */
+add_filter('wpseo_opengraph_url', function($url) {
+  $city = get_current_geo_city();
+
+  if ($city && get_query_var('geo_home')) {
+    return home_url('/' . $city['slug'] . '/');
+  }
+
+  return $url;
+});
+

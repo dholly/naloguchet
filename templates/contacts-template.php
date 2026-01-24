@@ -66,6 +66,18 @@ $contacts_data = [
                     </div>
                     <div class="contacts__info"><?php echo esc_html($contacts_data['metro']); ?></div>
                 </div>
+
+              <?php foreach (get_geo_cities() as $slug => $city): ?>
+                <div class="contacts__item">
+                  <div class="contacts__badge">
+                    <div class="contacts__icon">
+                      <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/geo-2.svg" alt="Geo">
+                    </div>
+                    <span><?php echo esc_html($city['name']); ?></span>
+                  </div>
+                  <div class="contacts__info"><?php echo esc_html($city['address']); ?></div>
+                </div>
+              <?php endforeach; ?>
             </div>
         </div>
     </section>

@@ -50,13 +50,13 @@ header {
 
 	// Socials
 	&:first-child {
-		@include respond(936px) {
+		@include respond(1072px) {
 			display: none;
 		}
 	}
 
 	&:nth-child(2) {
-		@include respond($tablet) {
+		@include respond(1072px) {
 			display: none;
 		}
 	}
@@ -65,7 +65,7 @@ header {
 .header__item:last-child {
     border-right: none;
     justify-content: flex-end;
-	@include respond($tablet) {
+	@include respond(1072px) {
 		justify-content: flex-start;
 		padding-left: 20px;
 	}
@@ -75,6 +75,7 @@ header {
   display: flex;
   align-items: center;
   height: 100%;
+  gap: 10px;
 }
 
 .socials-row span {
@@ -93,7 +94,7 @@ header {
     display: block;
     width: 6px;
     height: 6px;
-    background-color: #5BFF62; 
+    background-color: #5BFF62;
     border-radius: 50%;
     flex-shrink: 0;
   }
@@ -108,7 +109,6 @@ header {
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  margin-left: 10px;
 }
 
 .social__link {
@@ -119,24 +119,35 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s;
   background: #2d6281;
-  
+
+  transition:
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.2s ease,
+    box-shadow 0.2s ease;
+
   @media (any-hover: hover) {
     &:hover {
-      opacity: 0.7;
+      filter: brightness(1.15);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(45, 98, 129, 0.3);
     }
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.95);
+    filter: brightness(0.95);
   }
 
   img {
     width: 18px;
     height: 18px;
-    display: block; 
+    display: block;
   }
 
   img[src*="tg.svg"] {
-    padding-right: 2px; 
-    margin-top: 1px; 
+    padding-right: 2px;
+    margin-top: 1px;
   }
 }
 
@@ -181,14 +192,14 @@ header {
 #open-sidebar, #close-sidebar, #short-phone-btn {display: none;}
 
 #open-sidebar {
-    @include respond($tablet) {
-        display: flex; 
-        margin-left: auto; 
+    @include respond(1072px) {
+        display: flex;
+        margin-left: auto;
     }
 }
 
 #close-sidebar {
-    @include respond($tablet) {
+    @include respond(1072px) {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -199,42 +210,42 @@ header {
 
 .sidebar-btn {
     display: none;
-    width: 34px; 
+    width: 34px;
     height: 34px;
     padding: 0;
     border: none;
     cursor: pointer;
-    
+
     background: linear-gradient(360deg, #f0572d 0%, #ce441e 100%);
-    
+
     align-items: center;
     justify-content: center;
-    
+
     transition: opacity 0.3s ease;
 
-	padding: 0; 
+	padding: 0;
     margin: 0;
 
     &:hover {
         opacity: 0.9;
     }
-    
+
     svg {
         display: block;
         width: 22px;
         height: 22px;
         stroke: #ffffff;
-		margin: 0 auto; 
+		margin: 0 auto;
     }
 }
 
 .menu__header {
-    display: none; 
-    
-    @include respond($tablet) {
+    display: none;
+
+    @include respond(1072px) {
         display: flex;
-        justify-content: flex-end; 
-        padding: 15px 20px; 
+        justify-content: flex-end;
+        padding: 15px 20px;
         width: 100%;
     }
 }
@@ -250,28 +261,44 @@ header {
 .header__menu, .menu__body {width: 100%;}
 
 .menu__list {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0;
-    padding: 0.5rem;
-    list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0 0.5rem 1rem;
+  list-style: none;
+  flex-wrap: nowrap;
+  min-width: max-content;
 }
 
 .menu__link_calc {
-	display: flex;
-	align-items: center;
-	gap: 6px;
-	&::before {
-		content: "";
-		width: 24px;
-		height: 24px;
-		flex: 0 0 24px;
-		border: 1px solid #e5e5e5;
-		border-radius: 100%;
-		background: url("@/img/icons/calc.svg") center/10px no-repeat;
-	}
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #f0572d;
+
+  &::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    border: 1px solid #e5e5e5;
+    border-radius: 100%;
+    background: url("@/img/icons/calc.svg") center/10px no-repeat;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: #ce441e;
+
+      &::before {
+        border-color: #f0572d;
+        background-color: rgba(240, 87, 45, 0.05);
+      }
+    }
+  }
 }
 
 #sidebar-overlay {
@@ -288,7 +315,7 @@ header {
 
 
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: 1072px) {
   .bottom__item {
     display: flex;
     align-items: center;
@@ -305,13 +332,13 @@ header {
   }
 
   .header__item:last-child {
-    justify-content: space-between; 
+    justify-content: space-between;
     width: 100%;
-    gap: 0; 
+    gap: 0;
   }
-    
+
   #open-sidebar {
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 0;
@@ -344,14 +371,14 @@ header {
     right: -100%;
     height: 100vh;
     width: min(18em, 100%);
-    z-index: 100; 
+    z-index: 100;
     border-left: 2px solid #e5e5e5;
     transition: right 0.3s ease-out;
     overflow-y: auto;
 
     display: flex;
     flex-direction: column;
-    padding-top: 0; 
+    padding-top: 0;
   }
 
   .menu__body.show {
@@ -364,13 +391,31 @@ header {
 
   .menu__list {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: flex-start;
     gap: 1em;
-    
     width: 100%;
-    margin-top: 0; 
+    margin-top: 0;
     padding-left: 1rem;
+    justify-content: flex-start;
+
+
+    flex: 1 1 auto;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    min-width: 0;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 2px;
+    }
   }
 
   .menu__list .menu__item {
@@ -380,12 +425,12 @@ header {
   .menu__list a {
     width: 100%;
     display: block;
-    padding-left: 20px; 
+    padding-left: 20px;
     padding-right: 20px;
   }
 
   .menu__list a.menu__link_calc {
-    display: flex; 
+    display: flex;
     align-items: center;
   }
 }
@@ -425,8 +470,8 @@ header {
 
     .menu__footer {
       display: block;
-      margin-top: 20px; 
-      padding: 20px; 
+      margin-top: 20px;
+      padding: 20px;
       border-top: 1px solid #e5e5e5;
       width: 100%;
     }
@@ -437,13 +482,13 @@ header {
       align-items: center;
       gap: 1rem;
       width: 100%;
-      height: auto; 
+      height: auto;
     }
 
     .menu__footer .socials-row span {
       display: inline-flex;
       align-items: center;
-      gap: 6px; 
+      gap: 6px;
 
       font-size: 14px;
       color: #838383;
@@ -496,7 +541,10 @@ header {
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: all 0.3s ease;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
 }
 
 .sub-menu--wide .sub-menu__list {
@@ -535,7 +583,7 @@ header {
   border-bottom: none;
 }
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: 1072px) {
   .sub-menu__list,
   .sub-menu--wide .sub-menu__list {
     position: static;
@@ -600,12 +648,91 @@ header {
   color: #2d6281;
 }
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: 1072px) {
   .sub-menu__list {
     position: static;
     box-shadow: none;
     padding-left: 20px;
     min-width: auto;
     margin-top: 10px;
+  }
+}
+
+// ─────────────────────────────────────
+// Menu Links — Hover & Active States
+// ─────────────────────────────────────
+
+.menu__link {
+  transition: color 0.2s ease;
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: #2d6281;
+    }
+  }
+
+  &.is-active {
+    color: #f0572d;
+  }
+}
+
+// ─────────────────────────────────────
+// Desktop Menu — Horizontal Scroll
+// ─────────────────────────────────────
+
+.header__bottom {
+
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// ─────────────────────────────────────
+// Focus Visible — Accessibility
+// ─────────────────────────────────────
+
+.menu__link:focus-visible,
+.social__link:focus-visible,
+.sidebar-btn:focus-visible {
+  outline: 2px solid #f0572d;
+  outline-offset: 2px;
+}
+
+.menu__link:focus:not(:focus-visible),
+.social__link:focus:not(:focus-visible),
+.sidebar-btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+// ─────────────────────────────────────
+// "Все услуги →" — Parent Link in Submenu
+// ─────────────────────────────────────
+
+.sub-menu__list .menu__item--parent {
+  .menu__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    color: #f0572d;
+
+    &::after {
+      content: "→";
+      margin-left: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #ce441e;
+
+        &::after {
+          transform: translateX(4px);
+        }
+      }
+    }
   }
 }

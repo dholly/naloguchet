@@ -749,7 +749,7 @@ get_header();
           <div class="footer-left">
             <img src="<?php echo get_template_directory_uri(); ?>/static/img/icons/tiles/spheres2.png"
                  alt="sphere icons" class="sphere-img">
-            <span class="spheres-text">Еще более <?php echo max(0, wp_count_posts('buh_keysi')->publish - 6); ?> реальных результатов наших клиентов</span>
+            <span class="spheres-text">Еще более 120+ реальных результатов наших клиентов</span>
           </div>
           <a href="<?php echo get_post_type_archive_link('buh_keysi'); ?>" class="btn btn_arr">Все кейсы</a>
         </div>
@@ -1081,21 +1081,21 @@ get_header();
       </div>
     </section>
 
-    <section class="accordion-faq">
-      <div class="faq-accordion__container">
+    <section class="services-accordion-section nopb-nobg">
+      <div class="services-accordion__container">
 
-          <h2 class="faq-accordion__title">
-            Частые вопросы
-          </h2>
+        <h2 class="services-accordion__title">
+          Частые вопросы
+        </h2>
 
-          <h3 class="faq-accordion__subtitle">
-            Мы собрали ответы на самые важные вопросы. Если не нашли нужное — оставьте заявку, и мы проконсультируем вас лично.
-          </h3>
+        <h3 class="services-accordion__subtitle">
+          Мы собрали ответы на самые важные вопросы. Если не нашли нужное — оставьте заявку, и мы проконсультируем вас лично.
+        </h3>
 
-        <div class="faq-accordion">
+        <div class="services-accordion">
 
-          <div class="faq-accordion__item">
-            <div class="faq accordion__header">
+          <div class="services-accordion__item">
+            <div class="services accordion__header">
               <h3>Сколько стоит бухгалтерское обслуживание?</h3>
             </div>
             <div class="accordion-item__body">
@@ -1107,8 +1107,8 @@ get_header();
             </div>
           </div>
 
-          <div class="faq-accordion__item">
-            <div class="faq accordion__header">
+          <div class="services-accordion__item">
+            <div class="services accordion__header">
               <h3>Что входит в стоимость обслуживания?</h3>
             </div>
             <div class="accordion-item__body">
@@ -1120,8 +1120,8 @@ get_header();
             </div>
           </div>
 
-          <div class="faq-accordion__item">
-            <div class="faq accordion__header">
+          <div class="services-accordion__item">
+            <div class="services accordion__header">
               <h3>Как быстро вы начинаете работу?</h3>
             </div>
             <div class="accordion-item__body">
@@ -1133,8 +1133,8 @@ get_header();
             </div>
           </div>
 
-          <div class="faq-accordion__item">
-            <div class="faq accordion__header">
+          <div class="services-accordion__item">
+            <div class="services accordion__header">
               <h3>Кто отвечает за ошибки?</h3>
             </div>
             <div class="accordion-item__body">
@@ -1146,8 +1146,8 @@ get_header();
             </div>
           </div>
 
-          <div class="faq-accordion__item">
-            <div class="faq accordion__header">
+          <div class="services-accordion__item">
+            <div class="services accordion__header">
               <h3>Можно работать удалённо?</h3>
             </div>
             <div class="accordion-item__body">
@@ -1159,8 +1159,8 @@ get_header();
             </div>
           </div>
 
-          <div class="faq-accordion__item">
-            <div class="faq accordion__header">
+          <div class="services-accordion__item">
+            <div class="services accordion__header">
               <h3>Могу ли я поменять бухгалтера в процессе?</h3>
             </div>
             <div class="accordion-item__body">
@@ -1173,6 +1173,7 @@ get_header();
           </div>
 
         </div>
+      </div>
     </section>
 
   </div>
